@@ -1,0 +1,1107 @@
+/* =========================================================
+   WELCOME PUBLIC SCHOOL - TEACHERS
+   Theme matched EXACTLY with profile.css
+
+   Primary Yellow : #FFE600
+   Soft Yellow    : #FFF9A6
+   Deep Navy      : #1B1464
+   White          : #FFFFFF
+   Black          : #000000
+   Grey           : #555555 / #6B7280
+   Green          : #16A34A
+   Red            : #DC2626
+   ========================================================= */
+
+
+/* =========================================================
+   GLOBAL
+   ========================================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: #fff9a6;
+  color: #000000;
+}
+
+.dashboard-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+
+/* =========================================================
+   SIDEBAR
+   SAME AS profile.css
+   ========================================================= */
+
+.sidebar {
+  width: 300px;
+  min-height: 100vh;
+
+  background: #1b1464;
+
+  padding: 25px 18px;
+
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  z-index: 1000;
+}
+
+
+/* =========================================
+   SCHOOL LOGO
+   ========================================= */
+
+.logo {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.logo img {
+  width: 85px;
+  height: 85px;
+
+  object-fit: contain;
+
+  margin-bottom: 10px;
+}
+
+.logo-text h2 {
+  color: #ffffff;
+
+  font-size: 19px;
+  line-height: 1.25;
+
+  font-weight: 700;
+
+  letter-spacing: 0.5px;
+}
+
+.logo-text .school-info {
+  color: #fff9a6;
+
+  font-size: 10px;
+
+  margin-top: 4px;
+}
+
+.logo-text .state {
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   SIDEBAR MENU
+   SAME AS profile.css
+   ========================================================= */
+
+.sidebar ul {
+  list-style: none;
+}
+
+.sidebar li {
+  display: flex;
+  align-items: center;
+
+  gap: 15px;
+
+  padding: 14px 18px;
+
+  margin-bottom: 7px;
+
+  border-radius: 12px;
+
+  color: #ffffff;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition: all 0.25s ease;
+}
+
+.sidebar li i {
+  width: 20px;
+
+  font-size: 16px;
+
+  text-align: center;
+}
+
+
+/* Hover */
+
+.sidebar li:hover {
+  background: #fff9a6;
+  color: #1b1464;
+
+  transform: translateX(3px);
+}
+
+
+/* Active */
+
+.sidebar li.active {
+  background: #ffe600;
+  color: #1b1464;
+
+  font-weight: 600;
+
+  box-shadow:
+    0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+
+/* Logout */
+
+.sidebar li.logout-btn {
+  margin-top: 9px;
+}
+
+.sidebar li.logout-btn:hover {
+  background: #dc2626;
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   SIDEBAR SCROLLBAR
+   SAME AS profile.css
+   ========================================================= */
+
+.sidebar::-webkit-scrollbar {
+  width: 5px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+  background: #110d46;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background: #ffe600;
+  border-radius: 10px;
+}
+
+
+/* =========================================================
+   MAIN CONTENT
+   ========================================================= */
+
+.main-content {
+  margin-left: 300px;
+
+  width: calc(100% - 300px);
+
+  padding: 30px;
+}
+
+
+/* =========================================================
+   HEADER
+   SAME STYLE AS profile.css
+   ========================================================= */
+
+.page-header {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin-bottom: 25px;
+}
+
+.page-header h1 {
+  font-size: 25px;
+
+  color: #1b1464;
+
+  font-weight: 600;
+}
+
+.page-header p {
+  color: #555555;
+
+  font-size: 13px;
+
+  margin-top: 4px;
+}
+
+
+/* =========================================================
+   SECTION
+   SAME STYLE AS profile.css
+   ========================================================= */
+
+.principal-section,
+.teachers-section {
+  margin-bottom: 25px;
+
+  padding-bottom: 22px;
+
+  border-bottom: 1px solid #eeeeee;
+}
+
+.teachers-section {
+  margin-bottom: 20px;
+
+  border-bottom: none;
+
+  padding-bottom: 0;
+}
+
+
+/* =========================================================
+   SECTION HEADING
+   SAME STYLE AS .section h2 IN profile.css
+   ========================================================= */
+
+.section-title {
+  color: #1b1464;
+
+  font-size: 18px;
+
+  font-weight: 600;
+
+  margin-bottom: 17px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+}
+
+.section-title i {
+  width: 5px;
+
+  height: 22px;
+
+  background: #ffe600;
+
+  border-radius: 5px;
+
+  display: inline-block;
+
+  font-size: 0;
+}
+
+.section-title i::after {
+  content: "";
+}
+
+
+/* =========================================================
+   PRINCIPAL CARD
+   BASED ON .profile-card FROM profile.css
+   ========================================================= */
+
+.principal-card {
+  display: grid;
+
+  grid-template-columns: 260px 1fr;
+
+  background: #ffffff;
+
+  border-radius: 20px;
+
+  border: 1px solid #eeeeee;
+
+  box-shadow:
+    0 8px 25px rgba(0, 0, 0, 0.07);
+
+  overflow: hidden;
+
+  position: relative;
+}
+
+
+/* Yellow top border */
+
+.principal-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 5px;
+
+  background: #ffe600;
+}
+
+
+/* =========================================================
+   PRINCIPAL IMAGE
+   ========================================================= */
+
+.principal-image {
+  background: #1b1464;
+
+  padding: 35px 25px;
+
+  display: flex;
+
+  align-items: flex-start;
+
+  justify-content: center;
+
+  min-height: 350px;
+
+  position: relative;
+}
+
+
+/* Decorative yellow circle */
+
+.principal-image::after {
+  content: "";
+
+  position: absolute;
+
+  width: 180px;
+  height: 180px;
+
+  border-radius: 50%;
+
+  background: rgba(255, 230, 0, 0.08);
+
+  bottom: -70px;
+  left: -70px;
+}
+
+
+/* Principal photo */
+
+.principal-image img {
+  width: 190px;
+  height: 260px;
+
+  object-fit: cover;
+
+  object-position: center top;
+
+  border-radius: 14px;
+
+  border: 5px solid #ffe600;
+
+  padding: 4px;
+
+  background: #ffffff;
+
+  position: relative;
+
+  z-index: 2;
+
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.20);
+}
+
+
+/* =========================================================
+   PRINCIPAL INFORMATION
+   ========================================================= */
+
+.principal-info {
+  padding: 30px;
+}
+
+
+/* Badge */
+
+.principal-badge {
+  display: inline-block;
+
+  background: #ffe600;
+
+  color: #1b1464;
+
+  padding: 6px 11px;
+
+  border-radius: 8px;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.5px;
+
+  margin-bottom: 10px;
+}
+
+.principal-info h2 {
+  color: #1b1464;
+
+  font-size: 21px;
+
+  font-weight: 600;
+
+  margin-bottom: 7px;
+}
+
+.principal-info .role {
+  color: #6b7280;
+
+  font-size: 12px;
+
+  line-height: 1.7;
+
+  margin-bottom: 22px;
+}
+
+
+/* =========================================================
+   PRINCIPAL DETAILS
+   SAME VISUAL LANGUAGE AS profile.css .item
+   ========================================================= */
+
+.teacher-details {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 13px;
+}
+
+.teacher-details > div {
+  background: #fff9a6;
+
+  padding: 14px 15px;
+
+  border-radius: 11px;
+
+  border: 1px solid transparent;
+
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 10px;
+
+  transition: all 0.2s ease;
+}
+
+.teacher-details > div:hover {
+  background: #1b1464;
+
+  color: white;
+
+  border: none;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 4px 12px rgba(27, 20, 100, 0.07);
+}
+
+.teacher-details > div > i {
+  color: #1b1464;
+
+  width: 20px;
+
+  font-size: 14px;
+
+  text-align: center;
+
+  margin-top: 2px;
+}
+
+.teacher-details > div:hover > i {
+  color: white;
+}
+
+.teacher-details strong {
+  display: block;
+
+  color: #6b7280;
+
+  font-size: 10px;
+
+  font-weight: 500;
+
+  margin-bottom: 4px;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.3px;
+}
+
+.teacher-details > div:hover strong {
+  color: white;
+}
+
+.teacher-details p {
+  color: #1b1464;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  line-height: 1.5;
+}
+
+.teacher-details > div:hover p {
+  color: white;
+}
+
+
+/* =========================================================
+   TEACHERS GRID
+   ========================================================= */
+
+.teachers-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 13px;
+}
+
+
+/* =========================================================
+   TEACHER CARD
+   SAME CARD LANGUAGE AS profile.css
+   ========================================================= */
+
+.teacher-card {
+  background: #fefdfd;
+
+  border-radius: 15px;
+
+  border: 1px solid #ebe9e9;
+  
+
+
+  overflow: hidden;
+
+  position: relative;
+
+  transition: all 0.2s ease;
+}
+
+.teacher-card:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 10px 27px rgba(0, 0, 0, 0.09);
+}
+
+
+
+
+
+/* =========================================================
+   TEACHER IMAGE
+   RECTANGULAR + MORE HEIGHT
+   ========================================================= */
+
+.teacher-image {
+  width: 100%;
+
+  height: 250px;
+
+  background: #fefefe;
+
+  overflow: hidden;
+
+  display: flex;
+
+  align-items: flex-start;
+
+  justify-content: center;
+
+  padding: 20px 18px 0;
+}
+
+.teacher-image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  object-position: center top;
+
+  border-radius: 12px 12px 0 0;
+
+  border: 4px solid #ffe600;
+
+  padding: 3px;
+
+  background: #ffffff;
+
+  display: block;
+
+  box-shadow:
+    0 6px 18px rgba(0, 0, 0, 0.18);
+}
+
+
+/* =========================================================
+   TEACHER INFORMATION
+   ========================================================= */
+
+.teacher-info {
+  padding: 14px 15px 15px;
+}
+
+.teacher-info h3 {
+  color: #1b1464;
+
+  font-size: 16px;
+
+  font-weight: 600;
+
+  margin-bottom: 4px;
+}
+
+.teacher-role {
+  display: inline-block;
+
+  color: #6b7280;
+
+  font-size: 10px;
+
+  font-weight: 500;
+
+  margin-bottom: 13px;
+}
+
+
+/* =========================================================
+   TEACHER DETAIL ITEMS
+   SAME STYLE AS profile.css .item
+   ========================================================= */
+
+.detail {
+  background: #fff9a6;
+
+  padding: 10px 11px;
+
+  border-radius: 11px;
+
+  border: 1px solid transparent;
+
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 9px;
+
+  margin-bottom: 8px;
+
+  transition: all 0.2s ease;
+}
+
+.detail:last-child {
+  margin-bottom: 0;
+}
+
+.detail:hover {
+  background: #1b1464;
+
+  color: white;
+
+  border: none;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 4px 12px rgba(27, 20, 100, 0.07);
+}
+
+.detail i {
+  color: #1b1464;
+
+  width: 20px;
+
+  font-size: 13px;
+
+  text-align: center;
+
+  margin-top: 2px;
+}
+
+.detail:hover i {
+  color: white;
+}
+
+.detail span {
+  color: #1b1464;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  line-height: 1.5;
+
+  word-break: break-word;
+}
+
+.detail strong {
+  color: #6b7280;
+
+  font-weight: 500;
+}
+
+.detail:hover span,
+.detail:hover strong {
+  color: white;
+}
+
+
+/* =========================================================
+   SELECTION
+   SAME AS profile.css
+   ========================================================= */
+
+::selection {
+  background: #ffe600;
+
+  color: #1b1464;
+}
+
+
+/* =========================================================
+   RESPONSIVE - TABLET
+   SAME BREAKPOINT AS profile.css
+   ========================================================= */
+
+@media (max-width: 1200px) {
+
+  .principal-card {
+    grid-template-columns: 220px 1fr;
+  }
+
+  .principal-image {
+    padding: 30px 20px;
+  }
+
+  .principal-image img {
+    width: 160px;
+    height: 235px;
+  }
+
+  .principal-info {
+    padding: 25px;
+  }
+
+  .teachers-grid {
+    gap: 10px;
+  }
+}
+
+
+/* =========================================================
+   RESPONSIVE - SMALL LAPTOP
+   SAME SIDEBAR/MAIN VALUES AS profile.css
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .sidebar {
+    width: 230px;
+  }
+
+  .main-content {
+    margin-left: 230px;
+
+    width: calc(100% - 230px);
+
+    padding: 20px;
+  }
+
+  .logo-text h2,
+  .logo-text h3 {
+    font-size: 16px;
+  }
+
+  .sidebar li {
+    padding: 12px;
+
+    font-size: 12px;
+  }
+
+  .page-header h1 {
+    font-size: 22px;
+  }
+
+  .principal-card {
+    grid-template-columns: 190px 1fr;
+  }
+
+  .principal-image {
+    min-height: 320px;
+
+    padding: 28px 15px;
+  }
+
+  .principal-image img {
+    width: 140px;
+    height: 215px;
+  }
+
+  .principal-info {
+    padding: 22px;
+  }
+
+  .principal-info h2 {
+    font-size: 17px;
+  }
+
+  .section-title {
+    font-size: 16px;
+  }
+
+  .teachers-grid {
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 10px;
+  }
+
+  .teacher-image {
+    height: 220px;
+  }
+}
+
+
+/* =========================================================
+   RESPONSIVE - MOBILE
+   SAME AS profile.css
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  .dashboard-container {
+    display: block;
+  }
+
+  .sidebar {
+    position: relative;
+
+    width: 100%;
+
+    min-height: auto;
+
+    padding: 15px;
+
+    overflow-y: visible;
+  }
+
+  .logo {
+    margin-bottom: 15px;
+  }
+
+  .logo img {
+    width: 65px;
+    height: 65px;
+  }
+
+  .sidebar ul {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 5px;
+  }
+
+  .sidebar li {
+    margin-bottom: 0;
+
+    padding: 12px 10px;
+
+    font-size: 11px;
+  }
+
+  .sidebar li i {
+    width: 18px;
+
+    font-size: 14px;
+  }
+
+  .main-content {
+    margin-left: 0;
+
+    width: 100%;
+
+    padding: 15px;
+  }
+
+  .page-header {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 15px;
+
+    margin-bottom: 20px;
+  }
+
+  .page-header h1 {
+    font-size: 20px;
+  }
+
+  .page-header p {
+    font-size: 11px;
+  }
+
+  .principal-card {
+    grid-template-columns: 1fr;
+
+    border-radius: 17px;
+  }
+
+  .principal-image {
+    min-height: auto;
+
+    padding: 30px 20px 25px;
+  }
+
+  .principal-image::after {
+    display: none;
+  }
+
+  .principal-image img {
+    width: 155px;
+    height: 220px;
+  }
+
+  .principal-info {
+    padding: 22px 18px;
+  }
+
+  .principal-info h2 {
+    font-size: 19px;
+  }
+
+  .teacher-details {
+    grid-template-columns: 1fr 1fr;
+
+    gap: 10px;
+  }
+
+  .teachers-section {
+    margin-top: 20px;
+  }
+
+  .teachers-grid {
+    grid-template-columns: 1fr 1fr;
+
+    gap: 10px;
+  }
+
+  .teacher-image {
+    height: 210px;
+
+    padding: 18px 12px 0;
+  }
+
+  .teacher-info {
+    padding: 12px;
+  }
+
+  .teacher-info h3 {
+    font-size: 14px;
+  }
+
+  .detail {
+    padding: 9px;
+  }
+
+  .detail span {
+    font-size: 10px;
+  }
+}
+
+
+/* =========================================================
+   RESPONSIVE - SMALL MOBILE
+   SAME BREAKPOINT AS profile.css
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+  .main-content {
+    padding: 12px;
+  }
+
+  .page-header h1 {
+    font-size: 18px;
+  }
+
+  .page-header p {
+    font-size: 10px;
+  }
+
+  .principal-card {
+    border-radius: 15px;
+  }
+
+  .principal-image {
+    padding: 25px 15px 20px;
+  }
+
+  .principal-image img {
+    width: 145px;
+    height: 205px;
+  }
+
+  .principal-info {
+    padding: 18px 14px;
+  }
+
+  .principal-info h2 {
+    font-size: 17px;
+  }
+
+  .principal-info .role {
+    font-size: 11px;
+  }
+
+  .teacher-details {
+    grid-template-columns: 1fr;
+
+    gap: 8px;
+  }
+
+  .teachers-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .teacher-image {
+    height: 270px;
+
+    padding: 20px 15px 0;
+  }
+
+  .teacher-info {
+    padding: 14px;
+  }
+
+  .teacher-info h3 {
+    font-size: 15px;
+  }
+
+  .detail span {
+    font-size: 10px;
+  }
+}

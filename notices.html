@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>School Notices</title>
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+
+
+  <link rel="stylesheet" href="notices.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <!-- Standard Favicon for Browser Tabs & Chrome Shortcuts -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Apple/Safari Specific Icon (For pinned tabs or home screen shortcuts) -->
+  <link rel="apple-touch-icon" href="favicon.ico">
+
+</head>
+
+<body>
+
+  <div class="container">
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="sidebar">
+
+      <div class="logo">
+
+        <img src="images/logo.png" alt="School Logo">
+
+        <div class="logo-text">
+          <h2>BRILLIANT</h2>
+          <h2>COACHING CENTRE</h2>
+          <p class="school-info">Established in 2009</p>
+          <p class="school-info">Kairi Birpur, Dist- Kishanganj</p>
+          <p class="school-info state">BIHAR</p>
+        </div>
+
+      </div>
+
+      <ul>
+
+        <li onclick="location.href='dashboard.html'">
+          <i class="fa-solid fa-house"></i>
+          Dashboard
+        </li>
+
+        <li onclick="location.href='profile.html'">
+          <i class="fa-solid fa-user"></i>
+          Profile
+        </li>
+
+        <li onclick="location.href='marks.html'">
+          <i class="fa-solid fa-chart-column"></i>
+          Academic Performance
+        </li>
+
+        <li onclick="location.href='attendance.html'">
+          <i class="fa-solid fa-calendar-check"></i>
+          Attendance
+        </li>
+
+        <li onclick="location.href='fees.html'">
+          <i class="fa-solid fa-indian-rupee-sign"></i>
+          <span>Fees & Payments</span>
+        </li>
+
+        <li class="active">
+          <i class="fa-solid fa-bell"></i>
+          Announcements
+        </li>
+
+        <li onclick="location.href='timetable.html'">
+          <i class="fa-solid fa-clock"></i>
+          Class Schedule
+        </li>
+
+        <li onclick="location.href='teachers.html'">
+          <i class="fa-solid fa-chalkboard-user"></i>
+          Faculty & Mentors
+        </li>
+
+        <li onclick="location.href='answer-sheet.html'">
+
+          <i class="fa-solid fa-file-pen"></i>
+          Answer Sheets
+
+        </li>
+
+        <li onclick="location.href='alumni.html'">
+
+          <i class="fa-solid fa-user-graduate"></i>
+          Alumni Network
+
+        </li>
+
+        <li onclick="location.href='results.html'">
+          <i class="fa-solid fa-poll"></i>
+          <span>Board Results</span>
+        </li>
+
+        <li onclick="location.href='settings.html'">
+          <i class="fa-solid fa-gear"></i>
+          <span>Settings</span>
+        </li>
+
+        <li class="logout-btn" onclick="window.location.href='index.html'">
+          <i class="fa-solid fa-right-from-bracket"></i>
+          Logout
+        </li>
+
+      </ul>
+
+    </aside>
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="main">
+
+      <header>
+
+        <div>
+
+          <h1>School Notices</h1>
+
+          <p>Latest announcements and circulars</p>
+
+        </div>
+
+        <div class="profile-box" onclick="location.href='profile.html'">
+
+          <img src="images/student.jpg" alt="Student">
+
+          <div>
+
+            <h3>Meezan Alam</h3>
+
+            <span>Class X • Roll No. 01</span>
+
+          </div>
+
+        </div>
+
+      </header>
+
+      <!-- ================= NOTICE 1 ================= -->
+
+      <section class="notice-card important">
+
+        <div class="notice-icon">
+
+          <i class="fa-solid fa-bullhorn"></i>
+
+        </div>
+
+        <div class="notice-content">
+
+          <h2>Half-Yearly Examination Schedule Released</h2>
+
+          <p>
+
+            The Half-Yearly Examination will begin from
+            <strong>15 September 2026</strong>.
+            Students are advised to collect their admit cards
+            from the school office.
+
+          </p>
+
+          <span class="date">
+            📅 Posted on : 20 August 2026
+          </span>
+
+        </div>
+
+      </section>
+
+      <!-- ================= NOTICE 2 ================= -->
+
+      <section class="notice-card">
+
+        <div class="notice-icon">
+
+          <i class="fa-solid fa-calendar-days"></i>
+
+        </div>
+
+        <div class="notice-content">
+
+          <h2>Parent-Teacher Meeting</h2>
+
+          <p>
+
+            Parent-Teacher Meeting (PTM) will be held on
+            <strong>30 August 2026</strong>.
+            Parents are requested to attend with their wards.
+
+          </p>
+
+          <span class="date">
+            📅 Posted on : 18 August 2026
+          </span>
+
+        </div>
+
+      </section>
+
+      <!-- ================= NOTICE 3 ================= -->
+
+      <section class="notice-card">
+
+        <div class="notice-icon">
+
+          <i class="fa-solid fa-trophy"></i>
+
+        </div>
+
+        <div class="notice-content">
+
+          <h2>Annual Sports Competition</h2>
+
+          <p>
+
+            Students interested in Athletics, Football,
+            Cricket and Volleyball can register before
+            <strong>10 September 2026.</strong>
+
+          </p>
+
+          <span class="date">
+
+            📅 Posted on : 12 August 2026
+
+          </span>
+
+        </div>
+
+      </section>
+      <!-- ================= NOTICE 4 ================= -->
+
+      <section class="notice-card">
+
+        <div class="notice-icon">
+
+          <i class="fa-solid fa-book"></i>
+
+        </div>
+
+        <div class="notice-content">
+
+          <h2>Library Books Submission</h2>
+
+          <p>
+
+            Students must return all library books before
+            <strong>05 September 2026</strong>.
+            Late submissions may attract a fine.
+
+          </p>
+
+          <span class="date">
+
+            📅 Posted on : 10 August 2026
+
+          </span>
+
+        </div>
+
+      </section>
+
+      <!-- ================= NOTICE 5 ================= -->
+
+      <section class="notice-card">
+
+        <div class="notice-icon">
+
+          <i class="fa-solid fa-tree"></i>
+
+        </div>
+
+        <div class="notice-content">
+
+          <h2>Tree Plantation Drive</h2>
+
+          <p>
+
+            Brilliant Coaching Centre is organizing a Tree Plantation
+            Drive on <strong>02 September 2026</strong>.
+            Students are encouraged to participate.
+
+          </p>
+
+          <span class="date">
+
+            📅 Posted on : 08 August 2026
+
+          </span>
+
+        </div>
+
+      </section>
+
+      <!-- ================= NOTICE 6 ================= -->
+
+      <section class="notice-card">
+
+        <div class="notice-icon">
+
+          <i class="fa-solid fa-school"></i>
+
+        </div>
+
+        <div class="notice-content">
+
+          <h2>School Reopens After Vacation</h2>
+
+          <p>
+
+            The school will reopen on
+            <strong>25 August 2026</strong>.
+            Attendance is compulsory for all students.
+
+          </p>
+
+          <span class="date">
+
+            📅 Posted on : 05 August 2026
+
+          </span>
+
+        </div>
+
+      </section>
+
+      <!-- ================= ACTION BUTTONS ================= -->
+
+      <section class="button-section">
+
+        <button class="download-btn">
+
+          <i class="fa-solid fa-download"></i>
+
+          Download Notices
+
+        </button>
+
+        <button class="print-btn">
+
+          <i class="fa-solid fa-print"></i>
+
+          Print Notices
+
+        </button>
+
+        <button class="back-btn" onclick="location.href='index.html'">
+
+          <i class="fa-solid fa-arrow-left"></i>
+
+          Back to Dashboard
+
+        </button>
+
+      </section>
+
+    </main>
+
+  </div>
+
+  <script src="notices.js"></script>
+  <script src="common.js"></script>
+
+</body>
+
+</html>

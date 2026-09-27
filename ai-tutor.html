@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Myelin AI | BCC</title>
+
+  <!-- Google Font -->
+  <!-- Shared site font — keep the dashboard/sidebar typography unchanged -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- AI Tutor chat font -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+    rel="stylesheet" />
+
+  <!-- Hindi / Devanagari Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:ital@0;1&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+
+  <!-- Shared Learning Hub CSS -->
+  <link rel="stylesheet" href="ptm.css" />
+
+  <!-- AI Tutor Specific CSS -->
+  <link rel="stylesheet" href="ai-tutor.css" />
+
+  <!-- Standard Favicon for Browser Tabs & Chrome Shortcuts -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Apple/Safari Specific Icon (For pinned tabs or home screen shortcuts) -->
+  <link rel="apple-touch-icon" href="favicon.ico">
+
+
+</head>
+
+<body>
+  <div class="dashboard-container">
+    <!-- =====================================================
+             SIDEBAR
+        ====================================================== -->
+
+    <aside class="sidebar">
+      <!-- School Branding -->
+
+      <div class="school-brand">
+        <img src="images/logo.png" alt="Welcome Public School Logo" />
+
+        <h2>
+          <span>BRILLIANT</span>
+          <span>COACHING CENTRE</span>
+        </h2>
+
+        <div class="established">Established in 2009</div>
+
+        <div class="address">
+          Kairi Birpur, Po- Bishanpur<br />
+          Dist- Kishanganj<br />
+          <span>BIHAR</span>
+        </div>
+      </div>
+
+      <!-- Sidebar Menu -->
+
+      <div class="menu-title">Learning Center</div>
+
+      <nav class="sidebar-menu">
+        <a href="ptm.html">
+          <i class="fa-solid fa-users"></i>
+          <span>PTM</span>
+        </a>
+
+        <a href="ai-tutor.html" class="active">
+          <i class="fa-solid fa-robot"></i>
+          <span>AI Tutor</span>
+        </a>
+
+        <a href="motivational.html">
+          <i class="fa-solid fa-fire"></i>
+          <span>Motivational Sessions</span>
+        </a>
+
+        <a href="super.html">
+          <i class="fa-solid fa-star"></i>
+          <span>Super 15</span>
+        </a>
+
+        <a href="learning.html">
+          <i class="fa-solid fa-chalkboard-user"></i>
+          <span>Digital Classroom</span>
+        </a>
+      </nav>
+
+      <!-- Bottom Sidebar -->
+
+      <div class="sidebar-bottom">
+        <a href="dashboard.html" class="back-dashboard">
+          <i class="fa-solid fa-arrow-left"></i>
+          <span>Back to Dashboard</span>
+        </a>
+      </div>
+    </aside>
+
+    <!-- =====================================================
+             MAIN CONTENT
+        ====================================================== -->
+
+    <main class="main-content">
+      <!-- =================================================
+                 TOP HEADER
+            ================================================== -->
+
+      <header class="top-header">
+        <div class="page-heading">
+          <small> AI TUTOR </small>
+
+          <h1>Ask Your Doubt</h1>
+
+          <p>Learn smarter with your personal digital study companion.</p>
+        </div>
+
+        <div class="header-actions">
+          <div class="notification-btn">
+            <i class="fa-regular fa-bell"></i>
+          </div>
+
+          <div class="profile-mini">
+            <img src="images/student.jpg" alt="Student Profile" />
+
+            <span> Student </span>
+          </div>
+        </div>
+      </header>
+
+      <!-- =================================================
+                 MODE SWITCHER
+            ================================================== -->
+
+      <div class="learning-mode-switcher">
+        <div class="mode-switch-group">
+          <button class="mode-switch active" id="writtenModeButton" type="button">
+            <i class="fa-solid fa-pen-to-square"></i>
+
+            <span> Written Ask </span>
+          </button>
+
+          <button class="mode-switch" id="chatModeButton" type="button">
+            <i class="fa-solid fa-comments"></i>
+
+            <span> Chat Mode AI </span>
+          </button>
+
+          <button class="mode-switch" id="voiceModeButton" type="button">
+            <i class="fa-solid fa-microphone-lines"></i>
+
+            <span> Voice Mode AI </span>
+          </button>
+        </div>
+
+        <div class="ai-page-label">Powered by Nadaf Creates</div>
+      </div>
+
+      <!-- =================================================
+                 AI CHAT WINDOW
+            ================================================== -->
+
+      <section class="ai-tutor-window">
+        <!-- Chat Header -->
+
+        <div class="ai-chat-header">
+          <div class="ai-chat-title">
+            <div class="ai-chat-logo">
+              <img src="images/ai-company.png">
+            </div>
+
+            <div class="company-name">
+              <strong> Myelin AI by Nadaf </strong>
+
+              <div class="ai-online-status">
+                <span class="online-dot"></span>
+
+                <span> Your personal learning assistant </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Own AI Selector -->
+
+          <div class="ai-model-selector">
+            <button class="model-selector-button" id="modelSelectorButton" type="button">
+              <span class="model-selector-left">
+                <span class="selected-model-icon" id="selectedModelIcon">
+                  S
+                </span>
+
+                <span id="selectedModelName"> Myelin Smart </span>
+              </span>
+
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+
+            <div class="model-dropdown" id="modelDropdown">
+              <button class="model-option selected" data-model="Myelin Smart" type="button">
+                <span class="model-option-icon"> N </span>
+
+                <span> Myelin Smart </span>
+
+                <i class="fa-solid fa-check model-check"></i>
+              </button>
+
+              <button class="model-option" data-model="Myelin Vision" type="button">
+                <span class="model-option-icon"> V </span>
+
+                <span> Myelin Vision </span>
+
+                <i class="fa-solid fa-check model-check"></i>
+              </button>
+
+              <button class="model-option" data-model="Myelin Pro" type="button">
+                <span class="model-option-icon"> P </span>
+
+                <span> Myelin Pro </span>
+
+                <i class="fa-solid fa-check model-check"></i>
+              </button>
+            </div>
+          </div>
+
+          <button class="ai-fullscreen-button" id="aiFullscreenButton" type="button" title="Fullscreen"
+            aria-label="Open AI Tutor fullscreen">
+            <i class="fa-solid fa-expand"></i>
+          </button>
+        </div>
+
+        <!-- Chat Body -->
+
+        <div class="ai-chat-body" id="aiChatBody">
+          <!-- Welcome Screen -->
+
+          <div class="ai-welcome-state" id="aiWelcomeState">
+            <div class="ai-welcome-icon">
+              <img src="images/ai-company.png">
+            </div>
+
+            <h2>What would you like to learn?</h2>
+
+            <p>
+              Ask questions, understand difficult topics, practice problems,
+              or get help with your studies.
+            </p>
+
+            <div class="suggested-prompts">
+              <button class="suggested-prompt" type="button">
+                Explain this topic simply
+              </button>
+
+              <button class="suggested-prompt" type="button">
+                Help me solve a Maths problem
+              </button>
+
+              <button class="suggested-prompt" type="button">
+                Give me 10th board PYQ
+              </button>
+
+              <button class="suggested-prompt" type="button">
+                Make a quick revision plan
+              </button>
+            </div>
+          </div>
+
+          <!-- Messages -->
+
+          <div class="chat-messages" id="chatMessages"></div>
+
+          <!-- Typing Indicator -->
+
+          <div class="ai-typing-indicator" id="aiTypingIndicator">
+            <div class="typing-avatar"><img src="images/ai-company.png" alt="Myelin AI"></div>
+
+            <div class="typing-bubble">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+
+          <!-- Voice Mode Panel -->
+
+          <div class="voice-mode-panel" id="voiceModePanel">
+            <div class="voice-visualizer">
+              <span class="voice-ring ring-one"></span>
+              <span class="voice-ring ring-two"></span>
+              <span class="voice-ring ring-three"></span>
+
+              <div class="voice-center-icon">
+                <i class="fa-solid fa-microphone"></i>
+              </div>
+            </div>
+
+            <h2>Myelin AI</h2>
+
+            <p>
+              Talk naturally with Myelin AI and learn through voice-based
+              conversations.
+            </p>
+
+            <button class="start-voice-button" id="startVoiceButton" type="button">
+              <i class="fa-solid fa-microphone"></i>
+
+              Start Voice Session
+            </button>
+          </div>
+        </div>
+
+        <!-- Text Input Area -->
+
+        <div class="ai-chat-input-area" id="textInputArea">
+          <div class="chat-input-wrapper">
+            <button class="input-action-button" id="attachmentButton" type="button" title="Attach file">
+              <i class="fa-solid fa-paperclip paper"></i>
+            </button>
+
+            <textarea id="chatInput" rows="1" placeholder="Ask Nadaf Creates anything..."></textarea>
+
+            <button class="input-action-button" id="microphoneButton" type="button" title="Use microphone">
+              <i class="fa-solid fa-microphone mic"></i>
+            </button>
+
+            <button class="send-message-button" id="sendMessageButton" type="button" title="Send message">
+              <i class="fa-solid fa-arrow-up"></i>
+            </button>
+          </div>
+
+          <div class="ai-input-hint">
+            <span>
+              <i class="fa-solid fa-shield-halved"></i>
+              Study-focused assistant
+            </span>
+
+            <span> Enter to send </span>
+          </div>
+        </div>
+
+        <!-- Footer -->
+
+        <div class="ai-window-footer">
+          Myelin AI can make mistakes. Always verify important academic
+          information. Powered by Nadaf Creates
+        </div>
+      </section>
+
+      <!-- Page Footer -->
+
+      <div class="page-footer">
+        © 2009 Brilliant Coaching Center · Nadaf Creates
+      </div>
+    </main>
+  </div>
+
+  <script src="ai-tutor.js"></script>
+</body>
+
+</html>

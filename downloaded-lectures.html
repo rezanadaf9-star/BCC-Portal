@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>
+    Downloaded Lectures | BCC
+  </title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link rel="stylesheet" href="learning.css">
+  <link rel="stylesheet" href="downloaded-lectures.css">
+
+  <!-- Standard Favicon for Browser Tabs & Chrome Shortcuts -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Apple/Safari Specific Icon (For pinned tabs or home screen shortcuts) -->
+  <link rel="apple-touch-icon" href="favicon.ico">
+</head>
+
+<body>
+  <div class="dashboard-container">
+    <aside class="sidebar">
+      <div class="school-brand">
+        <img src="images/logo.png" alt="BCC Logo">
+        <h2>
+          BRILLIANT
+          <span>
+            COACHING CENTRE
+          </span>
+        </h2>
+        <p class="established">
+          Established in 2009
+        </p>
+        <p class="address">
+          Kairi Birpur, Po- Bishanpur
+          <br>
+          Dist- Kishanganj
+          <br>
+          <span>
+            BIHAR
+          </span>
+        </p>
+      </div>
+      <p class="menu-title">
+        Learning Center
+      </p>
+      <nav class="sidebar-menu">
+        <a href="learning.html" class="active">
+          <i class="fa-solid fa-chalkboard-user">
+          </i>
+          <span>
+            Lectures
+          </span>
+        </a>
+        <a href="notes.html">
+          <i class="fa-solid fa-book-open">
+          </i>
+          <span>
+            Notes
+          </span>
+        </a>
+        <a href="homework.html">
+          <i class="fa-solid fa-file-pen"></i>
+          </i>
+          <span>
+            Homework
+          </span>
+        </a>
+        <a href="quizzes.html">
+          <i class="fa-solid fa-clipboard-question">
+          </i>
+          <span>
+            Quizzes
+          </span>
+        </a>
+      </nav>
+      <div class="sidebar-bottom">
+        <a href="dashboard.html" class="back-dashboard">
+          <i class="fa-solid fa-arrow-left">
+          </i>
+          <span>
+            Back to Dashboard
+          </span>
+        </a>
+      </div>
+    </aside>
+    <main class="main-content">
+      <header class="top-header">
+        <div class="page-heading">
+          <small>
+            Digital Classroom
+          </small>
+          <h1>
+            Downloaded Lectures
+          </h1>
+          <p>
+            Your locally saved lecture library, sorted newest first.
+          </p>
+        </div>
+        <div class="header-actions">
+          <button class="notification-btn" id="notificationBtn">
+            <i class="fa-solid fa-bell">
+            </i>
+          </button>
+          <div class="profile-mini">
+            <img src="images/student.jpg" alt="Student">
+            <span>
+              Student
+            </span>
+          </div>
+        </div>
+      </header>
+      <section>
+        <div class="library-banner">
+          <div>
+            <span class="section-kicker">
+              Offline Library
+            </span>
+            <h2>
+              Your saved lectures.
+            </h2>
+            <p>
+              These entries point to videos stored on your device or served by your website.
+            </p>
+          </div>
+          <i class="fa-solid fa-download">
+          </i>
+        </div>
+        <div class="toolbar">
+          <div class="section-count">
+            <i class="fa-solid fa-download">
+            </i>
+            <span id="downloadCount">
+              0 Saved
+            </span>
+          </div>
+          <input id="searchDownloads" type="search" placeholder="Search saved lectures…">
+        </div>
+        <div id="downloadedLibrary">
+        </div>
+        <div class="empty-list-state" id="downloadedEmpty">
+          <i class="fa-regular fa-folder-open">
+          </i>
+          <span>
+            No downloaded lectures have been configured.
+          </span>
+        </div>
+      </section>
+      <footer class="page-footer">
+        © 2026 Brilliant Coaching Centre. All Rights Reserved.
+      </footer>
+    </main>
+  </div>
+  <div class="notification-message" id="notificationMessage">
+    <i class="fa-solid fa-bell">
+    </i>
+    <span>
+    </span>
+  </div>
+  <div class="subject-video-modal" id="downloadedVideoModal" aria-hidden="true">
+    <div class="subject-video-box" role="dialog" aria-modal="true">
+      <div class="subject-video-header">
+        <h3 id="downloadedVideoTitle">
+          Saved Lecture
+        </h3>
+        <button type="button" class="modal-close-btn" id="closeDownloadedVideo" aria-label="Close">
+          <i class="fa-solid fa-xmark">
+          </i>
+        </button>
+      </div>
+      <div class="subject-video-frame" id="downloadedVideoFrame">
+        <div id="downloadedPlayer">
+        </div>
+        <button type="button" class="subject-fullscreen" id="downloadedFullscreen" title="Fullscreen"
+          aria-label="Fullscreen">
+          <i class="fa-solid fa-expand">
+          </i>
+        </button>
+        <span class="subject-esc" id="downloadedEsc">
+          ESC to close
+        </span>
+      </div>
+    </div>
+  </div>
+  <script src="lecture-data.js">
+
+  </script>
+  <script src="downloaded-lectures.js">
+
+  </script>
+</body>
+
+</html>

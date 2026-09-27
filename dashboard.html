@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Dashboard</title>
+
+  <link rel="stylesheet" href="dashboard.css">
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+  <!-- Standard Favicon for Browser Tabs & Chrome Shortcuts -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Apple/Safari Specific Icon (For pinned tabs or home screen shortcuts) -->
+  <link rel="apple-touch-icon" href="favicon.ico">
+</head>
+
+<body>
+
+  <div class="container">
+
+    <!-- ================= Sidebar ================= -->
+
+    <aside class="sidebar" id="sidebar">
+
+      <div class="logo">
+
+        <img src="images/logo.png" alt="School Logo">
+
+        <div class="logo-text">
+          <h2>BRILLIANT</h2>
+          <h2>COACHING CENTRE</h2>
+          <p class="school-info">Established in 2009</p>
+          <p class="school-info">Kairi Birpur, Dist- Kishanganj</p>
+          <p class="school-info state">BIHAR</p>
+        </div>
+
+      </div>
+
+      <ul>
+
+        <li class="active">
+          <i class="fa-solid fa-house"></i>
+          Dashboard
+        </li>
+
+        <li onclick="window.location.href='profile.html'">
+          <i class="fa-solid fa-user"></i>
+          Profile
+        </li>
+
+        <li onclick="location.href='marks.html'">
+          <i class="fa-solid fa-chart-column"></i>
+          <span>Academic Performance</span>
+        </li>
+
+        <li onclick="location.href='attendance.html'">
+          <i class="fa-solid fa-calendar-check"></i>
+          <span>Attendance</span>
+        </li>
+
+        <li onclick="location.href='fees.html'">
+          <i class="fa-solid fa-indian-rupee-sign"></i>
+          <span>Fees & Payments</span>
+        </li>
+
+        <li onclick="location.href='notices.html'">
+          <i class="fa-solid fa-bell"></i>
+          <span>Announcements</span>
+        </li>
+
+        <li onclick="location.href='timetable.html'">
+          <i class="fa-solid fa-clock"></i>
+          <span>Class Schedule</span>
+        </li>
+
+        <li onclick="location.href='teachers.html'">
+          <i class="fa-solid fa-chalkboard-user"></i>
+          Faculty & Mentors
+        </li>
+
+        <li onclick="location.href='answer-sheet.html'">
+
+          <i class="fa-solid fa-file-pen"></i>
+          Answer Sheets
+
+        </li>
+
+
+        <li onclick="location.href='alumni.html'">
+          <i class="fa-solid fa-user-graduate"></i>
+          Alumni Network
+        </li>
+
+        <li onclick="location.href='results.html'">
+          <i class="fa-solid fa-poll"></i>
+          <span>Board Results</span>
+        </li>
+
+        <li onclick="location.href='settings.html'">
+          <i class="fa-solid fa-gear"></i>
+          <span>Settings</span>
+        </li>
+
+        <li class="logout-btn" onclick="window.location.href='index.html'">
+          <i class="fa-solid fa-right-from-bracket"></i>
+          Logout
+        </li>
+
+      </ul>
+
+
+      <div class="motivation">
+
+        <img src="images/trophy.png">
+
+        <h3>Keep Learning,<br>Keep Growing!</h3>
+
+        <p>
+          You are capable of amazing things!
+        </p>
+
+      </div>
+
+    </aside>
+
+
+
+    <!-- ================= Main Content ================= -->
+
+    <main class="main-content">
+
+      <!-- ================= Header ================= -->
+
+      <header class="dashboard-header" id="dashboardHeader">
+
+        <div class="header-title-wrap">
+
+          <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open navigation menu"
+            aria-controls="sidebar" aria-expanded="false">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+
+          <div class="header-title-text">
+
+            <h1>
+              Good Morning, Meezan Alam 👋
+            </h1>
+
+            <p>
+              Class 10 • Roll No. 1
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="header-right">
+
+          <button class="notification" type="button" aria-label="Notifications">
+
+            <i class="fa-regular fa-bell notification-bell" aria-hidden="true"></i>
+
+            <span aria-label="3 unread notifications">3</span>
+
+          </button>
+
+
+          <button class="profile" type="button" aria-label="Open student profile menu">
+
+            <img src="images/student.jpg" alt="Meezan Alam">
+
+            <div>
+
+              <h4>Meezan Alam</h4>
+
+              <p>Student</p>
+
+            </div>
+
+            <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+
+          </button>
+
+        </div>
+
+      </header>
+
+
+
+      <!-- Welcome Banner -->
+
+      <section class="banner">
+
+        <div class="banner-text">
+
+          <h2>
+            You don't have to be great to start, but you have to start to be great.
+          </h2>
+
+          <p>
+            Your hard work today will lead to a better tomorrow!
+          </p>
+
+        </div>
+
+        <img src="images/student-illustration.png">
+
+      </section>
+
+
+
+
+      <!-- Statistics -->
+
+      <section class="stats">
+
+        <div class="card">
+
+          <i class="fa-solid fa-chart-line"></i>
+
+          <h3>Overall Percentage</h3>
+
+          <h2>88.4%</h2>
+
+          <p>+5.6% from last term</p>
+
+        </div>
+
+
+        <div class="card">
+
+          <i class="fa-solid fa-calendar-check"></i>
+
+          <h3>Attendance</h3>
+
+          <h2>92%</h2>
+
+          <p>Present this month</p>
+
+        </div>
+
+
+        <div class="card">
+
+          <i class="fa-solid fa-trophy"></i>
+
+          <h3>Class Rank</h3>
+
+          <h2>5 / 42</h2>
+
+          <p>Keep it up!</p>
+
+        </div>
+
+
+        <div class="card">
+
+          <i class="fa-solid fa-star"></i>
+
+          <h3>Total Marks</h3>
+
+          <h2>482 / 600</h2>
+
+          <p>Half Yearly</p>
+
+        </div>
+
+      </section>
+
+
+
+
+      <!-- Middle -->
+
+      <section class="middle">
+
+        <!-- Marks -->
+
+        <div class="marks">
+
+          <div class="title">
+
+            <h2>Subject Wise Marks</h2>
+
+            <button onclick="location.href='marks.html'">
+              View All Marks
+            </button>
+
+          </div>
+
+          <table>
+
+            <tr>
+
+              <th>Subject</th>
+              <th>Marks</th>
+              <th>Out Of</th>
+              <th>%</th>
+              <th>Grade</th>
+
+            </tr>
+
+            <tr>
+              <td>Mathematics</td>
+              <td>95</td>
+              <td>100</td>
+              <td>95%</td>
+              <td>A+</td>
+            </tr>
+
+            <tr>
+              <td>Science</td>
+              <td>97</td>
+              <td>100</td>
+              <td>92%</td>
+              <td>A+</td>
+            </tr>
+
+            <tr>
+              <td>English</td>
+              <td>98</td>
+              <td>100</td>
+              <td>89%</td>
+              <td>A</td>
+            </tr>
+
+            <tr>
+              <td>Social Science</td>
+              <td>97</td>
+              <td>100</td>
+              <td>87%</td>
+              <td>A</td>
+            </tr>
+
+            <tr>
+              <td>Hindi</td>
+              <td>95</td>
+              <td>100</td>
+              <td>88%</td>
+              <td>A</td>
+            </tr>
+
+            <!-- 
+            <tr>
+              <td>Computer</td>
+              <td>79</td>
+              <td>100</td>
+              <td>79%</td>
+              <td>B+</td>
+            </tr>  
+       -->
+
+          </table>
+
+        </div>
+
+
+
+
+        <!-- Right Panel -->
+
+        <div class="right-panel">
+
+          <div class="attendance">
+
+            <div class="title">
+
+              <h2>Today's Attendance</h2>
+
+              <button onclick="location.href='attendance.html'">
+                View Calendar
+              </button>
+
+            </div>
+
+            <h1>92%</h1>
+
+            <p>Present</p>
+
+            <div class="progress">
+
+              <div class="bar"></div>
+
+            </div>
+
+          </div>
+
+
+
+          <div class="quick-links">
+
+            <h2>Quick Links</h2>
+
+            <div class="links">
+
+              <div onclick="location.href='marks.html'">
+                <i class="fa-solid fa-file"></i>
+                <span>My Marks</span>
+              </div>
+
+              <div onclick="location.href='timetable.html'">
+                <i class="fa-solid fa-calendar-days"></i>
+                <span>Time Table</span>
+              </div>
+
+              <div onclick="location.href='fees.html'">
+                <i class="fa-solid fa-indian-rupee-sign"></i>
+                <span>Fees</span>
+              </div>
+
+              <div onclick="location.href='downloads.html'">
+                <i class="fa-solid fa-download"></i>
+                <span>Downloads</span>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+
+
+      <!-- Bottom -->
+
+      <section class="bottom">
+
+        <!-- Top Performers -->
+
+        <div class="performers">
+
+          <div class="title">
+
+            <h2>Class Top Performers</h2>
+
+            <a href="class-students.html">View Full List</a>
+
+          </div>
+
+          <div class="students">
+
+            <div class="student">
+
+              <img src="images/student.jpg">
+
+              <h4>Meezan Alam</h4>
+
+              <p>96.4%</p>
+
+            </div>
+
+            <div class="student">
+
+              <img src="images/student2.jpg">
+
+              <h4>Falak Fatmi</h4>
+
+              <p>95.1%</p>
+
+            </div>
+
+            <div class="student">
+
+              <img src="images/student3.jpg">
+
+              <h4>Farhan Akhter</h4>
+
+              <p>94.8%</p>
+
+            </div>
+
+            <div class="student">
+
+              <img src="images/student4.jpg">
+
+              <h4>Farheen Naz</h4>
+
+              <p>94.7%</p>
+
+            </div>
+
+            <div class="student">
+
+              <img src="images/student5.jpg">
+
+              <h4>Akram Ilahi</h4>
+
+              <p>94.3%</p>
+
+            </div>
+
+            <div class="student">
+
+              <img src="images/student6.jpg">
+
+              <h4>Nishat Anjum</h4>
+
+              <p>94.2%</p>
+
+            </div>
+
+
+
+
+          </div>
+
+        </div>
+
+
+
+        <!-- Notices -->
+
+        <div class="notices">
+
+          <div class="title">
+
+            <h2>Recent Notices</h2>
+
+            <a href="notices.html">View All</a>
+
+          </div>
+
+          <div class="notice">
+
+            <h4>Half Yearly Exam Schedule</h4>
+
+            <p>Exams start from 15 September.</p>
+
+          </div>
+
+          <div class="notice">
+
+            <h4>PTM Meeting</h4>
+
+            <p>Sunday 18 August at 10 AM.</p>
+
+          </div>
+
+          <div class="notice">
+
+            <h4>Holiday Notice</h4>
+
+            <p>School will remain closed on 26 August.</p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <footer>
+
+        © 2009 Brilliant Coaching Centre. All Rights Reserved.
+
+      </footer>
+
+    </main>
+
+  </div>
+
+  <!-- Mobile / Tablet sidebar backdrop -->
+  <div class="sidebar-overlay" id="sidebarOverlay" aria-hidden="true"></div>
+
+
+  <!-- ==========================================
+      FLOATING LEARNING MENU
+  =========================================== -->
+
+  <div class="floating-learning-menu">
+
+    <!-- ======================================
+          AI TUTOR BUTTON
+          Hidden behind Learn initially
+      ======================================= -->
+
+    <a href="ptm.html" class="floating-circle floating-ai" aria-label="Connect">
+
+      <i class="fa-solid fa-user-group"></i>
+
+      <span>Connect</span>
+
+    </a>
+
+
+    <!-- ======================================
+          LEARN BUTTON
+          Always visible
+      ======================================= -->
+
+    <a href="learning.html" class="floating-circle floating-learn" aria-label="Learn">
+
+      <i class="fa-solid fa-graduation-cap"></i>
+
+      <span>Learn</span>
+
+    </a>
+
+  </div>
+
+
+
+  <script src="dashboard.js"></script>
+
+</body>
+
+</html>

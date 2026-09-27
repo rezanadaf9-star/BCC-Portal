@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>
+    Recorded Lectures | Digital Classroom
+  </title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link rel="stylesheet" href="learning.css">
+  <link rel="stylesheet" href="recorded-lectures.css">
+
+  <!-- Standard Favicon for Browser Tabs & Chrome Shortcuts -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Apple/Safari Specific Icon (For pinned tabs or home screen shortcuts) -->
+  <link rel="apple-touch-icon" href="favicon.ico">
+</head>
+
+<body>
+  <div class="dashboard-container">
+    <aside class="sidebar">
+      <div class="school-brand">
+        <img src="images/logo.png" alt="BCC Logo">
+        <h2>
+          BRILLIANT
+          <span>
+            COACHING CENTRE
+          </span>
+        </h2>
+        <p class="established">
+          Established in 2009
+        </p>
+        <p class="address">
+          Kairi Birpur, Po- Bishanpur
+          <br>
+          Dist- Kishanganj
+          <br>
+          <span>
+            BIHAR
+          </span>
+        </p>
+      </div>
+      <p class="menu-title">
+        Learning Center
+      </p>
+      <nav class="sidebar-menu">
+        <a href="learning.html" class="active">
+          <i class="fa-solid fa-chalkboard-user">
+          </i>
+          <span>
+            Lectures
+          </span>
+        </a>
+        <a href="notes.html">
+          <i class="fa-solid fa-book-open">
+          </i>
+          <span>
+            Notes
+          </span>
+        </a>
+        <a href="homework.html">
+          <i class="fa-solid fa-file-pen"></i>
+          </i>
+          <span>
+            Homework
+          </span>
+        </a>
+        <a href="quizzes.html">
+          <i class="fa-solid fa-clipboard-question">
+          </i>
+          <span>
+            Quizzes
+          </span>
+        </a>
+      </nav>
+      <div class="sidebar-bottom">
+        <a href="dashboard.html" class="back-dashboard">
+          <i class="fa-solid fa-arrow-left">
+          </i>
+          <span>
+            Back to Dashboard
+          </span>
+        </a>
+      </div>
+    </aside>
+    <main class="main-content">
+      <header class="top-header">
+        <div class="page-heading">
+          <small>
+            Digital Classroom
+          </small>
+          <h1>
+            Recorded Lectures
+          </h1>
+          <p>
+            Choose a subject to view its latest recorded lectures.
+          </p>
+        </div>
+        <div class="header-actions">
+          <button class="notification-btn" id="notificationBtn" aria-label="Notifications">
+            <i class="fa-solid fa-bell">
+            </i>
+          </button>
+          <div class="profile-mini">
+            <img src="images/student.jpg" alt="Student">
+            <span>
+              Student
+            </span>
+          </div>
+        </div>
+      </header>
+      <section>
+        <div class="library-banner">
+          <div>
+            <span class="section-kicker">
+              Lecture Library
+            </span>
+            <h2>
+              Choose Your Subject.
+            </h2>
+            <p>
+              Select a subject below to see its lectures, organised chapter-wise with the latest lectures first.
+            </p>
+          </div>
+          <i class="fa-solid fa-clapperboard">
+          </i>
+        </div>
+        <div class="subject-card-grid" id="recordedSubjectGrid">
+        </div>
+        <div class="empty-list-state" id="recordedSubjectsEmpty" hidden>
+          <i class="fa-regular fa-folder-open">
+          </i>
+          <span>
+            No subjects are configured.
+          </span>
+        </div>
+      </section>
+      <footer class="page-footer">
+        © 2026 Brilliant Coaching Centre. All Rights Reserved.
+      </footer>
+    </main>
+  </div>
+  <div class="notification-message" id="notificationMessage">
+    <i class="fa-solid fa-bell">
+    </i>
+    <span>
+    </span>
+  </div>
+  <script src="lecture-data.js">
+
+  </script>
+  <script src="recorded-lectures.js">
+
+  </script>
+</body>
+
+</html>

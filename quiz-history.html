@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz History | Digital Classroom</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link rel="stylesheet" href="learning.css">
+  <link rel="stylesheet" href="quizzes.css">
+  <link rel="stylesheet" href="quiz-history.css">
+</head>
+
+<body>
+  <div class="dashboard-container">
+    <aside class="sidebar">
+      <div class="school-brand">
+        <img src="images/logo.png" alt="BCC Logo">
+        <h2>BRILLIANT <span>COACHING CENTRE</span></h2>
+        <p class="established">Established in 2009</p>
+        <p class="address">Kairi Birpur, Po- Bishanpur<br>Dist- Kishanganj<br><span>BIHAR</span></p>
+      </div>
+      <p class="menu-title">Learning Center</p>
+      <nav class="sidebar-menu">
+        <a href="learning.html"><i class="fa-solid fa-chalkboard-user"></i><span>Lectures</span></a>
+        <a href="notes.html"><i class="fa-solid fa-book-open"></i><span>Notes</span></a>
+        <a href="homework.html"><i class="fa-solid fa-file-pen"></i><span>Homework</span></a>
+        <a href="quizzes.html" class="active"><i class="fa-solid fa-clipboard-question"></i><span>Quizzes</span></a>
+      </nav>
+      <div class="sidebar-bottom">
+        <a href="quizzes.html" class="back-dashboard"><i class="fa-solid fa-arrow-left"></i><span>Back to
+            Quizzes</span></a>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="top-header">
+        <div class="page-heading">
+          <small>Digital Classroom</small>
+          <h1>Quiz History</h1>
+          <p>View your submitted quizzes, marks and answer analysis.</p>
+        </div>
+        <div class="header-actions">
+          <button type="button" class="notification-btn" id="historyNotification" aria-label="Notifications"><i
+              class="fa-solid fa-bell"></i></button>
+          <div class="profile-mini"><img src="images/student.jpg" alt="Student Profile"><span>Student</span></div>
+        </div>
+      </header>
+
+      <section class="history-summary-card">
+        <div class="history-summary-icon"><i class="fa-solid fa-chart-simple"></i></div>
+        <div>
+          <span class="section-kicker">Submission Record</span>
+          <h2>Your Quiz Performance</h2>
+          <p id="historySummaryText">Loading your quiz history...</p>
+        </div>
+        <div class="history-summary-stat"><strong id="historyCount">0</strong><span>SUBMISSIONS</span></div>
+      </section>
+
+      <section class="history-page-section">
+        <div class="section-heading">
+          <div>
+            <span class="section-kicker">All Attempts</span>
+            <h2>Quiz History</h2>
+            <p>Every submitted quiz remains available for review.</p>
+          </div>
+        </div>
+        <div class="history-full-list" id="historyFullList"></div>
+        <div class="history-page-empty" id="historyPageEmpty" hidden>
+          <i class="fa-solid fa-clock-rotate-left"></i>
+          <h3>No Quiz History</h3>
+          <p>Submitted quizzes will appear here after you complete a quiz.</p>
+          <a href="quizzes.html">Go to Quizzes</a>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <section class="analysis-modal" id="analysisModal" aria-hidden="true">
+    <div class="analysis-modal-card">
+      <div class="analysis-modal-header">
+        <div>
+          <span class="section-kicker">Quiz Analysis</span>
+          <h2 id="analysisTitle">Quiz</h2>
+          <p id="analysisMeta">SUBMITTED</p>
+        </div>
+        <button type="button" class="analysis-close" id="closeAnalysis" aria-label="Close"><i
+            class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="analysis-score-strip" id="analysisScoreStrip"></div>
+      <div class="analysis-answer-list" id="analysisAnswerList"></div>
+      <div class="analysis-modal-actions">
+        <button type="button" class="analysis-download" id="downloadAnalysis"><i class="fa-solid fa-download"></i>
+          Download Analysis PDF</button>
+        <button type="button" class="analysis-close-secondary" id="closeAnalysisSecondary">Close</button>
+      </div>
+    </div>
+  </section>
+
+  <div class="quiz-notification" id="historyNotificationMessage" aria-live="polite"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="quiz-history.js?v=20260919-history-1"></script>
+</body>
+
+</html>

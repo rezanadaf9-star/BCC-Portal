@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Login | BCC</title>
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Standard Favicon for Browser Tabs & Chrome Shortcuts -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Apple/Safari Specific Icon (For pinned tabs or home screen shortcuts) -->
+  <link rel="apple-touch-icon" href="favicon.ico">
+</head>
+
+<body>
+
+  <!-- =====================================================
+         BACKGROUND VIDEO
+         ===================================================== -->
+
+  <video class="background-video" autoplay muted loop playsinline preload="auto">
+    <source src="images/bg-video.mp4" type="video/mp4">
+  </video>
+
+
+  <!-- =====================================================
+         VIDEO OVERLAY
+         ===================================================== -->
+
+  <div class="video-overlay"></div>
+
+
+  <!-- =====================================================
+         DECORATIVE LIGHT
+         ===================================================== -->
+
+  <div class="ambient-light light-one"></div>
+  <div class="ambient-light light-two"></div>
+
+
+  <!-- =====================================================
+         LOGIN PAGE
+         ===================================================== -->
+
+  <main class="login-page">
+
+
+    <!-- =================================================
+             SCHOOL BRANDING
+             No background / no card
+             ================================================= -->
+
+    <section class="school-branding">
+
+      <div class="logo-wrapper">
+
+        <img src="images/logo.png" alt="School Logo" class="school-logo">
+
+      </div>
+
+
+
+
+      <div class="school-name">
+
+        <h1>
+          BRILLIANT
+        </h1>
+
+        <h2>
+          COACHING CENTER
+        </h2>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+             LOGIN CARD
+             ================================================= -->
+
+    <section class="login-section">
+
+      <div class="login-card">
+
+
+        <!-- Glass shine -->
+
+        <div class="glass-shine"></div>
+
+
+        <!-- =================================================
+                     CARD HEADER
+                     ================================================= -->
+
+        <div class="login-header">
+
+          <div class="login-icon">
+
+            <i class="fa-solid fa-graduation-cap"></i>
+
+          </div>
+
+          <div>
+
+            <h2>
+              Welcome back
+            </h2>
+
+            <p>
+              BCCian
+            </p>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+                     PORTAL STATUS
+                     ================================================= -->
+
+        <div class="portal-status student-mode" id="portalStatus">
+
+          <span class="status-dot"></span>
+
+          <div class="status-text">
+
+            <span>
+              Portal Status
+            </span>
+
+            <strong id="portalName">
+              Student Portal
+            </strong>
+
+          </div>
+
+          <i class="fa-solid fa-circle-check" id="statusIcon"></i>
+
+        </div>
+
+
+
+        <!-- =================================================
+                     LOGIN FORM
+                     ================================================= -->
+
+        <form id="loginForm" autocomplete="on" novalidate>
+
+
+          <!-- ID -->
+
+          <div class="input-group">
+
+            <label for="userId">
+
+              <i class="fa-regular fa-id-card"></i>
+
+              <span id="idLabel">
+                Student ID
+              </span>
+
+            </label>
+
+
+            <div class="input-box">
+
+              <i class="fa-solid fa-user"></i>
+
+              <input type="text" id="userId" name="userId" placeholder="Enter ID" autocomplete="username">
+
+            </div>
+
+
+            <small class="error" id="idError"></small>
+
+          </div>
+
+
+
+          <!-- PASSWORD -->
+
+          <div class="input-group">
+
+            <label for="password">
+
+              <i class="fa-solid fa-lock"></i>
+
+              <span id="passwordLabel">
+                Password
+              </span>
+
+            </label>
+
+
+            <div class="input-box">
+
+              <i class="fa-solid fa-key"></i>
+
+              <input type="password" id="password" name="password" placeholder="Enter Password"
+                autocomplete="current-password">
+
+
+              <button type="button" class="password-toggle" id="passwordToggle" aria-label="Show password">
+
+                <i class="fa-regular fa-eye"></i>
+
+              </button>
+
+            </div>
+
+
+            <small class="error" id="passwordError"></small>
+
+          </div>
+
+
+
+          <!-- =================================================
+                         LOGIN BUTTON
+                         ================================================= -->
+
+          <button type="submit" class="login-button" id="loginButton">
+
+            <span class="button-text">
+              Login
+            </span>
+
+            <i class="fa-solid fa-arrow-right"></i>
+
+            <span class="loader"></span>
+
+          </button>
+
+        </form>
+
+
+
+        <!-- =================================================
+                     PORTAL SELECTOR
+                     ================================================= -->
+
+        <div class="portal-selector">
+
+          <span class="selector-label">
+            Login as
+          </span>
+
+
+          <div class="portal-buttons">
+
+
+            <button type="button" class="portal-button active" id="studentButton">
+
+              <i class="fa-solid fa-user-graduate"></i>
+
+              <span>
+                Student
+              </span>
+
+            </button>
+
+
+            <button type="button" class="portal-button" id="teacherButton">
+
+              <i class="fa-solid fa-chalkboard-user"></i>
+
+              <span>
+                Teacher
+              </span>
+
+            </button>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+                     MESSAGE
+                     ================================================= -->
+
+        <div class="login-message" id="loginMessage"></div>
+
+
+
+        <!-- =================================================
+                     SECURITY
+                     ================================================= -->
+
+        <div class="security">
+
+          <i class="fa-solid fa-shield-halved"></i>
+
+          <span>
+            Secure School Portal
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <p class="copyright">
+        © 2009 Brilliant Coaching Center. All Rights Reserved.
+      </p>
+
+    </section>
+
+  </main>
+
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+  <!-- JavaScript -->
+  <script src="common.js"></script>
+
+</body>
+
+</html>

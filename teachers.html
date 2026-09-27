@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Teachers</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+
+    <!-- Teachers CSS -->
+    <link rel="stylesheet" href="teachers.css" />
+    <!-- Standard Favicon for Browser Tabs & Chrome Shortcuts -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+    <!-- Apple/Safari Specific Icon (For pinned tabs or home screen shortcuts) -->
+    <link rel="apple-touch-icon" href="favicon.ico" />
+  </head>
+
+  <body>
+    <div class="dashboard-container">
+      <!-- ================= SIDEBAR ================= -->
+
+      <aside class="sidebar">
+        <div class="logo">
+          <img src="images/logo.png" alt="School Logo" />
+
+          <div class="logo-text">
+            <h2>BRILLIANT</h2>
+            <h2>COACHING CENTRE</h2>
+            <p class="school-info">Established in 2009</p>
+            <p class="school-info">Kairi Birpur, Dist- Kishanganj</p>
+            <p class="school-info state">BIHAR</p>
+          </div>
+        </div>
+
+        <ul>
+          <li onclick="location.href = 'dashboard.html'">
+            <i class="fa-solid fa-house"></i>
+            Dashboard
+          </li>
+
+          <li onclick="location.href = 'profile.html'">
+            <i class="fa-solid fa-user"></i>
+            Profile
+          </li>
+
+          <li onclick="location.href = 'marks.html'">
+            <i class="fa-solid fa-chart-column"></i>
+            Academic Performance
+          </li>
+
+          <li onclick="location.href = 'attendance.html'">
+            <i class="fa-solid fa-calendar-check"></i>
+            Attendance
+          </li>
+
+          <li onclick="location.href = 'fees.html'">
+            <i class="fa-solid fa-indian-rupee-sign"></i>
+            Fees & Payments
+          </li>
+
+          <li onclick="location.href = 'notices.html'">
+            <i class="fa-solid fa-bell"></i>
+            Announcements
+          </li>
+
+          <li onclick="location.href = 'timetable.html'">
+            <i class="fa-solid fa-clock"></i>
+            Class Schedule
+          </li>
+
+          <!-- NEW TEACHERS SECTION -->
+
+          <li class="active">
+            <i class="fa-solid fa-chalkboard-user"></i>
+            Faculty & Mentors
+          </li>
+
+          <li onclick="location.href = 'answer-sheet.html'">
+            <i class="fa-solid fa-file-pen"></i>
+            Answer Sheets
+          </li>
+
+          <li onclick="location.href = 'alumni.html'">
+            <i class="fa-solid fa-user-graduate"></i>
+            Alumni Network
+          </li>
+
+          <li onclick="location.href = 'results.html'">
+            <i class="fa-solid fa-poll"></i>
+            <span>Board Results</span>
+          </li>
+
+          <li onclick="location.href = 'settings.html'">
+            <i class="fa-solid fa-gear"></i>
+            Settings
+          </li>
+
+          <li class="logout-btn" onclick="window.location.href = 'index.html'">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            Logout
+          </li>
+        </ul>
+      </aside>
+
+      <!-- ================= MAIN CONTENT ================= -->
+
+      <main class="main-content">
+        <!-- HEADER -->
+
+        <div class="page-header">
+          <div>
+            <h1>Our Teachers</h1>
+
+            <p>
+              Meet our dedicated teachers and explore the subjects and classes
+              they teach.
+            </p>
+          </div>
+        </div>
+
+        <!-- PRINCIPAL -->
+
+        <section class="principal-section">
+          <div class="section-title">
+            <i class="fa-solid fa-crown"></i>
+
+            <h2>Director</h2>
+          </div>
+
+          <div class="principal-card">
+            <div class="principal-image">
+              <img src="images/rehan-sir.png" alt="Rehan Sir" />
+            </div>
+
+            <div class="principal-info">
+              <span class="principal-badge"> DIRECTOR </span>
+
+              <h2>Mr. Rehan Quasmi</h2>
+
+              <p class="role">Director</p>
+
+              <div class="teacher-details">
+                <div>
+                  <i class="fa-solid fa-book"></i>
+
+                  <div>
+                    <strong>Subjects</strong>
+                    <p>Physics, Chemistry, Mathematics, Biology</p>
+                  </div>
+                </div>
+
+                <div>
+                  <i class="fa-solid fa-school"></i>
+
+                  <div>
+                    <strong>Classes</strong>
+                    <p>Class 9 – 10</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- TEACHERS -->
+
+        <section class="teachers-section">
+          <div class="section-title">
+            <i class="fa-solid fa-users"></i>
+
+            <h2>Our Teaching Stars</h2>
+          </div>
+
+          <div class="teachers-grid">
+            <!-- ZAKI QUASMI -->
+
+            <div class="teacher-card">
+              <div class="teacher-image">
+                <img src="images/zaki-sir.png" alt="Zaki Sir" />
+              </div>
+
+              <div class="teacher-info">
+                <h3>Mr. Zaki Quasmi</h3>
+
+                <span class="teacher-role"> Principal </span>
+
+                <div class="detail">
+                  <i class="fa-solid fa-book"></i>
+
+                  <span>
+                    <strong>Subject:</strong>
+                    Social Sciences
+                  </span>
+                </div>
+
+                <div class="detail">
+                  <i class="fa-solid fa-school"></i>
+
+                  <span>
+                    <strong>Classes:</strong>
+                    Class 8 – 10
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <!-- MUNTAZAIR AKRAM -->
+
+            <div class="teacher-card">
+              <div class="teacher-image">
+                <img src="images/muntazir-sir.png" alt="Muntazir Sir" />
+              </div>
+
+              <div class="teacher-info">
+                <h3>Mr. Muntazir Akram</h3>
+
+                <span class="teacher-role"> Vice-Priciple </span>
+
+                <div class="detail">
+                  <i class="fa-solid fa-book"></i>
+
+                  <span>
+                    <strong>Subjects:</strong>
+                    Urdu
+                  </span>
+                </div>
+
+                <div class="detail">
+                  <i class="fa-solid fa-school"></i>
+
+                  <span>
+                    <strong>Classes:</strong>
+                    Class 1 – 10
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <!-- IMRAN QUASMI -->
+
+            <div class="teacher-card">
+              <div class="teacher-image">
+                <img src="images/imran-sir.png" alt="imran-sir" />
+              </div>
+
+              <div class="teacher-info">
+                <h3>Mr. Imran Quasmi</h3>
+
+                <span class="teacher-role"> Teacher </span>
+
+                <div class="detail">
+                  <i class="fa-solid fa-book"></i>
+
+                  <span>
+                    <strong>Subjects:</strong>
+                    All Subjects
+                  </span>
+                </div>
+
+                <div class="detail">
+                  <i class="fa-solid fa-school"></i>
+
+                  <span>
+                    <strong>Classes:</strong>
+                    Class 1 – 8
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <!-- ZAKI QUASMI -->
+
+            <div class="teacher-card">
+              <div class="teacher-image">
+                <img src="images/faiz-sir.png" alt="faiz-sir" />
+              </div>
+
+              <div class="teacher-info">
+                <h3>Mr. Faiz Anjum</h3>
+
+                <span class="teacher-role"> Teacher </span>
+
+                <div class="detail">
+                  <i class="fa-solid fa-book"></i>
+
+                  <span>
+                    <strong>Subject:</strong>
+                    All Subjects
+                  </span>
+                </div>
+
+                <div class="detail">
+                  <i class="fa-solid fa-school"></i>
+
+                  <span>
+                    <strong>Classes:</strong>
+                    Class 1 – 7
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <!-- ZAKI QUASMI -->
+
+            <div class="teacher-card">
+              <div class="teacher-image">
+                <img src="images/tazalli-miss.png" alt="tazalli-miss" />
+              </div>
+
+              <div class="teacher-info">
+                <h3>Miss Tazalli Perween</h3>
+
+                <span class="teacher-role"> Teacher </span>
+
+                <div class="detail">
+                  <i class="fa-solid fa-book"></i>
+
+                  <span>
+                    <strong>Subject:</strong>
+                    All Subjects
+                  </span>
+                </div>
+
+                <div class="detail">
+                  <i class="fa-solid fa-school"></i>
+
+                  <span>
+                    <strong>Classes:</strong>
+                    Class 1 – 7
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <!-- ZAKI QUASMI -->
+
+            <div class="teacher-card">
+              <div class="teacher-image">
+                <img src="images/mansabi-miss.png" alt="mansabi-miss" />
+              </div>
+
+              <div class="teacher-info">
+                <h3>Miss Mansabi Perween</h3>
+
+                <span class="teacher-role"> Teacher </span>
+
+                <div class="detail">
+                  <i class="fa-solid fa-book"></i>
+
+                  <span>
+                    <strong>Subject:</strong>
+                    All Subjects
+                  </span>
+                </div>
+
+                <div class="detail">
+                  <i class="fa-solid fa-school"></i>
+
+                  <span>
+                    <strong>Classes:</strong>
+                    Class 1 – 7
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="teachers.js"></script>
+  </body>
+</html>

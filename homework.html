@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Homework | Digital Classroom</title>
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+  <!-- Use the existing Digital Classroom theme. -->
+  <link rel="stylesheet" href="learning.css">
+  <link rel="stylesheet" href="homework.css">
+
+  <!-- Standard Favicon for Browser Tabs & Chrome Shortcuts -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Apple/Safari Specific Icon (For pinned tabs or home screen shortcuts) -->
+  <link rel="apple-touch-icon" href="favicon.ico">
+</head>
+
+<body>
+  <div class="dashboard-container">
+
+    <aside class="sidebar">
+      <div class="school-brand">
+        <img src="images/logo.png" alt="BCC Logo">
+        <h2>BRILLIANT <span>COACHING CENTRE</span></h2>
+        <p class="established">Established in 2009</p>
+        <p class="address">
+          Kairi Birpur, Po- Bishanpur<br>
+          Dist- Kishanganj<br>
+          <span>BIHAR</span>
+        </p>
+      </div>
+
+      <p class="menu-title">Learning Center</p>
+
+      <nav class="sidebar-menu">
+        <a href="learning.html">
+          <i class="fa-solid fa-chalkboard-user"></i>
+          <span>Lectures</span>
+        </a>
+
+        <a href="notes.html">
+          <i class="fa-solid fa-book-open"></i>
+          <span>Notes</span>
+        </a>
+
+        <a href="homework.html" class="active">
+          <i class="fa-solid fa-file-pen"></i>
+          <span>Homework</span>
+        </a>
+
+        <a href="quizzes.html">
+          <i class="fa-solid fa-clipboard-question"></i>
+          <span>Quizzes</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <a href="dashboard.html" class="back-dashboard">
+          <i class="fa-solid fa-arrow-left"></i>
+          <span>Back to Dashboard</span>
+        </a>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="top-header">
+        <div class="page-heading">
+          <small>Digital Classroom</small>
+          <h1>Homework</h1>
+          <p>Open your subject homework, assignments and daily work in one place.</p>
+        </div>
+
+        <div class="header-actions">
+          <button type="button" class="notification-btn" id="notificationBtn" aria-label="Notifications">
+            <i class="fa-solid fa-bell"></i>
+          </button>
+
+          <div class="profile-mini">
+            <img src="images/student.jpg" alt="Student Profile">
+            <span>Student</span>
+          </div>
+        </div>
+      </header>
+
+      <section class="learning-section">
+        <div class="section-heading">
+          <div>
+            <span class="section-kicker">Homework Hub</span>
+            <h2>Choose Your Subject</h2>
+            <p>Select a subject to view today's homework and its individual parts.</p>
+          </div>
+
+          <div class="section-count">
+            <i class="fa-solid fa-layer-group"></i>
+            <span>6 Subjects</span>
+          </div>
+        </div>
+
+        <div class="homework-subject-grid" id="homeworkSubjectGrid">
+          <!-- The six subject cards are created by homework.js. -->
+        </div>
+      </section>
+
+      <footer class="page-footer">
+        © 2026 Brilliant Coaching Centre. All Rights Reserved.
+      </footer>
+    </main>
+  </div>
+
+  <div class="notification-message" id="notificationMessage">
+    <i class="fa-solid fa-bell"></i>
+    <span></span>
+  </div>
+
+  <script src="homework.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>My Marks</title>
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="marks.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <!-- Standard Favicon for Browser Tabs & Chrome Shortcuts -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Apple/Safari Specific Icon (For pinned tabs or home screen shortcuts) -->
+  <link rel="apple-touch-icon" href="favicon.ico">
+
+</head>
+
+<body>
+
+  <div class="container">
+
+    <!-- ================= Sidebar ================= -->
+
+    <aside class="sidebar" id="sidebar">
+
+      <div class="logo">
+
+        <img src="images/logo.png" alt="School Logo">
+
+        <div class="logo-text">
+          <h2>BRILLIANT</h2>
+          <h2>COACHING CENTRE</h2>
+          <p class="school-info">Established in 2009</p>
+          <p class="school-info">Kairi Birpur, Dist- Kishanganj</p>
+          <p class="school-info state">BIHAR</p>
+        </div>
+
+      </div>
+
+      <ul>
+
+        <li onclick="location.href='dashboard.html'">
+          <i class="fa-solid fa-house"></i>
+          Dashboard
+        </li>
+
+        <li onclick="location.href='profile.html'">
+          <i class="fa-solid fa-user"></i>
+          Profile
+        </li>
+
+        <li class="active">
+          <i class="fa-solid fa-chart-column"></i>
+          Academic Performance
+        </li>
+
+        <li onclick="location.href='attendance.html'">
+          <i class="fa-solid fa-calendar-check"></i>
+          Attendance
+        </li>
+
+        <li onclick="location.href='fees.html'">
+          <i class="fa-solid fa-indian-rupee-sign"></i>
+          <span>Fees & Payments</span>
+        </li>
+
+        <li onclick="location.href='notices.html'">
+          <i class="fa-solid fa-bell"></i>
+          <span>Announcements</span>
+        </li>
+
+        <li onclick="location.href='timetable.html'">
+          <i class="fa-solid fa-clock"></i>
+          Class Schedule
+        </li>
+
+        <li onclick="location.href='teachers.html'">
+          <i class="fa-solid fa-chalkboard-user"></i>
+          Faculty & Mentors
+        </li>
+
+        <li onclick="location.href='answer-sheet.html'">
+
+          <i class="fa-solid fa-file-pen"></i>
+          Answer Sheets
+
+        </li>
+
+        <li onclick="location.href='alumni.html'">
+
+          <i class="fa-solid fa-user-graduate"></i>
+          Alumni Network
+
+        </li>
+
+        <li onclick="location.href='results.html'">
+          <i class="fa-solid fa-poll"></i>
+          <span>Board Results</span>
+        </li>
+
+        <li onclick="location.href='settings.html'">
+          <i class="fa-solid fa-gear"></i>
+          <span>Settings</span>
+        </li>
+
+        <li class="logout-btn" onclick="window.location.href='index.html'">
+          <i class="fa-solid fa-right-from-bracket"></i>
+          Logout
+        </li>
+
+      </ul>
+
+    </aside>
+
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- ================= Main Content ================= -->
+
+    <main class="main">
+
+      <header>
+
+        <div class="header-title-wrap">
+          <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open navigation menu"
+            aria-expanded="false" aria-controls="sidebar">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+
+          <div class="header-title-text">
+            <h1>My Marks</h1>
+            <p>View your examination results and academic performance.</p>
+          </div>
+        </div>
+
+        <div class="profile-box" onclick="location.href='profile.html'">
+
+          <img src="images/student.jpg" alt="Student">
+
+          <div>
+
+            <h3>Meezan Alam</h3>
+
+            <span>Class X • Roll No. 01</span>
+
+          </div>
+
+        </div>
+
+      </header>
+
+      <!-- ================= Student Card ================= -->
+
+      <section class="student-card">
+
+        <img src="images/student.jpg" alt="Student">
+
+        <div class="student-info">
+
+          <h2>Meezan Alam</h2>
+
+          <p><strong>Admission No:</strong> 20250001</p>
+
+          <p><strong>Class:</strong> X - A</p>
+
+          <p><strong>Roll No:</strong> 01</p>
+
+          <p><strong>Session:</strong> 2026 - 2027</p>
+
+        </div>
+
+        <div class="exam-box">
+
+          <h3>Half Yearly Examination</h3>
+
+          <p>Academic Session 2026-27</p>
+
+        </div>
+
+      </section>
+
+      <!-- ================= Marks Table ================= -->
+
+      <section class="marks-section">
+
+        <h2>Subject-wise Marks</h2>
+
+        <table>
+
+          <thead>
+
+            <tr>
+
+              <th>Subject</th>
+
+              <th>Full Marks</th>
+
+              <th>Obtained</th>
+
+              <th>Grade</th>
+
+            </tr>
+
+          </thead>
+
+          <tbody>
+
+            <tr>
+              <td>English</td>
+              <td>100</td>
+              <td>98</td>
+              <td>A+</td>
+            </tr>
+
+            <tr>
+              <td>Hindi</td>
+              <td>100</td>
+              <td>96</td>
+              <td>A+</td>
+            </tr>
+
+            <tr>
+              <td>Mathematics</td>
+              <td>100</td>
+              <td>95</td>
+              <td>A+</td>
+            </tr>
+
+            <tr>
+              <td>Science</td>
+              <td>100</td>
+              <td>97</td>
+              <td>A+</td>
+            </tr>
+
+            <tr>
+              <td>Social Science</td>
+              <td>100</td>
+              <td>97</td>
+              <td>A+</td>
+            </tr>
+            <!--
+                    <tr>
+                        <td>Computer</td>
+                        <td>100</td>
+                        <td>97</td>
+                        <td>A+</td>
+                    </tr>
+                  -->
+          </tbody>
+
+        </table>
+
+      </section>
+      <!-- ================= Result Summary ================= -->
+
+      <section class="summary-section">
+
+        <h2>Result Summary</h2>
+
+        <div class="summary-grid">
+
+          <div class="summary-card">
+            <h3>Total Marks</h3>
+            <p>482 / 500</p>
+          </div>
+
+          <div class="summary-card">
+            <h3>Percentage</h3>
+            <p>96.4%</p>
+          </div>
+
+          <div class="summary-card">
+            <h3>Overall Grade</h3>
+            <p>A+</p>
+          </div>
+
+          <div class="summary-card">
+            <h3>Result</h3>
+            <p class="pass">PASS</p>
+          </div>
+
+          <div class="summary-card">
+            <h3>Class Rank</h3>
+            <p>01</p>
+          </div>
+
+          <div class="summary-card">
+            <h3>Margin with 1st Ranker</h3>
+            <p>00</p>
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- ================= Teacher's Remarks ================= -->
+
+      <section class="remarks-section">
+
+        <h2>Teacher's Remarks</h2>
+
+        <div class="remarks-box">
+
+          <i class="fa-solid fa-star"></i>
+
+          <p>
+
+            Excellent academic performance throughout the Half Yearly Examination.
+            Keep maintaining the same consistency and continue working hard.
+            Wishing you success in the Annual Examination.
+
+          </p>
+
+        </div>
+
+      </section>
+
+      <!-- ================= Action Buttons ================= -->
+
+      <section class="button-section">
+
+        <button class="download-btn">
+
+          <i class="fa-solid fa-download"></i>
+
+          Download Marksheet
+
+        </button>
+
+        <button class="print-btn">
+
+          <i class="fa-solid fa-print"></i>
+
+          Print Result
+
+        </button>
+
+        <button class="back-btn" onclick="location.href='index.html'">
+
+          <i class="fa-solid fa-arrow-left"></i>
+
+          Back to Dashboard
+
+        </button>
+
+      </section>
+
+    </main>
+
+  </div>
+
+  <script src="marks.js"></script>
+  <script src="common.js"></script>
+
+
+</body>
+
+</html>

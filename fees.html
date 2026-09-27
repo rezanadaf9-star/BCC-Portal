@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Fees</title>
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+
+  <link rel="stylesheet" href="fees.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <!-- Standard Favicon for Browser Tabs & Chrome Shortcuts -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Apple/Safari Specific Icon (For pinned tabs or home screen shortcuts) -->
+  <link rel="apple-touch-icon" href="favicon.ico">
+
+</head>
+
+<body>
+
+  <div class="container">
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="sidebar">
+
+      <div class="logo">
+
+        <img src="images/logo.png" alt="School Logo">
+
+        <div class="logo-text">
+          <h2>BRILLIANT</h2>
+          <h2>COACHING CENTRE</h2>
+          <p class="school-info">Established in 2009</p>
+          <p class="school-info">Kairi Birpur, Dist- Kishanganj</p>
+          <p class="school-info state">BIHAR</p>
+        </div>
+
+      </div>
+
+      <ul>
+
+        <li onclick="location.href='dashboard.html'">
+          <i class="fa-solid fa-house"></i>
+          Dashboard
+        </li>
+
+        <li onclick="location.href='profile.html'">
+          <i class="fa-solid fa-user"></i>
+          Profile
+        </li>
+
+        <li onclick="location.href='marks.html'">
+          <i class="fa-solid fa-chart-column"></i>
+          Academic Performance
+        </li>
+
+        <li onclick="location.href='attendance.html'">
+          <i class="fa-solid fa-calendar-check"></i>
+          Attendance
+        </li>
+
+        <li class="active">
+          <i class="fa-solid fa-indian-rupee-sign"></i>
+          Fees & Payments
+        </li>
+
+        <li onclick="location.href='notices.html'">
+          <i class="fa-solid fa-bell"></i>
+          Announcements
+        </li>
+
+        <li onclick="location.href='timetable.html'">
+          <i class="fa-solid fa-clock"></i>
+          Class Schedule
+        </li>
+
+        <li onclick="location.href='teachers.html'">
+          <i class="fa-solid fa-chalkboard-user"></i>
+          Faculty & Mentors
+        </li>
+
+        <li onclick="location.href='answer-sheet.html'">
+
+          <i class="fa-solid fa-file-pen"></i>
+          Answer Sheets
+
+        </li>
+
+        <li onclick="location.href='alumni.html'">
+
+          <i class="fa-solid fa-user-graduate"></i>
+          Alumni Network
+
+        </li>
+
+        <li onclick="location.href='results.html'">
+
+          <i class="fa-solid fa-poll-h"></i>
+
+          Board Results
+
+        </li>
+
+
+
+        <li onclick="location.href='settings.html'">
+          <i class="fa-solid fa-gear"></i>
+          Settings
+        </li>
+
+        <li class="logout-btn" onclick="window.location.href='index.html'">
+          <i class="fa-solid fa-right-from-bracket"></i>
+          Logout
+        </li>
+
+      </ul>
+
+    </aside>
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="main">
+
+      <!-- Header -->
+
+      <header>
+
+        <div>
+
+          <h1>Fee Management</h1>
+
+          <p>View your fee details and payment history</p>
+
+        </div>
+
+        <div class="profile-box" onclick="location.href='profile.html'">
+
+          <img src="images/student.jpg" alt="Student">
+
+          <div>
+
+            <h3>Meezan Alam</h3>
+
+            <span>Class X • Roll No. 01</span>
+
+          </div>
+
+        </div>
+
+      </header>
+
+      <!-- Summary Cards -->
+
+      <section class="summary">
+
+        <div class="card">
+
+          <i class="fa-solid fa-wallet"></i>
+
+          <h2>₹2500</h2>
+
+          <p>Total Fee</p>
+
+        </div>
+
+        <div class="card paid">
+
+          <i class="fa-solid fa-circle-check"></i>
+
+          <h2>₹1900</h2>
+
+          <p>Paid</p>
+
+        </div>
+
+        <div class="card due">
+
+          <i class="fa-solid fa-triangle-exclamation"></i>
+
+          <h2>₹600</h2>
+
+          <p>Due</p>
+
+        </div>
+
+      </section>
+
+      <!-- Fee Table -->
+
+      <section class="table-card">
+
+        <h2>
+
+          <i class="fa-solid fa-file-invoice-dollar"></i>
+
+          Fee Details
+
+        </h2>
+
+        <table>
+
+          <thead>
+
+            <tr>
+
+              <th>Fee Type</th>
+
+              <th>Total</th>
+
+              <th>Paid</th>
+
+              <th>Due</th>
+
+              <th>Status</th>
+
+            </tr>
+
+          </thead>
+
+          <tbody>
+
+            <tr>
+
+              <td>Admission Fee</td>
+
+              <td>₹1,000</td>
+
+              <td>₹1,000</td>
+
+              <td>₹0</td>
+
+              <td><span class="paid-status">Paid</span></td>
+
+            </tr>
+
+            <tr>
+
+              <td>Tuition Fee</td>
+
+              <td>₹500</td>
+
+              <td>₹400</td>
+
+              <td>₹100</td>
+
+              <td><span class="pending-status">Pending</span></td>
+
+            </tr>
+
+            <tr>
+
+              <td>Computer Fee</td>
+
+              <td>₹500</td>
+
+              <td>₹000</td>
+
+              <td>₹500</td>
+
+              <td><span class="pending-status">Pending</span></td>
+
+            </tr>
+
+            <tr>
+
+              <td>Library Fee</td>
+
+              <td>₹300</td>
+
+              <td>₹300</td>
+
+              <td>₹0</td>
+
+              <td><span class="paid-status">Paid</span></td>
+
+            </tr>
+
+            <tr>
+
+              <td>Examination Fee</td>
+
+              <td>₹200</td>
+
+              <td>₹200</td>
+
+              <td>₹0</td>
+
+              <td><span class="paid-status">Paid</span></td>
+
+            </tr>
+
+          </tbody>
+
+        </table>
+
+      </section>
+
+      <!-- Payment History -->
+
+      <section class="table-card">
+
+        <h2>
+
+          <i class="fa-solid fa-clock-rotate-left"></i>
+
+          Payment History
+
+        </h2>
+
+        <table>
+
+          <thead>
+
+            <tr>
+
+              <th>Date</th>
+
+              <th>Amount</th>
+
+              <th>Mode</th>
+
+              <th>Transaction ID</th>
+
+              <th>Status</th>
+
+            </tr>
+
+          </thead>
+
+          <tbody>
+
+            <tr>
+
+              <td>01-Apr-2026</td>
+
+              <td>₹1,000</td>
+
+              <td>UPI</td>
+
+              <td>TXN458921</td>
+
+              <td><span class="paid-status">Success</span></td>
+
+            </tr>
+
+            <tr>
+
+              <td>15-Jun-2026</td>
+
+              <td>₹700</td>
+
+              <td>Cash</td>
+
+              <td>OFFLINE</td>
+
+              <td><span class="paid-status">Success</span></td>
+
+            </tr>
+
+            <tr>
+
+              <td>18-Aug-2026</td>
+
+              <td>₹200</td>
+
+              <td>Online</td>
+
+              <td>TXN874563</td>
+
+              <td><span class="paid-status">Success</span></td>
+
+            </tr>
+
+          </tbody>
+
+        </table>
+
+      </section>
+
+      <!-- Buttons -->
+
+      <section class="button-section">
+
+        <button class="pay-btn">
+
+          <i class="fa-solid fa-credit-card"></i>
+
+          Pay Fee
+
+        </button>
+
+        <button class="download-btn">
+
+          <i class="fa-solid fa-download"></i>
+
+          Download Receipt
+
+        </button>
+
+        <button class="print-btn">
+
+          <i class="fa-solid fa-print"></i>
+
+          Print Receipt
+
+        </button>
+
+        <button class="back-btn" onclick="location.href='index.html'">
+
+          <i class="fa-solid fa-arrow-left"></i>
+
+          Dashboard
+
+        </button>
+
+      </section>
+
+    </main>
+
+  </div>
+
+  <script src="fees.js"></script>
+  <script src="common.js"></script>
+
+</body>
+
+</html>

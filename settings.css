@@ -1,0 +1,1077 @@
+/* =========================================================
+   WELCOME PUBLIC SCHOOL - SETTINGS
+   Theme matched with profile(2).css
+   =========================================================
+
+   Primary Yellow : #FFE600
+   Soft Yellow    : #FFF9A6
+   Deep Navy      : #1B1464
+   White          : #FFFFFF
+   Black          : #000000
+   Grey           : #555555 / #6B7280
+   Green          : #16A34A
+   Red            : #DC2626
+   ========================================================= */
+
+
+/* =========================================================
+   GLOBAL
+   ========================================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: #fff9a6;
+  color: #000000;
+}
+
+.container {
+  display: flex;
+  min-height: 100vh;
+}
+
+
+/* =========================================================
+   SIDEBAR
+   ========================================================= */
+
+.sidebar {
+  width: 300px;
+  min-height: 100vh;
+
+  background: #1b1464;
+
+  padding: 25px 18px;
+
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  z-index: 1000;
+}
+
+
+/* =========================================================
+   SCHOOL LOGO
+   ========================================================= */
+
+.logo {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.logo img {
+  width: 85px;
+  height: 85px;
+
+  object-fit: contain;
+
+  margin-bottom: 10px;
+}
+
+.logo-text h2,
+.logo-text h3 {
+  color: #ffffff;
+
+  font-size: 19px;
+  line-height: 1.25;
+
+  font-weight: 700;
+
+  letter-spacing: 0.5px;
+}
+
+.logo-text p {
+  color: #fff9a6;
+
+  font-size: 10px;
+
+  margin-top: 4px;
+}
+
+.logo-text p:last-child {
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   SIDEBAR MENU
+   ========================================================= */
+
+.sidebar ul {
+  list-style: none;
+}
+
+.sidebar li {
+  display: flex;
+  align-items: center;
+
+  gap: 15px;
+
+  padding: 14px 18px;
+
+  margin-bottom: 7px;
+
+  border-radius: 12px;
+
+  color: #ffffff;
+
+  font-size: 14px;
+
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition: all 0.25s ease;
+}
+
+.sidebar li i {
+  width: 20px;
+
+  font-size: 16px;
+
+  text-align: center;
+}
+
+
+/* =========================================================
+   SIDEBAR HOVER
+   ========================================================= */
+
+.sidebar li:hover {
+  background: #fff9a6;
+  color: #1b1464;
+
+  transform: translateX(3px);
+}
+
+
+/* =========================================================
+   ACTIVE SETTINGS
+   ========================================================= */
+
+.sidebar li.active {
+  background: #ffe600;
+  color: #1b1464;
+
+  font-weight: 600;
+
+  box-shadow:
+    0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+
+/* =========================================================
+   LOGOUT
+   ========================================================= */
+
+.sidebar li.logout-btn {
+  margin-top: 9px;
+}
+
+.sidebar li.logout-btn:hover {
+  background: #dc2626;
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   SIDEBAR SCROLLBAR
+   ========================================================= */
+
+.sidebar::-webkit-scrollbar {
+  width: 5px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+  background: #110d46;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background: #ffe600;
+  border-radius: 10px;
+}
+
+
+/* =========================================================
+   MAIN CONTENT
+   ========================================================= */
+
+.main {
+  margin-left: 300px;
+
+  width: calc(100% - 300px);
+
+  padding: 30px;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+header {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin-bottom: 25px;
+}
+
+header h1 {
+  font-size: 25px;
+
+  color: #1b1464;
+
+  font-weight: 600;
+}
+
+header > div:first-child p {
+  color: #555555;
+
+  font-size: 13px;
+
+  margin-top: 4px;
+}
+
+
+/* =========================================================
+   HEADER PROFILE BOX
+   ========================================================= */
+
+.profile-box {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  background: #ffffff;
+
+  padding: 7px 12px;
+
+  border-radius: 14px;
+
+  border: 2px solid white;
+
+  box-shadow:
+    0 3px 12px rgba(0, 0, 0, 0.06);
+
+  transition: all 0.2s ease;
+}
+
+.profile-box:hover {
+  border-color: #ffe600;
+  transform: translateY(-1px);
+}
+
+.profile-box img {
+  width: 42px;
+  height: 42px;
+
+  object-fit: cover;
+
+  border-radius: 50%;
+
+  border: 3px solid #ffe600;
+}
+
+.profile-box h3 {
+  font-size: 13px;
+
+  color: #1b1464;
+
+  font-weight: 600;
+}
+
+.profile-box span {
+  color: #6b7280;
+
+  font-size: 10px;
+}
+
+
+/* =========================================================
+   SETTINGS CARD
+   ========================================================= */
+
+.setting-card {
+  background: #ffffff;
+
+  border-radius: 20px;
+
+  border: 1px solid #eeeeee;
+
+  box-shadow:
+    0 8px 25px rgba(0, 0, 0, 0.07);
+
+  padding: 25px 30px;
+
+  margin-bottom: 20px;
+
+  position: relative;
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   YELLOW TOP BORDER
+   ========================================================= */
+
+.setting-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 5px;
+
+  background: #ffe600;
+}
+
+
+/* =========================================================
+   SETTINGS HEADING
+   ========================================================= */
+
+.setting-card h2 {
+  color: #1b1464;
+
+  font-size: 18px;
+
+  font-weight: 600;
+
+  margin-bottom: 20px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+}
+
+
+/* =========================================================
+   HEADING ICON
+   ========================================================= */
+
+.setting-card h2 i {
+  width: 30px;
+  height: 30px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  background: #fff9a6;
+
+  color: #1b1464;
+
+  border-radius: 8px;
+
+  font-size: 14px;
+
+  transition: all 0.2s ease;
+}
+
+.setting-card h2:hover i {
+  background: #ffe600;
+
+  transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   FORM GROUP
+   ========================================================= */
+
+.form-group {
+  margin-bottom: 17px;
+}
+
+.form-group:last-child {
+  margin-bottom: 0;
+}
+
+
+/* =========================================================
+   FORM LABEL
+   ========================================================= */
+
+.form-group label {
+  display: block;
+
+  color: #6b7280;
+
+  font-size: 10px;
+
+  font-weight: 500;
+
+  margin-bottom: 6px;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.3px;
+}
+
+
+/* =========================================================
+   INPUT
+   ========================================================= */
+
+.form-group input {
+  width: 100%;
+
+  background: #fff9a6;
+
+  color: #1b1464;
+
+  border: 1px solid transparent;
+
+  border-radius: 11px;
+
+  padding: 13px 15px;
+
+  font-family: inherit;
+
+  font-size: 12px;
+
+  font-weight: 500;
+
+  outline: none;
+
+  transition: all 0.2s ease;
+}
+
+
+/* =========================================================
+   INPUT HOVER
+   ========================================================= */
+
+.form-group input:hover {
+  border-color: #ffe600;
+}
+
+
+/* =========================================================
+   INPUT FOCUS
+   ========================================================= */
+
+.form-group input:focus {
+  background: #ffffff;
+
+  border: 2px solid #ffe600;
+
+  box-shadow:
+    0 4px 12px rgba(255, 230, 0, 0.15);
+}
+
+
+/* =========================================================
+   PASSWORD INPUT
+   ========================================================= */
+
+input[type="password"] {
+  letter-spacing: 2px;
+}
+
+
+/* =========================================================
+   PREFERENCES
+   ========================================================= */
+
+.toggle {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  background: #fff9a6;
+
+  padding: 13px 15px;
+
+  border-radius: 11px;
+
+  margin-bottom: 10px;
+
+  border: 1px solid transparent;
+
+  transition: all 0.2s ease;
+}
+
+.toggle:last-child {
+  margin-bottom: 0;
+}
+
+.toggle:hover {
+  background: #1b1464;
+
+  color: #ffffff;
+
+  border-color: #1b1464;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 4px 12px rgba(27, 20, 100, 0.07);
+}
+
+.toggle span {
+  color: #1b1464;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  transition: all 0.2s ease;
+}
+
+.toggle:hover span {
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   CUSTOM CHECKBOX
+   ========================================================= */
+
+.toggle input[type="checkbox"] {
+  appearance: none;
+
+  -webkit-appearance: none;
+
+  width: 42px;
+  height: 22px;
+
+  background: #d1d5db;
+
+  border-radius: 30px;
+
+  position: relative;
+
+  cursor: pointer;
+
+  outline: none;
+
+  transition: all 0.25s ease;
+
+  flex-shrink: 0;
+}
+
+
+/* Toggle circle */
+
+.toggle input[type="checkbox"]::before {
+  content: "";
+
+  position: absolute;
+
+  width: 16px;
+  height: 16px;
+
+  top: 3px;
+  left: 3px;
+
+  background: #ffffff;
+
+  border-radius: 50%;
+
+  transition: all 0.25s ease;
+
+  box-shadow:
+    0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+
+/* Checked */
+
+.toggle input[type="checkbox"]:checked {
+  background: #16a34a;
+}
+
+.toggle input[type="checkbox"]:checked::before {
+  left: 23px;
+}
+
+
+/* Checkbox hover */
+
+.toggle input[type="checkbox"]:hover {
+  box-shadow:
+    0 0 0 3px rgba(255, 230, 0, 0.25);
+}
+
+
+/* =========================================================
+   BUTTON SECTION
+   ========================================================= */
+
+.button-section {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 10px;
+
+  margin-top: 5px;
+}
+
+
+/* =========================================================
+   ALL BUTTONS
+   ========================================================= */
+
+.button-section button {
+  border: none;
+
+  padding: 10px 17px;
+
+  border-radius: 9px;
+
+  font-family: inherit;
+
+  font-size: 11px;
+
+  font-weight: 500;
+
+  cursor: pointer;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 7px;
+
+  transition: all 0.2s ease;
+}
+
+.button-section button:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 5px 15px rgba(0, 0, 0, 0.12);
+}
+
+.button-section button:active {
+  transform: translateY(0);
+}
+
+
+/* =========================================================
+   SAVE BUTTON
+   ========================================================= */
+
+.save-btn {
+  background: #1b1464;
+
+  color: #ffffff;
+}
+
+.save-btn:hover {
+  background: #ffe600;
+
+  color: #1b1464;
+}
+
+.save-btn:active {
+  background: #1b1464;
+
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   RESET BUTTON
+   ========================================================= */
+
+.reset-btn {
+  background: #e5e7eb;
+
+  color: #374151;
+}
+
+.reset-btn:hover {
+  background: #ffe600;
+
+  color: #1b1464;
+}
+
+.reset-btn:active {
+  background: #e5e7eb;
+
+  color: #374151;
+}
+
+
+/* =========================================================
+   BACK TO DASHBOARD
+   ========================================================= */
+
+.back-btn {
+  background: #16a34a;
+
+  color: #ffffff;
+}
+
+.back-btn:hover {
+  background: #ffe600;
+
+  color: #1b1464;
+}
+
+.back-btn:active {
+  background: #16a34a;
+
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   SELECTION
+   ========================================================= */
+
+::selection {
+  background: #ffe600;
+
+  color: #1b1464;
+}
+
+
+/* =========================================================
+   RESPONSIVE - TABLET
+   ========================================================= */
+
+@media (max-width: 1200px) {
+
+  .setting-card {
+    padding: 25px;
+  }
+
+  .form-group input {
+    padding: 12px 14px;
+  }
+
+  .toggle {
+    padding: 13px 14px;
+  }
+}
+
+
+/* =========================================================
+   RESPONSIVE - SMALL LAPTOP
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .sidebar {
+    width: 230px;
+  }
+
+  .main {
+    margin-left: 230px;
+
+    width: calc(100% - 230px);
+
+    padding: 20px;
+  }
+
+  .logo-text h2,
+  .logo-text h3 {
+    font-size: 16px;
+  }
+
+  .sidebar li {
+    padding: 12px;
+
+    font-size: 12px;
+  }
+
+  header h1 {
+    font-size: 22px;
+  }
+
+  .setting-card {
+    padding: 22px;
+  }
+
+  .setting-card h2 {
+    font-size: 16px;
+  }
+
+  .form-group input {
+    font-size: 11px;
+  }
+
+  .toggle span {
+    font-size: 11px;
+  }
+
+  .button-section button {
+    padding: 10px 14px;
+  }
+}
+
+
+/* =========================================================
+   RESPONSIVE - MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  .container {
+    display: block;
+  }
+
+  .sidebar {
+    position: relative;
+
+    width: 100%;
+
+    min-height: auto;
+
+    padding: 15px;
+
+    overflow-y: visible;
+  }
+
+  .logo {
+    margin-bottom: 15px;
+  }
+
+  .logo img {
+    width: 65px;
+    height: 65px;
+  }
+
+  .sidebar ul {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 5px;
+  }
+
+  .sidebar li {
+    margin-bottom: 0;
+
+    padding: 12px 10px;
+
+    font-size: 11px;
+  }
+
+  .sidebar li i {
+    width: 18px;
+
+    font-size: 14px;
+  }
+
+  .main {
+    margin-left: 0;
+
+    width: 100%;
+
+    padding: 15px;
+  }
+
+  header {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 15px;
+
+    margin-bottom: 20px;
+  }
+
+  header h1 {
+    font-size: 20px;
+  }
+
+  header > div:first-child p {
+    font-size: 11px;
+  }
+
+  .profile-box {
+    width: 100%;
+
+    justify-content: flex-start;
+  }
+
+  .setting-card {
+    padding: 22px 18px;
+
+    border-radius: 17px;
+
+    margin-bottom: 15px;
+  }
+
+  .setting-card h2 {
+    font-size: 15px;
+
+    margin-bottom: 17px;
+  }
+
+  .setting-card h2 i {
+    width: 28px;
+    height: 28px;
+
+    font-size: 13px;
+  }
+
+  .form-group {
+    margin-bottom: 14px;
+  }
+
+  .form-group input {
+    padding: 12px;
+
+    font-size: 11px;
+  }
+
+  .toggle {
+    padding: 12px;
+
+    margin-bottom: 8px;
+  }
+
+  .toggle span {
+    font-size: 11px;
+  }
+
+  .button-section {
+    display: grid;
+
+    grid-template-columns: 1fr;
+  }
+
+  .button-section button {
+    width: 100%;
+
+    padding: 11px;
+  }
+}
+
+
+/* =========================================================
+   RESPONSIVE - SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+  .main {
+    padding: 12px;
+  }
+
+  header h1 {
+    font-size: 18px;
+  }
+
+  header > div:first-child p {
+    font-size: 10px;
+  }
+
+  .profile-box {
+    padding: 6px 10px;
+  }
+
+  .profile-box img {
+    width: 38px;
+    height: 38px;
+  }
+
+  .profile-box h3 {
+    font-size: 12px;
+  }
+
+  .profile-box span {
+    font-size: 9px;
+  }
+
+  .setting-card {
+    padding: 18px 14px;
+
+    border-radius: 15px;
+  }
+
+  .setting-card h2 {
+    font-size: 14px;
+
+    margin-bottom: 13px;
+  }
+
+  .setting-card h2 i {
+    width: 26px;
+    height: 26px;
+
+    font-size: 12px;
+  }
+
+  .form-group label {
+    font-size: 8px;
+  }
+
+  .form-group input {
+    padding: 11px 12px;
+
+    font-size: 10px;
+
+    border-radius: 9px;
+  }
+
+  .toggle {
+    padding: 11px 12px;
+
+    border-radius: 9px;
+  }
+
+  .toggle span {
+    font-size: 10px;
+  }
+
+  .toggle input[type="checkbox"] {
+    width: 38px;
+    height: 20px;
+  }
+
+  .toggle input[type="checkbox"]::before {
+    width: 14px;
+    height: 14px;
+
+    top: 3px;
+    left: 3px;
+  }
+
+  .toggle input[type="checkbox"]:checked::before {
+    left: 21px;
+  }
+
+  .button-section button {
+    font-size: 10px;
+
+    padding: 10px;
+  }
+}

@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>
+    Digital Classroom | BCC
+  </title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link rel="stylesheet" href="learning.css">
+
+  <!-- Standard Favicon for Browser Tabs & Chrome Shortcuts -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Apple/Safari Specific Icon (For pinned tabs or home screen shortcuts) -->
+  <link rel="apple-touch-icon" href="favicon.ico">
+</head>
+
+<body>
+  <div class="dashboard-container">
+    <aside class="sidebar">
+      <div class="school-brand">
+        <img src="images/logo.png" alt="BCC Logo">
+        <h2>
+          BRILLIANT
+          <span>
+            COACHING CENTRE
+          </span>
+        </h2>
+        <p class="established">
+          Established in 2009
+        </p>
+        <p class="address">
+          Kairi Birpur, Po- Bishanpur
+          <br>
+          Dist- Kishanganj
+          <br>
+          <span>
+            BIHAR
+          </span>
+        </p>
+      </div>
+      <p class="menu-title">
+        Learning Center
+      </p>
+      <nav class="sidebar-menu">
+        <a href="learning.html" class="active">
+          <i class="fa-solid fa-chalkboard-user">
+          </i>
+          <span>
+            Lectures
+          </span>
+        </a>
+        <a href="notes.html">
+          <i class="fa-solid fa-book-open">
+          </i>
+          <span>
+            Notes
+          </span>
+        </a>
+        <a href="homework.html">
+          <i class="fa-solid fa-file-pen"></i>
+          </i>
+          <span>
+            Homework
+          </span>
+        </a>
+        <a href="quizzes.html">
+          <i class="fa-solid fa-clipboard-question">
+          </i>
+          <span>
+            Quizzes
+          </span>
+        </a>
+      </nav>
+      <div class="sidebar-bottom">
+        <a href="dashboard.html" class="back-dashboard">
+          <i class="fa-solid fa-arrow-left">
+          </i>
+          <span>
+            Back to Dashboard
+          </span>
+        </a>
+      </div>
+    </aside>
+    <main class="main-content">
+      <header class="top-header">
+        <div class="page-heading">
+          <small>
+            Digital Classroom
+          </small>
+          <h1>
+            Learn. Practice. Improve.
+          </h1>
+          <p>
+            Attend live classes, watch recorded lectures and continue your learning journey.
+          </p>
+        </div>
+        <div class="header-actions">
+          <button type="button" class="notification-btn" id="notificationBtn" aria-label="Notifications">
+            <i class="fa-solid fa-bell">
+            </i>
+          </button>
+          <div class="profile-mini">
+            <img src="images/student.jpg" alt="Student Profile">
+            <span>
+              Student
+            </span>
+          </div>
+        </div>
+      </header>
+      <section id="lectures" class="learning-section">
+        <div class="section-heading">
+          <div>
+            <span class="section-kicker">
+              Learning Hub
+            </span>
+            <h2>
+              Your Lectures
+            </h2>
+            <p>
+              Join live classes or continue watching your available learning content.
+            </p>
+          </div>
+          <div class="section-count">
+            <i class="fa-solid fa-video">
+            </i>
+            <span id="availableClassesCount">
+              Available Classes
+            </span>
+          </div>
+        </div>
+        <div class="lecture-grid">
+          <article class="feature-card">
+            <div class="card-visual live-visual">
+              <span class="status-badge live" id="liveStatusBadge">
+                <i class="fa-solid fa-circle">
+                </i>
+                CHECKING
+              </span>
+              <i class="fa-solid fa-video visual-icon">
+              </i>
+              <div class="visual-bottom">
+                <strong id="liveCardLabel">
+                  Live Classroom
+                </strong>
+                <span id="liveRoom">
+                  Online
+                </span>
+              </div>
+            </div>
+            <div class="feature-content">
+              <div>
+                <span class="eyebrow" id="liveSubject">
+                  Live Class
+                </span>
+                <h3 id="liveTitle">
+                  No Live Now
+                </h3>
+                <p id="liveDescription">
+                  No live lecture for now.
+                </p>
+              </div>
+              <button type="button" class="primary-btn watch-live-btn" id="watchLiveBtn">
+                <i class="fa-solid fa-play">
+                </i>
+                <span>
+                  Watch Live
+                </span>
+              </button>
+            </div>
+          </article>
+          <article class="feature-card clickable-card" id="recordedCard">
+            <div class="card-visual recorded-visual">
+              <span class="status-badge recorded">
+                RECORDED
+              </span>
+              <i class="fa-solid fa-clapperboard visual-icon">
+              </i>
+              <div class="visual-bottom">
+                <strong>
+                  Recorded Class
+                </strong>
+                <span id="recordedSummary">
+                  Organised by subject
+                </span>
+              </div>
+            </div>
+            <div class="feature-content">
+              <div>
+                <span class="eyebrow">
+                  Lecture Library
+                </span>
+                <h3>
+                  Recorded Lectures
+                </h3>
+                <p>
+                  Browse recorded classes by subject, chapter and lecture.
+                </p>
+              </div>
+              <a class="secondary-btn" href="recorded-lectures.html">
+                <i class="fa-solid fa-arrow-right">
+                </i>
+                Open
+              </a>
+            </div>
+          </article>
+          <article class="feature-card clickable-card" id="downloadedCard">
+            <div class="card-visual downloaded-visual">
+              <span class="status-badge downloaded">
+                SAVED
+              </span>
+              <i class="fa-solid fa-download visual-icon">
+              </i>
+              <div class="visual-bottom">
+                <strong>
+                  Saved Lecture
+                </strong>
+                <span>
+                  Available Offline
+                </span>
+              </div>
+            </div>
+            <div class="feature-content">
+              <div>
+                <span class="eyebrow">
+                  Offline Library
+                </span>
+                <h3>
+                  Downloaded Lectures
+                </h3>
+                <p>
+                  Open lectures saved locally on this device.
+                </p>
+              </div>
+              <a class="primary-btn" href="downloaded-lectures.html">
+                <i class="fa-solid fa-arrow-right">
+                </i>
+                Open
+              </a>
+            </div>
+          </article>
+        </div>
+        <div class="resume-box" id="resumeBox" hidden>
+          <div class="resume-icon">
+            <i class="fa-solid fa-play">
+            </i>
+          </div>
+          <div class="resume-info">
+            <h3>
+              Continue Your Last Lecture
+            </h3>
+            <p id="resumeText">
+            </p>
+          </div>
+          <button type="button" class="resume-btn" id="resumeLectureBtn">
+            <i class="fa-solid fa-play">
+            </i>
+            Resume Lecture
+          </button>
+        </div>
+        <div class="subsection-heading">
+          <h2>
+            Upcoming Lectures
+          </h2>
+          <p>
+            Keep track of your next classes.
+          </p>
+        </div>
+        <div class="upcoming-list" id="upcomingList">
+        </div>
+        <div class="empty-list-state" id="upcomingEmpty">
+          <i class="fa-regular fa-calendar-xmark">
+          </i>
+          <span>
+            No upcoming YouTube classes found.
+          </span>
+        </div>
+        <div class="missed-heading">
+          <h2>
+            Missed Lectures
+          </h2>
+          <p>
+            Catch up on classes supplied by the attendance system.
+          </p>
+        </div>
+        <div id="missedList">
+        </div>
+        <div class="empty-list-state" id="missedEmpty">
+          <i class="fa-regular fa-circle-check">
+          </i>
+          <span>
+            No missed lectures have been supplied.
+          </span>
+        </div>
+      </section>
+      <footer class="page-footer">
+        © 2026 Brilliant Coaching Centre. All Rights Reserved.
+      </footer>
+    </main>
+  </div>
+  <div class="notification-message" id="notificationMessage">
+    <i class="fa-solid fa-bell">
+    </i>
+    <span>
+    </span>
+  </div>
+  <div class="video-modal" id="videoModal" aria-hidden="true">
+    <div class="video-modal-box" role="dialog" aria-modal="true" aria-labelledby="videoModalTitle">
+      <div class="video-modal-header">
+        <div class="modal-lecture-title">
+          <img id="videoModalLogo" src="images/logo.png" alt="School Logo">
+          <div>
+            <span class="section-kicker">
+              DIGITAL CLASSROOM
+            </span>
+            <h3 id="videoModalTitle">
+              Lecture
+            </h3>
+          </div>
+        </div>
+        <button type="button" class="modal-close-btn" id="closeVideoModal" aria-label="Close video">
+          <i class="fa-solid fa-xmark">
+          </i>
+        </button>
+      </div>
+      <div class="video-frame" id="videoFrame">
+        <div id="youtubePlayerContainer">
+        </div>
+        <div class="video-placeholder" id="videoPlaceholder">
+          <img src="images/logo.png" alt="Welcome Public School Logo">
+          <h2>
+            Live Lecture Player
+          </h2>
+          <p>
+            Select a valid YouTube lecture to start watching.
+          </p>
+          <span>
+            Student View • No External Redirection
+          </span>
+        </div>
+        <button type="button" class="fullscreen-video-btn" id="fullscreenVideoBtn" aria-label="Enter fullscreen"
+          title="Fullscreen">
+          <i class="fa-solid fa-expand">
+          </i>
+        </button>
+        <span class="esc-hint" id="escHint">
+          ESC to exit fullscreen
+        </span>
+      </div>
+    </div>
+  </div>
+  <script src="lecture-data.js">
+
+  </script>
+  <script src="learning.js">
+
+  </script>
+</body>
+
+</html>

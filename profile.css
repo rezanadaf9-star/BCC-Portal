@@ -1,0 +1,1617 @@
+/* =========================================================
+   WELCOME PUBLIC SCHOOL - STUDENT PROFILE
+   Theme matched with style(1).css
+
+   Primary Yellow : #FFE600
+   Soft Yellow    : #FFF9A6
+   Deep Navy      : #1B1464
+   White          : #FFFFFF
+   Black          : #000000
+   Grey           : #555555 / #6B7280
+   Green          : #16A34A
+   Red            : #DC2626
+   ========================================================= */
+
+
+/* =========================================================
+   GLOBAL
+   ========================================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: #fff9a6;
+  color: #000000;
+}
+
+.container {
+  display: flex;
+  min-height: 100vh;
+}
+
+
+/* =========================================================
+   SIDEBAR
+   ========================================================= */
+
+.sidebar {
+  width: 300px;
+  min-height: 100vh;
+
+  background: #1b1464;
+
+  padding: 25px 18px;
+
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  z-index: 1000;
+}
+
+
+/* =========================================
+   SCHOOL LOGO
+   ========================================= */
+
+.logo {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.logo img {
+  width: 85px;
+  height: 85px;
+
+  object-fit: contain;
+
+  margin-bottom: 10px;
+}
+
+.logo-text h2 {
+  color: #ffffff;
+
+  font-size: 19px;
+  line-height: 1.25;
+
+  font-weight: 700;
+
+  letter-spacing: 0.5px;
+}
+
+.logo-text .school-info {
+  color: #fff9a6;
+
+  font-size: 10px;
+
+  margin-top: 4px;
+}
+
+.logo-text .state {
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* =========================================================
+   SIDEBAR MENU
+   ========================================================= */
+
+.sidebar ul {
+  list-style: none;
+}
+
+.sidebar li {
+  display: flex;
+  align-items: center;
+
+  gap: 15px;
+
+  padding: 14px 18px;
+
+  margin-bottom: 7px;
+
+  border-radius: 12px;
+
+  color: #ffffff;
+
+  font-size: 14px;
+
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition: all 0.25s ease;
+}
+
+.sidebar li i {
+  width: 20px;
+
+  font-size: 16px;
+
+  text-align: center;
+}
+
+
+/* Hover */
+
+.sidebar li:hover {
+  background: #fff9a6;
+  color: #1b1464;
+
+  transform: translateX(3px);
+}
+
+
+/* Active */
+
+.sidebar li.active {
+  background: #ffe600;
+  color: #1b1464;
+
+  font-weight: 600;
+
+  box-shadow:
+    0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+
+/* Logout */
+
+.sidebar li.logout-btn {
+  margin-top: 9px;
+}
+
+.sidebar li.logout-btn:hover {
+  background: #dc2626;
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   SIDEBAR SCROLLBAR
+   ========================================================= */
+
+.sidebar::-webkit-scrollbar {
+  width: 5px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+  background: #110d46;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background: #ffe600;
+  border-radius: 10px;
+}
+
+
+/* =========================================================
+   MAIN CONTENT
+   ========================================================= */
+
+.main {
+  margin-left: 300px;
+
+  width: calc(100% - 300px);
+
+  padding: 30px;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+header {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin-bottom: 25px;
+}
+
+header h1 {
+  font-size: 25px;
+
+  color: #1b1464;
+
+  font-weight: 600;
+}
+
+header > div:first-child p {
+  color: #555555;
+
+  font-size: 13px;
+
+  margin-top: 4px;
+}
+
+
+/* =========================================================
+   HEADER PROFILE BOX
+   ========================================================= */
+
+.profile-box {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  background: #ffffff;
+
+  padding: 7px 12px;
+
+  border-radius: 14px;
+
+  border: none;
+
+  box-shadow:
+    0 3px 12px rgba(0, 0, 0, 0.06);
+
+  transition: all 0.2s ease;
+}
+
+.profile-box:hover {
+  border-color: #ffe600;
+  transform: translateY(-1px);
+}
+
+.profile-box img {
+  width: 42px;
+  height: 42px;
+
+  object-fit: cover;
+
+  border-radius: 50%;
+
+  border: 3px solid #ffe600;
+}
+
+.profile-box h3 {
+  font-size: 13px;
+
+  color: #1b1464;
+
+  font-weight: 600;
+}
+
+.profile-box span {
+  color: #6b7280;
+
+  font-size: 10px;
+}
+
+
+/* =========================================================
+   MAIN PROFILE CARD
+   ========================================================= */
+
+.profile-card {
+  display: grid;
+
+  grid-template-columns: 260px 1fr;
+
+  background: #ffffff;
+
+  border-radius: 20px;
+
+  border: 1px solid #eeeeee;
+
+  box-shadow:
+    0 8px 25px rgba(0, 0, 0, 0.07);
+
+  overflow: hidden;
+
+  position: relative;
+}
+
+
+
+
+
+/* =========================================================
+   LEFT PROFILE
+   ========================================================= */
+
+.left-profile {
+  background: #1b1464;
+
+  padding: 35px 25px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: flex-start;
+
+  text-align: center;
+
+  min-height: 650px;
+
+  position: relative;
+}
+
+
+/* Decorative yellow circle */
+
+.left-profile::after {
+  content: "";
+
+  position: absolute;
+
+  width: 180px;
+  height: 180px;
+
+  border-radius: 50%;
+
+  background: rgba(255, 230, 0, 0.08);
+
+  bottom: -70px;
+  left: -70px;
+}
+
+
+/* Student photo */
+
+.left-profile img {
+  width: 145px;
+  height: 145px;
+
+  object-fit: cover;
+
+  border-radius: 50%;
+
+  border: 5px solid #ffe600;
+
+  padding: 4px;
+
+  background: #ffffff;
+
+  margin-top: 10px;
+
+  margin-bottom: 18px;
+
+  position: relative;
+
+  z-index: 2;
+
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.20);
+}
+
+
+/* Student name */
+
+.left-profile h2 {
+  color: #ffffff;
+
+  font-size: 21px;
+
+  font-weight: 600;
+
+  margin-bottom: 7px;
+
+  position: relative;
+
+  z-index: 2;
+}
+
+
+/* Class / Roll */
+
+.left-profile p {
+  color: #fff9a6;
+
+  font-size: 12px;
+
+  line-height: 1.7;
+
+  position: relative;
+
+  z-index: 2;
+}
+
+
+/* Edit Profile */
+
+.left-profile button {
+  border: none;
+
+  background: #ffe600;
+
+  color: #1b1464;
+
+  padding: 10px 22px;
+
+  border-radius: 10px;
+
+  font-family: inherit;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  margin-top: 22px;
+
+  transition: all 0.25s ease;
+
+  position: relative;
+
+  z-index: 2;
+}
+
+.left-profile button:hover {
+  background: #ffffff;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+
+/* =========================================================
+   RIGHT PROFILE
+   ========================================================= */
+
+.right-profile {
+  padding: 30px;
+
+  background: #ffffff;
+}
+
+
+/* =========================================================
+   INFORMATION SECTION
+   ========================================================= */
+
+.section {
+  margin-bottom: 25px;
+
+  padding-bottom: 22px;
+
+  border-bottom: 1px solid #eeeeee;
+}
+
+.section:last-of-type {
+  margin-bottom: 20px;
+
+  border-bottom: none;
+
+  padding-bottom: 0;
+}
+
+
+/* Section heading */
+
+.section h2 {
+  color: #1b1464;
+
+  font-size: 18px;
+
+  font-weight: 600;
+
+  margin-bottom: 17px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+}
+
+
+/* Yellow heading indicator */
+
+.section h2::before {
+  content: "";
+
+  width: 5px;
+
+  height: 22px;
+
+  background: #ffe600;
+
+  border-radius: 5px;
+
+  display: inline-block;
+}
+
+
+/* =========================================================
+   INFORMATION GRID
+   ========================================================= */
+
+.grid {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 13px;
+}
+
+
+/* Information item */
+
+.item {
+  background: #fff9a6;
+
+  padding: 14px 15px;
+
+  border-radius: 11px;
+
+  border: 1px solid transparent;
+
+  transition: all 0.2s ease;
+}
+
+.item:hover {
+  background: #1b1464;
+  color: white;
+
+  border: none;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 4px 12px rgba(27, 20, 100, 0.07);
+}
+
+
+/* Label */
+
+.item label {
+  display: block;
+
+  color: #6b7280;
+
+  font-size: 10px;
+
+  font-weight: 500;
+
+  margin-bottom: 4px;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.3px;
+}
+
+.item:hover label {
+  color: white;
+  opacity: 100;
+}
+
+
+/* Value */
+
+.item span {
+  display: block;
+
+  color: #1b1464;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  word-break: break-word;
+}
+
+.item:hover span {
+  color: white;
+}
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+.buttons {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 10px;
+
+  margin-top: 5px;
+}
+
+.buttons button {
+  border: none;
+
+  padding: 10px 15px;
+
+  border-radius: 9px;
+
+  font-family: inherit;
+
+  font-size: 11px;
+
+  font-weight: 500;
+
+  cursor: pointer;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 7px;
+
+  transition: all 0.2s ease;
+}
+
+
+/* Blue / Navy */
+
+.buttons .blue {
+  background: #1b1464;
+
+  color: #ffffff;
+}
+
+.buttons .blue:hover {
+  background: #ffe600;
+
+  color: #1b1464;
+
+  transform: translateY(-2px);
+}
+
+.buttons .blue:active {
+  background: #1b1464;
+
+  color: #ffffff;
+}
+
+
+/* Green */
+
+.buttons .green {
+  background: #16a34a;
+
+  color: #ffffff;
+}
+
+.buttons .green:hover {
+  background: #ffe600;
+  color: #1b1464;
+
+  transform: translateY(-2px);
+}
+
+.buttons .green:active {
+  background: #16a34a;
+
+  color: #ffffff;
+}
+
+
+/* Grey */
+
+.buttons .grey {
+  background: #e5e7eb;
+
+  color: #374151;
+}
+
+.buttons .grey:hover {
+  background: #ffe600;
+
+  color: #1b1464;
+
+  transform: translateY(-2px);
+}
+
+.buttons .grey:active {
+  background: #e5e7eb;
+
+  color: #374151;
+}
+
+
+/* =========================================================
+   SELECTION
+   ========================================================= */
+
+::selection {
+  background: #ffe600;
+
+  color: #1b1464;
+}
+
+
+/* =========================================================
+   RESPONSIVE - TABLET
+   ========================================================= */
+
+@media (max-width: 1200px) {
+
+  .profile-card {
+    grid-template-columns: 220px 1fr;
+  }
+
+  .left-profile {
+    padding: 30px 20px;
+  }
+
+  .left-profile img {
+    width: 125px;
+    height: 125px;
+  }
+
+  .right-profile {
+    padding: 25px;
+  }
+
+  .grid {
+    gap: 10px;
+  }
+}
+
+
+/* =========================================================
+   RESPONSIVE - SMALL LAPTOP
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .sidebar {
+    width: 230px;
+  }
+
+  .main {
+    margin-left: 230px;
+
+    width: calc(100% - 230px);
+
+    padding: 20px;
+  }
+
+  .logo-text h2,
+  .logo-text h3 {
+    font-size: 16px;
+  }
+
+  .sidebar li {
+    padding: 12px;
+
+    font-size: 12px;
+  }
+
+  header h1 {
+    font-size: 22px;
+  }
+
+  .profile-card {
+    grid-template-columns: 190px 1fr;
+  }
+
+  .left-profile {
+    min-height: 620px;
+
+    padding: 28px 15px;
+  }
+
+  .left-profile img {
+    width: 105px;
+    height: 105px;
+  }
+
+  .left-profile h2 {
+    font-size: 17px;
+  }
+
+  .right-profile {
+    padding: 22px;
+  }
+
+  .section h2 {
+    font-size: 16px;
+  }
+}
+
+
+/* =========================================================
+   RESPONSIVE - MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  .container {
+    display: block;
+  }
+
+  .sidebar {
+    position: relative;
+
+    width: 100%;
+
+    min-height: auto;
+
+    padding: 15px;
+
+    overflow-y: visible;
+  }
+
+  .logo {
+    margin-bottom: 15px;
+  }
+
+  .logo img {
+    width: 65px;
+    height: 65px;
+  }
+
+  .sidebar ul {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 5px;
+  }
+
+  .sidebar li {
+    margin-bottom: 0;
+
+    padding: 12px 10px;
+
+    font-size: 11px;
+  }
+
+  .sidebar li i {
+    width: 18px;
+
+    font-size: 14px;
+  }
+
+  .main {
+    margin-left: 0;
+
+    width: 100%;
+
+    padding: 15px;
+  }
+
+  header {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 15px;
+
+    margin-bottom: 20px;
+  }
+
+  header h1 {
+    font-size: 20px;
+  }
+
+  header > div:first-child p {
+    font-size: 11px;
+  }
+
+  .profile-box {
+    width: 100%;
+
+    justify-content: flex-start;
+  }
+
+  .profile-card {
+    grid-template-columns: 1fr;
+
+    border-radius: 17px;
+  }
+
+  .left-profile {
+    min-height: auto;
+
+    padding: 30px 20px 35px;
+  }
+
+  .left-profile::after {
+    display: none;
+  }
+
+  .left-profile img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .left-profile h2 {
+    font-size: 19px;
+  }
+
+  .right-profile {
+    padding: 22px 18px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr 1fr;
+
+    gap: 10px;
+  }
+
+  .item {
+    padding: 12px;
+  }
+
+  .item label {
+    font-size: 9px;
+  }
+
+  .item span {
+    font-size: 11px;
+  }
+
+  .section {
+    margin-bottom: 20px;
+
+    padding-bottom: 18px;
+  }
+
+  .section h2 {
+    font-size: 15px;
+  }
+
+  .buttons {
+    display: grid;
+
+    grid-template-columns: 1fr;
+  }
+
+  .buttons button {
+    width: 100%;
+
+    padding: 11px;
+  }
+}
+
+
+/* =========================================================
+   RESPONSIVE - SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+  .main {
+    padding: 12px;
+  }
+
+  header h1 {
+    font-size: 18px;
+  }
+
+  header > div:first-child p {
+    font-size: 10px;
+  }
+
+  .profile-box {
+    padding: 6px 10px;
+  }
+
+  .profile-box img {
+    width: 38px;
+    height: 38px;
+  }
+
+  .profile-box h3 {
+    font-size: 12px;
+  }
+
+  .profile-box span {
+    font-size: 9px;
+  }
+
+  .left-profile {
+    padding: 25px 15px 30px;
+  }
+
+  .left-profile img {
+    width: 105px;
+    height: 105px;
+  }
+
+  .left-profile h2 {
+    font-size: 17px;
+  }
+
+  .left-profile p {
+    font-size: 11px;
+  }
+
+  .left-profile button {
+    font-size: 11px;
+
+    padding: 9px 18px;
+  }
+
+  .right-profile {
+    padding: 18px 14px;
+  }
+
+  .section h2 {
+    font-size: 14px;
+
+    margin-bottom: 13px;
+  }
+
+  .section h2::before {
+    width: 4px;
+    height: 18px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+
+    gap: 8px;
+  }
+
+  .item {
+    padding: 11px 12px;
+  }
+
+  .item label {
+    font-size: 8px;
+  }
+
+  .item span {
+    font-size: 11px;
+  }
+
+  .buttons button {
+    font-size: 10px;
+  }
+}
+
+
+/* =========================================================
+   RESPONSIVE HAMBURGER SIDEBAR
+   Desktop design remains unchanged
+   ========================================================= */
+
+.menu-toggle {
+  display: none;
+  position: fixed;
+  top: 18px;
+  left: 18px;
+  width: 46px;
+  height: 46px;
+  border: none;
+  border-radius: 13px;
+  background: #1b1464;
+  color: #ffffff;
+  font-size: 19px;
+  cursor: pointer;
+  z-index: 2100;
+  box-shadow: 0 6px 18px rgba(27, 20, 100, 0.18);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.menu-toggle:hover {
+  background: #ffe600;
+  color: #1b1464;
+  transform: translateY(-1px);
+}
+
+.menu-toggle:active {
+  transform: scale(0.96);
+}
+
+.sidebar-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.42);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  z-index: 1900;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+body.sidebar-open {
+  overflow: hidden;
+}
+
+/* =========================================================
+   TABLET + MOBILE
+   Sidebar becomes an off-canvas menu
+   ========================================================= */
+
+@media (max-width: 1050px) {
+
+  .menu-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .sidebar {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 290px;
+    height: 100vh;
+    min-height: 100vh;
+    padding: 25px 18px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    z-index: 2000;
+    transform: translateX(-105%);
+    transition: transform 0.28s ease;
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+  }
+
+  .sidebar ul {
+    display: block;
+  }
+
+  body.sidebar-open .sidebar-overlay {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  /*
+     Main starts normally at the top.
+     The hamburger is positioned independently.
+  */
+  .main {
+    margin-left: 0 !important;
+    width: 100% !important;
+    padding: 30px;
+    padding-top: 30px;
+    position: relative;
+  }
+
+  /*
+     Keep the title and hamburger on the same horizontal row.
+  */
+  header {
+    position: relative;
+    padding-left: 58px;
+  }
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .main {
+    padding: 24px;
+    padding-top: 26px;
+  }
+
+  header {
+    padding-left: 56px;
+  }
+
+  header h1 {
+    font-size: 22px;
+  }
+
+  .profile-card {
+    grid-template-columns: 1fr;
+  }
+
+  .left-profile {
+    min-height: auto;
+    padding: 30px 20px 35px;
+  }
+
+  .left-profile::after {
+    display: none;
+  }
+
+  .right-profile {
+    padding: 25px;
+  }
+}
+
+/* =========================================================
+   LARGE MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  .container {
+    display: block;
+  }
+
+  .sidebar {
+    position: fixed !important;
+    width: min(300px, 86vw);
+    height: 100vh;
+    min-height: 100vh;
+    padding: 22px 16px;
+  }
+
+  .logo {
+    margin-bottom: 25px;
+  }
+
+  .sidebar ul {
+    display: block;
+  }
+
+  .sidebar li {
+    padding: 13px 14px;
+    margin-bottom: 6px;
+    font-size: 13px;
+  }
+
+  /*
+     No artificial top gap.
+     Hamburger + title remain together.
+  */
+  .main {
+    padding: 18px;
+    padding-top: 20px;
+  }
+
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+    margin-bottom: 20px;
+    padding-left: 56px;
+  }
+
+  header h1 {
+    font-size: 20px;
+  }
+
+  header > div:first-child p {
+    font-size: 11px;
+  }
+
+  .profile-box {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .profile-card {
+    grid-template-columns: 1fr;
+    border-radius: 17px;
+  }
+
+  .left-profile {
+    min-height: auto;
+    padding: 30px 20px 35px;
+  }
+
+  .left-profile img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .right-profile {
+    padding: 22px 18px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .buttons {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .buttons button {
+    width: 100%;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+  .menu-toggle {
+    top: 18px;
+    left: 14px;
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+  }
+
+  .main {
+    padding: 12px;
+    padding-top: 18px;
+  }
+
+  header {
+    padding-left: 54px;
+  }
+
+  header h1 {
+    font-size: 18px;
+  }
+
+  header > div:first-child p {
+    font-size: 10px;
+  }
+
+  .profile-box {
+    padding: 6px 10px;
+  }
+
+  .profile-box img {
+    width: 38px;
+    height: 38px;
+  }
+
+  .profile-box h3 {
+    font-size: 12px;
+  }
+
+  .profile-box span {
+    font-size: 9px;
+  }
+
+  .left-profile {
+    padding: 25px 15px 30px;
+  }
+
+  .left-profile img {
+    width: 105px;
+    height: 105px;
+  }
+
+  .right-profile {
+    padding: 18px 14px;
+  }
+
+  .section h2 {
+    font-size: 14px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .item {
+    padding: 11px 12px;
+  }
+
+  .item label {
+    font-size: 8px;
+  }
+
+  .item span {
+    font-size: 11px;
+  }
+}
+
+/* =========================================================
+   VERY SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 360px) {
+
+  .main {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 16px;
+  }
+
+  header {
+    padding-left: 52px;
+  }
+
+  .profile-card {
+    border-radius: 14px;
+  }
+
+  .right-profile {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .left-profile {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .sidebar,
+  .sidebar-overlay,
+  .menu-toggle,
+  .sidebar li {
+    transition: none !important;
+  }
+}
+
+
+/* =========================================================
+   MOBILE HEADER + HAMBURGER ALIGNMENT
+   ========================================================= */
+
+@media (max-width: 700px) {
+  .main {
+    position: relative;
+  }
+
+  .menu-toggle {
+    position: fixed;
+    top: 20px;
+    left: 14px;
+    width: 42px;
+    height: 42px;
+    z-index: 100;
+  }
+
+  header {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    min-height: 44px;
+    padding-left: 54px;
+    margin-bottom: 20px;
+  }
+
+  header > div:first-child {
+    flex: 1;
+    min-width: 0;
+  }
+
+  header h1,
+  header > div:first-child p {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .profile-box {
+    width: auto;
+    flex-shrink: 0;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    min-height: 44px;
+    padding-left: 52px;
+    gap: 6px;
+  }
+
+  .menu-toggle {
+    top: 18px;
+    left: 14px;
+  }
+
+  .profile-box {
+    padding: 6px 8px;
+  }
+
+  .profile-box > div {
+    min-width: 0;
+  }
+
+  .profile-box h3,
+  .profile-box span {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+@media (max-width: 360px) {
+  header {
+    padding-left: 50px;
+    gap: 5px;
+  }
+
+  .profile-box h3 {
+    font-size: 11px;
+  }
+
+  .profile-box span {
+    font-size: 8px;
+  }
+}
+
+
+/* =========================================================
+   FIXED MOBILE HEADER
+   White background + stays at top while scrolling
+   ========================================================= */
+
+@media (max-width: 700px) {
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    min-height: 60px;
+
+    margin: 0;
+    padding: 8px 14px 8px 68px;
+
+    background: #ffffff;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+
+    z-index: 2000;
+    box-sizing: border-box;
+  }
+
+  .sidebar {
+        z-index: 3000 !important;
+    }
+
+  .menu-toggle {
+    top: 8px;
+    left: 14px;
+    z-index: 2100;
+  }
+
+  .main {
+    padding-top: 82px;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    min-height: 58px;
+    padding: 7px 10px 7px 64px;
+  }
+
+  .menu-toggle {
+    top: 7px;
+    left: 12px;
+  }
+
+  .main {
+    padding-top: 76px;
+  }
+}
+
+@media (max-width: 360px) {
+  header {
+    padding-left: 60px;
+  }
+
+  .main {
+    padding-top: 74px;
+  }
+}

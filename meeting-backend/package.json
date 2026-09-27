@@ -1,0 +1,15 @@
+{
+    "name": "bcc-learning-center-backend",
+    "version": "1.0.0",
+    "private": true,
+    "description": "Backend for BCC PTM, Motivational Sessions and Super 15 group chat.",
+    "main": "server.js",
+    "scripts": {
+        "start": "node server.js",
+        "dev": "node server.js"
+    },
+    "dependencies": {
+        "express": "^5.1.0",
+        "socket.io": "^4.8.1"
+    }
+}

@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Motivational Sessions | BCC</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <script src="https://meet.jit.si/external_api.js"></script>
+  <link rel="stylesheet" href="ptm.css">
+
+  <!-- Standard Favicon for Browser Tabs & Chrome Shortcuts -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Apple/Safari Specific Icon (For pinned tabs or home screen shortcuts) -->
+  <link rel="apple-touch-icon" href="favicon.ico">
+</head>
+
+<body>
+  <div class="dashboard-container">
+
+    <aside class="sidebar">
+      <div class="school-brand">
+        <img src="images/logo.png" alt="Welcome Public School Logo">
+        <h2>
+          <span>BRILLIANT</span>
+          <span>COACHING CENTRE</span>
+        </h2>
+        <div class="established">Established in 2009</div>
+        <div class="address">
+          Kairi Birpur, Po- Bishanpur<br>
+          Dist- Kishanganj<br>
+          <span>BIHAR</span>
+        </div>
+      </div>
+
+      <div class="menu-title">Learning Center</div>
+      <nav class="sidebar-menu">
+        <a href="ptm.html"><i class="fa-solid fa-users"></i><span>PTM</span></a>
+        <a href="ai-tutor.html"><i class="fa-solid fa-robot"></i><span>AI Tutor</span></a>
+        <a href="motivational.html" class="active"><i class="fa-solid fa-fire"></i><span>Motivational
+            Sessions</span></a>
+        <a href="super.html"><i class="fa-solid fa-star"></i><span>Super 15</span></a>
+        <a href="learning.html"><i class="fa-solid fa-chalkboard-user"></i><span>Digital Classroom</span></a>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <a href="dashboard.html" class="back-dashboard"><i class="fa-solid fa-arrow-left"></i><span>Back to
+            Dashboard</span></a>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="top-header">
+        <div class="page-heading">
+          <small>Learning Center</small>
+          <h1>Motivational Sessions</h1>
+          <p>Join live motivational sessions with invited speakers.</p>
+        </div>
+        <div class="header-actions">
+          <button class="notification-btn" type="button" aria-label="Notifications"><i
+              class="fa-regular fa-bell"></i></button>
+          <div class="profile-mini"><img src="images/student.jpg" alt="Student"><span
+              id="studentNameMini">Student</span></div>
+        </div>
+      </header>
+
+      <section class="ptm-section" id="motivationalMeeting">
+        <div class="section-heading">
+          <div>
+            <span class="section-kicker">LIVE MOTIVATIONAL SESSION</span>
+            <h2 id="motivationalTitle">Motivational Session</h2>
+            <p id="motivationalDescription">Join the scheduled session directly from this page.</p>
+          </div>
+          <span class="live-badge" id="motivationalBadge"><span></span>LIVE</span>
+        </div>
+
+        <div class="jitsi-wrapper" id="motivationalMeetingWindow">
+          <div class="jitsi-header">
+            <div class="meeting-title">
+              <span class="meeting-live-dot"></span>
+              <div>
+                <strong id="meetingTitle">Motivational Session</strong>
+                <small id="meetingSpeaker">Teacher / Speaker</small>
+              </div>
+            </div>
+            <div class="meeting-header-actions">
+              <div class="meeting-status" id="meetingStatus">Not joined</div>
+              <button type="button" class="meeting-icon-btn" id="motivationalFullscreenBtn" aria-label="Full screen"
+                title="Full screen"><i class="fa-solid fa-expand"></i></button>
+              <button type="button" class="meeting-icon-btn" id="motivationalCloseBtn" aria-label="Close meeting"
+                title="Close meeting"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+          </div>
+
+          <div id="motivationalJitsiContainer"></div>
+
+          <div class="jitsi-placeholder" id="motivationalPlaceholder">
+            <div class="placeholder-icon"><i class="fa-solid fa-microphone-lines"></i></div>
+            <h3 id="placeholderTitle">Ready to join the session?</h3>
+            <p id="placeholderText">Your camera and microphone can be controlled after joining.</p>
+            <button class="join-ptm-btn" id="joinMotivationalBtn" type="button"><i class="fa-solid fa-video"></i>Join
+              Session</button>
+          </div>
+        </div>
+      </section>
+
+      <footer class="page-footer">
+        © 2009 Brilliant Coaching Center. All Rights Reserved.
+      </footer>
+    </main>
+  </div>
+
+  <script src="login.js"></script>
+  <script src="motivational-data.js"></script>
+  <script src="meeting-common.js"></script>
+  <script src="motivational.js"></script>
+</body>
+
+</html>

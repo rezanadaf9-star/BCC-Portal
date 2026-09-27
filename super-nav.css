@@ -1,0 +1,66 @@
+/* Super 15 sidebar subsections */
+.sidebar-menu a,
+.sidebar-menu a:hover,
+.sidebar-menu a:focus,
+.super-submenu a,
+.super-submenu a:hover,
+.super-submenu a:focus {
+    text-decoration: none;
+}
+
+.super-submenu {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    margin: 2px 0 8px 28px;
+}
+
+.super-submenu a {
+    min-height: 38px;
+    padding: 8px 12px;
+    border-radius: 9px;
+    color: #777777;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 11px;
+    transition: .25s ease;
+}
+
+.super-submenu a i {
+    width: 16px;
+    font-size: 11px;
+}
+
+.super-submenu a:hover,
+.super-submenu a.submenu-active {
+    background: #ffe600;
+    color: #1b1464;
+}
+
+.super-submenu.hidden {
+    display: none;
+}
+
+/* Keep the meeting compact enough for the full page and footer to remain visible. */
+#super15MeetingWindow {
+    height: 490px;
+}
+
+@media (max-width: 900px) {
+    #super15MeetingWindow {
+        height: 460px;
+    }
+}
+
+
+/* Full screen must use the complete viewport, including Super 15's ID-sized window. */
+#super15MeetingWindow.ptm-fullscreen {
+    width: 100vw !important;
+    height: 100vh !important;
+    height: 100dvh !important;
+    max-width: none !important;
+    max-height: none !important;
+    margin: 0 !important;
+    border-radius: 0 !important;
+}

@@ -1,0 +1,562 @@
+/*====================================
+  RESPONSIVE DESIGN
+====================================*/
+
+/* Large Laptop */
+@media (max-width:1400px){
+
+    .stats{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .students{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+/* Laptop */
+@media (max-width:1200px){
+
+    .container{
+        flex-direction:column;
+    }
+
+    .sidebar{
+        width:100%;
+        height:auto;
+    }
+
+    .middle{
+        grid-template-columns:1fr;
+    }
+
+    .bottom{
+        grid-template-columns:1fr;
+    }
+
+}
+
+/* Tablet */
+@media (max-width:992px){
+
+    header{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:20px;
+    }
+
+    .header-right{
+        width:100%;
+        justify-content:space-between;
+    }
+
+    .banner{
+        flex-direction:column;
+        text-align:center;
+        gap:25px;
+    }
+
+    .banner img{
+        width:220px;
+    }
+
+    .banner-text h2{
+        font-size:28px;
+    }
+
+    .stats{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+/* Mobile */
+@media (max-width:768px){
+
+    .main-content{
+        padding:18px;
+    }
+
+    .sidebar{
+        padding:18px;
+    }
+
+    .logo{
+        justify-content:center;
+    }
+
+    .sidebar ul li{
+        font-size:14px;
+        padding:12px;
+    }
+
+    header h1{
+        font-size:24px;
+    }
+
+    .profile{
+        padding:8px 12px;
+    }
+
+    .profile img{
+        width:42px;
+        height:42px;
+    }
+
+    .banner{
+        padding:25px;
+    }
+
+    .banner-text h2{
+        font-size:24px;
+    }
+
+    .banner-text p{
+        font-size:14px;
+    }
+
+    .stats{
+        grid-template-columns:1fr;
+    }
+
+    .card{
+        padding:22px;
+    }
+
+    .marks{
+        overflow-x:auto;
+    }
+
+    .marks table{
+        min-width:650px;
+    }
+
+    .links{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .students{
+        grid-template-columns:1fr;
+    }
+
+}
+
+/* Small Mobile */
+@media (max-width:500px){
+
+    .header-right{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:15px;
+    }
+
+    .banner img{
+        width:170px;
+    }
+
+    .links{
+        grid-template-columns:1fr;
+    }
+
+    .title{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:15px;
+    }
+
+    .title button{
+        width:100%;
+    }
+
+    .title a{
+        margin-top:5px;
+    }
+
+    footer{
+        font-size:12px;
+    }
+
+}
+
+/*====================================
+  ANIMATIONS
+====================================*/
+
+@keyframes fadeIn{
+
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+@keyframes slideLeft{
+
+    from{
+        opacity:0;
+        transform:translateX(-30px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateX(0);
+    }
+
+}
+
+@keyframes slideRight{
+
+    from{
+        opacity:0;
+        transform:translateX(30px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateX(0);
+    }
+
+}
+
+@keyframes zoomIn{
+
+    from{
+        opacity:0;
+        transform:scale(.8);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+
+}
+
+.sidebar{
+    animation:slideLeft .8s ease;
+}
+
+header{
+    animation:fadeIn .8s ease;
+}
+
+.banner{
+    animation:fadeIn 1s ease;
+}
+
+.card{
+    animation:zoomIn .8s ease;
+}
+
+.marks{
+    animation:slideLeft .8s ease;
+}
+
+.attendance,
+.quick-links{
+    animation:slideRight .8s ease;
+}
+
+.performers,
+.notices{
+    animation:fadeIn 1s ease;
+}
+
+/*====================================
+  EXTRA STYLING
+====================================*/
+
+.card,
+.banner,
+.marks,
+.attendance,
+.quick-links,
+.performers,
+.notices{
+    transition:.35s ease;
+}
+
+.card:hover,
+.banner:hover,
+.marks:hover,
+.attendance:hover,
+.quick-links:hover,
+.performers:hover,
+.notices:hover{
+
+    box-shadow:0 18px 40px rgba(46,91,255,.12);
+
+}
+
+button{
+
+    transition:.3s ease;
+
+}
+
+button:hover{
+
+    transform:translateY(-2px);
+
+}
+
+table tr{
+
+    transition:.25s ease;
+
+}
+
+table tr:hover{
+
+    background:#f2f6ff;
+
+}
+
+.profile img,
+.student img{
+
+    transition:.35s ease;
+
+}
+
+.student:hover img{
+
+    transform:scale(1.08);
+
+}
+
+.notification,
+.profile{
+
+    cursor:pointer;
+
+}
+
+body{
+
+    overflow-x:hidden;
+
+}
+/* ==========================================
+   RESPONSIVE DESIGN
+========================================== */
+
+/* Large Laptop */
+@media (max-width:1200px){
+
+    .stats{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .middle{
+        grid-template-columns:1fr;
+    }
+
+    .bottom{
+        grid-template-columns:1fr;
+    }
+
+    .students{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+/* Tablet */
+@media (max-width:992px){
+
+    .container{
+        flex-direction:column;
+    }
+
+    .sidebar{
+        width:100%;
+        height:auto;
+        padding:20px;
+    }
+
+    .sidebar ul{
+        display:flex;
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:10px;
+    }
+
+    .sidebar ul li{
+        margin:0;
+    }
+
+    .motivation{
+        display:none;
+    }
+
+    header{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:20px;
+    }
+
+    .header-right{
+        width:100%;
+        justify-content:space-between;
+    }
+
+    .banner{
+        flex-direction:column;
+        text-align:center;
+        gap:20px;
+    }
+
+    .banner img{
+        width:220px;
+    }
+
+}
+
+/* Mobile */
+@media (max-width:768px){
+
+    body{
+        overflow-x:hidden;
+    }
+
+    .main-content{
+        padding:15px;
+    }
+
+    header h1{
+        font-size:24px;
+    }
+
+    .header-right{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:15px;
+    }
+
+    .profile{
+        width:100%;
+        justify-content:space-between;
+    }
+
+    .stats{
+        grid-template-columns:1fr;
+    }
+
+    .card{
+        padding:20px;
+    }
+
+    .banner{
+        padding:25px;
+    }
+
+    .banner-text h2{
+        font-size:26px;
+    }
+
+    .banner-text p{
+        font-size:14px;
+    }
+
+    .banner img{
+        width:180px;
+    }
+
+    .marks{
+        overflow-x:auto;
+    }
+
+    .marks table{
+        min-width:700px;
+    }
+
+    .links{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .students{
+        grid-template-columns:1fr;
+    }
+
+}
+
+/* Small Mobile */
+@media (max-width:576px){
+
+    .sidebar{
+        padding:15px;
+    }
+
+    .logo{
+        justify-content:center;
+        text-align:center;
+    }
+
+    .logo h2{
+        font-size:20px;
+    }
+
+    .logo p{
+        font-size:12px;
+    }
+
+    .sidebar ul{
+        flex-direction:column;
+    }
+
+    .sidebar ul li{
+        width:100%;
+        justify-content:flex-start;
+    }
+
+    .banner{
+        padding:20px;
+    }
+
+    .banner-text h2{
+        font-size:22px;
+    }
+
+    .banner img{
+        width:150px;
+    }
+
+    .attendance h1{
+        font-size:40px;
+    }
+
+    .links{
+        grid-template-columns:1fr;
+    }
+
+    .students{
+        grid-template-columns:1fr;
+    }
+
+    .student{
+        width:100%;
+    }
+
+    .title{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:10px;
+    }
+
+    .title button{
+        width:100%;
+    }
+
+    footer{
+        font-size:12px;
+    }
+
+}

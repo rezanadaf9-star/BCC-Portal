@@ -1,0 +1,3599 @@
+/* =========================================
+   WELCOME PUBLIC SCHOOL - STUDENT DASHBOARD
+   Theme:
+   #FFE600  -> Bright Yellow
+   #1B1464  -> Deep Navy
+   #FFF9A6  -> Soft Yellow
+   #FFFFFF  -> White
+   Green    -> Success
+   Red      -> Warning/Error
+   ========================================= */
+
+
+/* =========================================
+   GLOBAL
+   ========================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: #fff9a6;
+  color: #000000;
+}
+
+.container {
+  display: flex;
+  min-height: 100vh;
+}
+
+
+/* =========================================
+   SIDEBAR
+   ========================================= */
+
+.sidebar {
+  width: 300px;
+  min-height: 100vh;
+
+  background: #1b1464;
+
+  padding: 25px 18px;
+
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+
+  overflow-y: auto;
+
+  z-index: 1000;
+}
+
+
+/* =========================================
+   SCHOOL LOGO
+   ========================================= */
+
+.logo {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.logo img {
+  width: 85px;
+  height: 85px;
+
+  object-fit: contain;
+
+  margin-bottom: 10px;
+}
+
+.logo-text h2 {
+  color: #ffffff;
+
+  font-size: 19px;
+  line-height: 1.25;
+
+  font-weight: 700;
+
+  letter-spacing: 0.5px;
+}
+
+.logo-text .school-info {
+  color: #fff9a6;
+
+  font-size: 10px;
+
+  margin-top: 4px;
+}
+
+.logo-text .state {
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+
+/* =========================================
+   SIDEBAR MENU
+   ========================================= */
+
+.sidebar ul {
+  list-style: none;
+}
+
+.sidebar li {
+  display: flex;
+  align-items: center;
+
+  gap: 15px;
+
+  padding: 14px 18px;
+
+  margin-bottom: 7px;
+
+  border-radius: 12px;
+
+  color: #ffffff;
+
+  font-size: 14px;
+
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition: all 0.25s ease;
+}
+
+.sidebar li i {
+  width: 20px;
+
+  font-size: 16px;
+
+  text-align: center;
+}
+
+
+/* Hover */
+
+.sidebar li:hover {
+  background: #fff9a6;
+
+  color: #1b1464;
+
+  transform: translateX(3px);
+}
+
+
+/* Active */
+
+.sidebar li.active {
+  background: #ffe600;
+
+  color: #1b1464;
+
+  font-weight: 600;
+
+  box-shadow:
+    0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* =========================================================
+   LOGOUT
+   ========================================================= */
+
+.sidebar li.logout-btn {
+  margin-top: 9px;
+}
+
+.sidebar li.logout-btn:hover {
+  background: #dc2626;
+  color: #ffffff;
+}
+
+
+/* =========================================
+   MOTIVATION
+   ========================================= */
+
+.motivation {
+  background: #fff9a6;
+
+  border: 1px solid #ffe600;
+
+  border-radius: 18px;
+
+  padding: 20px 15px;
+
+  text-align: center;
+
+  margin-top: 30px;
+}
+
+.motivation img {
+  width: 55px;
+  height: 55px;
+
+  object-fit: contain;
+
+  margin-bottom: 8px;
+}
+
+.motivation h3 {
+  color: #1b1464;
+
+  font-size: 15px;
+
+  line-height: 1.4;
+
+  margin-bottom: 8px;
+}
+
+.motivation p {
+  color: #374151;
+
+  font-size: 11px;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================
+   MAIN CONTENT
+   ========================================= */
+
+.main-content {
+  margin-left: 300px;
+
+  width: calc(100% - 300px);
+
+  padding: 30px;
+}
+
+
+/* =========================================
+   HEADER
+   ========================================= */
+
+header {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin-bottom: 25px;
+}
+
+header h1 {
+  font-size: 25px;
+
+  color: #1b1464;
+
+  font-weight: 600;
+}
+
+header > div:first-child p {
+  color: #555555;
+
+  font-size: 13px;
+
+  margin-top: 4px;
+}
+
+
+/* =========================================
+   HEADER RIGHT
+   ========================================= */
+
+.header-right {
+  display: flex;
+
+  align-items: center;
+
+  gap: 20px;
+}
+
+
+/* =========================================
+   NOTIFICATION
+   ========================================= */
+
+.notification {
+  width: 45px;
+  height: 45px;
+
+  background: #ffffff;
+
+  border: none;
+
+  border-radius: 12px;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  position: relative;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 3px 12px rgba(0, 0, 0, 0.08);
+
+  transition: 0.2s ease;
+}
+
+.notification:hover {
+  background: #ffe600;
+
+  border-color: #ffe600;
+}
+
+.notification i {
+  color: #1b1464;
+
+  font-size: 18px;
+}
+
+.notification span {
+  position: absolute;
+
+  top: -5px;
+  right: -5px;
+
+  background: #dc2626;
+
+  color: #ffffff;
+
+  width: 20px;
+  height: 20px;
+
+  border-radius: 50%;
+
+  font-size: 10px;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+}
+
+
+/* =========================================
+   PROFILE
+   ========================================= */
+
+.profile {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  background: #ffffff;
+
+  padding: 7px 12px;
+
+  border-radius: 14px;
+
+  border: none;
+
+  box-shadow:
+    0 3px 12px rgba(0, 0, 0, 0.06);
+}
+
+.profile img {
+  width: 42px;
+  height: 42px;
+
+  object-fit: cover;
+
+  border-radius: 50%;
+
+  border: 3px solid #ffe600;
+}
+
+.profile h4 {
+  font-size: 13px;
+
+  color: #1b1464;
+}
+
+.profile p {
+  color: #6b7280;
+
+  font-size: 10px;
+}
+
+.profile > i {
+  color: #6b7280;
+
+  font-size: 11px;
+
+  margin-left: 8px;
+}
+
+
+/* =========================================
+   BANNER
+   ========================================= */
+
+.banner {
+  background:
+    linear-gradient(
+      135deg,
+      #1b1464,
+      #49419a
+    );
+
+  border-radius: 20px;
+
+  padding: 25px 30px;
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  min-height: 170px;
+
+  overflow: hidden;
+
+  margin-bottom: 25px;
+
+  box-shadow:
+    0 10px 25px rgba(27, 20, 100, 0.20);
+}
+
+.banner-text h2 {
+  color: #ffffff;
+
+  font-size: 23px;
+
+  margin-bottom: 8px;
+}
+
+.banner-text p {
+  color: #fff9a6;
+
+  font-size: 13px;
+}
+
+.banner img {
+  height: 150px;
+
+  max-width: 240px;
+
+  object-fit: contain;
+}
+
+
+/* =========================================
+   STATISTICS
+   ========================================= */
+
+.stats {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap: 20px;
+
+  margin-bottom: 25px;
+}
+
+
+/* =========================================
+   STAT CARD
+   ========================================= */
+
+.card {
+  background: #ffffff;
+
+  border-radius: 18px;
+
+  padding: 22px;
+
+  box-shadow:
+    0 5px 18px rgba(0, 0, 0, 0.06);
+
+  border: 1px solid #eeeeee;
+
+  transition: all 0.25s ease;
+
+  position: relative;
+
+  overflow: hidden;
+
+  
+}
+
+
+
+.card:hover {
+  transform: translateY(-8px);
+  background-color: #1b1464;
+
+  box-shadow:
+    0 10px 25px rgba(27, 20, 100, 0.12);
+
+  border-color: #faf7d9;
+}
+
+
+/* Icon */
+
+.card i {
+  width: 45px;
+  height: 45px;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  background: #1b1464;
+
+  color: white;
+
+  border-radius: 12px;
+
+  font-size: 18px;
+
+  margin-bottom: 15px;
+
+  transition: all 0.3s ease;
+}
+
+.card:hover i {
+    transform: rotate(12deg) scale(1.1);
+    background-color: white;
+    color: #1b1464;
+}
+
+.card h3 {
+  font-size: 13px;
+
+  color: #6b7280;
+
+  font-weight: 500;
+
+  margin-bottom: 6px;
+}
+
+.card h2 {
+  font-size: 24px;
+
+  color: #1b1464;
+
+  margin-bottom: 5px;
+}
+
+.card:hover h2 {
+  color: white;
+}
+
+.card p {
+  color: #16a34a;
+
+  font-size: 11px;
+
+  font-weight: 600;
+}
+
+
+/* =========================================
+   MIDDLE SECTION
+   ========================================= */
+
+.middle {
+  display: grid;
+
+  grid-template-columns: 2fr 1fr;
+
+  gap: 20px;
+
+  margin-bottom: 25px;
+}
+
+
+/* =========================================
+   TITLES
+   ========================================= */
+
+.title {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin-bottom: 20px;
+}
+
+.title h2 {
+  color: #1b1464;
+
+  font-size: 18px;
+
+  font-weight: 600;
+}
+
+
+/* =========================================
+   BUTTON
+   ========================================= */
+
+.title button {
+  border: none;
+
+  background: #1b1464;
+
+  color: #ffffff;
+
+  padding: 8px 14px;
+
+  border-radius: 9px;
+
+  font-family: inherit;
+
+  font-size: 11px;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+.title button:hover {
+  background: #ffe600;
+
+  color: #1b1464;
+
+  transform: translateY(-1px);
+}
+
+
+/* =========================================
+   LINKS
+   ========================================= */
+
+.title a {
+  color: #1b1464;
+
+  font-size: 11px;
+
+  text-decoration: none;
+
+  font-weight: 600;
+}
+
+.title a:hover {
+  color: #970747;
+
+  text-decoration: underline;
+}
+
+
+/* =========================================
+   MARKS
+   ========================================= */
+
+.marks {
+  background: #ffffff;
+
+  padding: 25px;
+
+  border-radius: 18px;
+
+  box-shadow:
+    0 5px 18px rgba(0, 0, 0, 0.06);
+
+  border: 1px solid #eeeeee;
+
+  overflow-x: auto;
+}
+
+.marks table {
+  width: 100%;
+
+  border-collapse: collapse;
+
+  min-width: 550px;
+}
+
+
+/* Table Header */
+
+.marks th {
+  background: #1b1464;
+
+  color: #ffffff;
+
+  padding: 12px 10px;
+
+  font-size: 11px;
+
+  text-align: left;
+
+  font-weight: 600;
+}
+
+.marks th:first-child {
+  border-radius: 8px 0 0 8px;
+}
+
+.marks th:last-child {
+  border-radius: 0 8px 8px 0;
+}
+
+
+/* Table Rows */
+
+.marks td {
+  padding: 13px 10px;
+
+  font-size: 12px;
+
+  color: #374151;
+
+  border-bottom:
+    1px solid #eeeeee;
+}
+
+.marks tr:hover td {
+  background: #fff9a6;
+}
+
+
+/* Percentage */
+
+.marks td:nth-child(4) {
+  color: #1b1464;
+
+  font-weight: 600;
+}
+
+
+/* Grade */
+
+.marks td:last-child {
+  color: #16a34a;
+
+  font-weight: 700;
+}
+
+
+/* =========================================
+   RIGHT PANEL
+   ========================================= */
+
+.right-panel {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 20px;
+}
+
+
+/* =========================================
+   ATTENDANCE
+   ========================================= */
+
+.attendance {
+  background: #ffffff;
+
+  padding: 25px;
+
+  border-radius: 18px;
+
+  box-shadow:
+    0 5px 18px rgba(0, 0, 0, 0.06);
+
+  border: 1px solid #eeeeee;
+}
+
+.attendance h1 {
+  color: #1b1464;
+
+  font-size: 34px;
+
+  margin-top: 5px;
+}
+
+.attendance > p {
+  color: #16a34a;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  margin-bottom: 15px;
+}
+
+
+/* Progress */
+
+.progress {
+  width: 100%;
+
+  height: 9px;
+
+  background: #fff9a6;
+
+  border-radius: 20px;
+
+  overflow: hidden;
+}
+
+.progress .bar {
+  width: 92%;
+
+  height: 100%;
+
+  background: #1b1464;
+
+  border-radius: 20px;
+}
+
+
+/* =========================================
+   QUICK LINKS
+   ========================================= */
+
+.quick-links {
+  background: #ffffff;
+
+  padding: 25px;
+
+  border-radius: 18px;
+
+  box-shadow:
+    0 5px 18px rgba(0, 0, 0, 0.06);
+
+  border: 1px solid #eeeeee;
+
+
+}
+
+.quick-links h2 {
+  color: #1b1464;
+
+  font-size: 18px;
+
+  margin-bottom: 17px;
+}
+
+.links {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 10px;
+}
+
+.links div {
+  background: #fff9a6;
+
+  padding: 13px 10px;
+
+  border-radius: 11px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+.links div:hover {
+  background: #ffe600;
+
+  color: #1b1464;
+
+  transform: translateY(-2px);
+}
+
+.links i {
+  color: #1b1464;
+
+  font-size: 14px;
+}
+
+.links span {
+  font-size: 11px;
+
+  color: #1b1464;
+}
+
+
+/* =========================================
+   BOTTOM SECTION
+   ========================================= */
+
+.bottom {
+  display: grid;
+
+  grid-template-columns: 2fr 1fr;
+
+  gap: 20px;
+
+  margin-bottom: 25px;
+}
+
+
+/* =========================================
+   PERFORMERS
+   ========================================= */
+
+.performers {
+  background: #ffffff;
+
+  padding: 25px;
+
+  border-radius: 18px;
+
+  box-shadow:
+    0 5px 18px rgba(0, 0, 0, 0.06);
+
+  border: 1px solid #eeeeee;
+}
+
+.students {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 15px;
+}
+
+.student {
+  background: #fff9a6;
+
+  padding: 16px 10px;
+
+  border-radius: 15px;
+
+  text-align: center;
+
+  transition: all 0.2s ease;
+}
+
+.student:hover {
+  background: #1b1464;
+
+  transform: translateY(-3px);
+}
+
+.student img {
+  width: 60px;
+  height: 60px;
+
+  border-radius: 50%;
+
+  object-fit: cover;
+
+  border: 3px solid #ffe600;
+
+  margin-bottom: 8px;
+}
+
+.student h4 {
+  color: #000000;
+
+  font-size: 11px;
+
+  margin-bottom: 4px;
+}
+
+.student p {
+  color: #16a34a;
+
+  font-size: 12px;
+
+  font-weight: 700;
+}
+
+.student:hover h4,
+.student:hover p {
+  color: #ffffff;
+}
+
+
+/* =========================================
+   NOTICES
+   ========================================= */
+
+.notices {
+  background: #ffffff;
+
+  padding: 25px;
+
+  border-radius: 18px;
+
+  box-shadow:
+    0 5px 18px rgba(0, 0, 0, 0.06);
+
+  border: 1px solid #eeeeee;
+}
+
+.notice {
+  background: #fff9a6;
+
+  padding: 14px;
+
+  border-radius: 12px;
+
+  margin-bottom: 10px;
+
+  border-left: 5px solid #ffe600;
+
+  transition: all 0.2s ease;
+}
+
+.notice:hover {
+  background: #ffe600;
+
+  border-left-color: #1b1464;
+}
+
+.notice h4 {
+  color: #1b1464;
+
+  font-size: 12px;
+
+  margin-bottom: 4px;
+}
+
+.notice p {
+  color: #555555;
+
+  font-size: 10px;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================
+   FOOTER
+   ========================================= */
+
+footer {
+  text-align: center;
+
+  color: #6b7280;
+
+  font-size: 10px;
+
+  padding: 10px 0 5px;
+}
+
+
+/* =========================================
+   SCROLLBAR
+   ========================================= */
+
+.sidebar::-webkit-scrollbar {
+  width: 5px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+  background: #110d46;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background: #ffe600;
+
+  border-radius: 10px;
+}
+
+
+/* =========================================
+   SELECTION
+   ========================================= */
+
+::selection {
+  background: #ffe600;
+
+  color: #1b1464;
+}
+
+
+/* ==========================================
+   FLOATING LEARNING MENU
+========================================== */
+
+.floating-learning-menu {
+
+    position: fixed;
+
+    right: 28px;
+    bottom: 28px;
+
+    width: 82px;
+    height: 170px;
+
+    z-index: 99999;
+
+    /*
+       IMPORTANT:
+       The hover area includes both circles.
+       This prevents the animation from disappearing
+       while the mouse moves from Learn to AI Tutor.
+    */
+
+    padding-top: 5px;
+
+}
+
+
+/* ==========================================
+   COMMON CIRCLE
+========================================== */
+
+.floating-circle {
+
+    position: absolute;
+
+    right: 0;
+
+    width: 72px;
+    height: 72px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 3px;
+
+    text-decoration: none;
+
+    font-family: 'Poppins', sans-serif;
+
+    cursor: pointer;
+
+    box-sizing: border-box;
+
+}
+
+
+/* ==========================================
+   LEARN BUTTON
+========================================== */
+
+.floating-learn {
+
+    bottom: 0;
+
+    z-index: 10;
+
+    background: linear-gradient(
+        145deg,
+        #110d46,
+        #403c79
+    );
+
+    color: #ffffff;
+
+    border: 1px solid rgb(51, 43, 85);
+
+    box-shadow:
+        0 8px 25px rgba(80, 80, 160, 0.28);
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        background 0.35s ease;
+
+}
+
+
+/* Learn icon */
+
+.floating-learn i {
+
+    font-size: 22px;
+
+    color: #ffffff;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+
+}
+
+
+/* Learn text */
+
+.floating-learn span {
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.4px;
+
+    color: #ffffff;
+
+    transition: color 0.3s ease;
+
+}
+
+
+/* ==========================================
+   AI TUTOR BUTTON
+========================================== */
+
+.floating-ai {
+
+    /*
+       Initially sitting directly behind
+       the Learn circle.
+    */
+
+    bottom: 0;
+
+    z-index: 5;
+
+    background: linear-gradient(
+        145deg,
+        #110d46,
+        #403c79
+    );
+
+    border: 1px solid rgb(51, 43, 85);
+
+    color: #fdfdfd;
+    
+    box-shadow:
+        0 6px 20px rgba(80, 80, 160, 0.20);
+
+    /*
+       Starts smaller, behind Learn
+    */
+
+    transform:
+        translateY(0)
+        scale(0.72);
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transition:
+        transform 0.45s cubic-bezier(
+            0.22,
+            1,
+            0.36,
+            1
+        ),
+        opacity 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease;
+
+}
+
+
+/* AI icon */
+
+.floating-ai i {
+
+    font-size: 21px;
+
+    color: #fcfcfc;
+
+}
+
+
+/* AI text */
+
+.floating-ai span {
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.3px;
+
+    color: #fdfdfd;
+
+}
+
+
+/* ==========================================
+   HOVER AREA
+========================================== */
+
+/*
+   When the mouse enters the floating menu,
+   AI Tutor rises from behind Learn.
+*/
+
+.floating-learning-menu:hover .floating-ai {
+
+    opacity: 1;
+
+    pointer-events: auto;
+
+    /*
+       Move AI Tutor above Learn
+       with a clean 12px gap.
+    */
+
+    transform:
+        translateY(-84px)
+        scale(1);
+
+}
+
+
+/* ==========================================
+   LEARN ANIMATION WHILE MENU IS OPEN
+========================================== */
+
+.floating-learning-menu:hover .floating-learn {
+
+    transform: scale(0.94);
+
+    box-shadow:
+        0 10px 28px rgba(80, 80, 160, 0.32);
+
+}
+
+
+/* ==========================================
+   LEARN HOVER / ACTIVE LOOK
+========================================== */
+
+.floating-learn:hover {
+
+    transform: scale(1.04);
+
+    background: linear-gradient(
+        145deg,
+        #110d46,
+        #403c79
+    );
+
+    border: 1px solid rgb(51, 43, 85);
+
+    box-shadow:
+        0 12px 30px rgba(80, 80, 160, 0.30),
+        0 0 18px rgba(138, 138, 255, 0.25);
+
+}
+
+
+.floating-learn:hover i,
+.floating-learn:hover span {
+
+    color: #ffffff;
+
+}
+
+
+/* ==========================================
+   AI TUTOR HOVER
+========================================== */
+
+.floating-ai:hover {
+
+    transform:
+        translateY(-84px)
+        scale(1.05);
+
+    background: linear-gradient(
+        145deg,
+        #110d46,
+        #403c79
+    );
+
+    border: 1px solid rgb(51, 43, 85);
+
+    box-shadow:
+        0 12px 30px rgba(80, 80, 160, 0.30),
+        0 0 18px rgba(138, 138, 255, 0.28);
+
+}
+
+
+.floating-ai:hover i,
+.floating-ai:hover span {
+
+    color: #ffffff;
+
+}
+
+
+/* ==========================================
+   CLICK EFFECT
+========================================== */
+
+.floating-circle:active {
+
+    transform: scale(0.94);
+
+}
+
+
+/* ==========================================
+   SUBTLE PULSE AROUND LEARN
+========================================== */
+
+.floating-learn::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: -4px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(
+        138,
+        138,
+        255,
+        0.20
+    );
+
+    pointer-events: none;
+
+    animation: floatingPulse 3s ease-in-out infinite;
+
+}
+
+
+@keyframes floatingPulse {
+
+    0% {
+
+        transform: scale(1);
+
+        opacity: 0.65;
+
+    }
+
+    50% {
+
+        transform: scale(1.12);
+
+        opacity: 0;
+
+    }
+
+    100% {
+
+        transform: scale(1.12);
+
+        opacity: 0;
+
+    }
+
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 700px) {
+
+    .floating-learning-menu {
+
+        right: 18px;
+
+        bottom: 18px;
+
+        width: 72px;
+
+        height: 148px;
+
+    }
+
+
+    .floating-circle {
+
+        width: 62px;
+
+        height: 62px;
+
+    }
+
+
+    .floating-learn i {
+
+        font-size: 19px;
+
+    }
+
+
+    .floating-learn span {
+
+        font-size: 9px;
+
+    }
+
+
+    .floating-ai i {
+
+        font-size: 18px;
+
+    }
+
+
+    .floating-ai span {
+
+        font-size: 9px;
+
+    }
+
+
+    .floating-learning-menu:hover .floating-ai {
+
+        transform:
+            translateY(-72px)
+            scale(1);
+
+    }
+
+
+    .floating-ai:hover {
+
+        transform:
+            translateY(-72px)
+            scale(1.05);
+
+    }
+
+}
+
+
+/*====================================================
+  RESPONSIVE DESIGN
+====================================================*/
+
+
+/*====================================================
+  LARGE TABLET
+====================================================*/
+
+@media (max-width: 1200px) {
+
+    .sidebar {
+        width: 250px;
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .students {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+
+/*====================================================
+  TABLET
+====================================================*/
+
+@media (max-width: 950px) {
+
+    .sidebar {
+        width: 220px;
+
+        padding: 18px;
+    }
+
+    .logo img {
+        width: 105px;
+        height: 105px;
+    }
+
+    .logo-text h2 {
+        font-size: 21px;
+    }
+
+    .sidebar ul li {
+        padding: 12px 13px;
+
+        font-size: 14px;
+    }
+
+    .main-content {
+        padding: 22px;
+    }
+
+    .middle {
+        grid-template-columns: 1fr;
+    }
+
+    .bottom {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/*====================================================
+  MOBILE
+====================================================*/
+
+@media (max-width: 700px) {
+
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        position: relative;
+
+        width: 100%;
+
+        height: auto;
+
+        padding: 15px;
+
+        box-shadow: none;
+    }
+
+    .logo {
+        margin-bottom: 20px;
+    }
+
+    .logo img {
+        width: 85px;
+        height: 85px;
+    }
+
+    .logo-text h2 {
+        font-size: 20px;
+    }
+
+    .logo-text .school-info {
+        font-size: 7px;
+    }
+
+    .sidebar ul {
+        display: grid;
+
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 8px;
+    }
+
+    .sidebar ul li {
+        margin-bottom: 0;
+
+        padding: 11px;
+
+        font-size: 13px;
+    }
+
+    .motivation {
+        display: none;
+    }
+
+    .main-content {
+        padding: 18px;
+    }
+
+    header {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 20px;
+    }
+
+    header h1 {
+        font-size: 25px;
+    }
+
+    .header-right {
+        width: 100%;
+
+        justify-content: space-between;
+    }
+
+    .banner {
+        padding: 25px;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 20px;
+    }
+
+    .banner-text h2 {
+        font-size: 25px;
+    }
+
+    .banner img {
+        width: 180px;
+
+        margin: auto;
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+    }
+
+    .marks {
+        overflow-x: auto;
+    }
+
+    .marks table {
+        min-width: 600px;
+    }
+
+    .students {
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 12px;
+    }
+
+    .student {
+        padding: 15px;
+    }
+
+    .student img {
+        width: 70px;
+        height: 70px;
+    }
+
+    .student h4 {
+        font-size: 13px;
+    }
+}
+
+
+/*====================================================
+  SMALL MOBILE
+====================================================*/
+
+@media (max-width: 450px) {
+
+    .sidebar ul {
+        grid-template-columns: 1fr;
+    }
+
+    .header-right {
+        gap: 10px;
+    }
+
+    .profile {
+        padding: 6px 10px;
+    }
+
+    .profile img {
+        width: 42px;
+        height: 42px;
+    }
+
+    .profile h4 {
+        font-size: 13px;
+    }
+
+    .notification {
+        width: 42px;
+        height: 42px;
+    }
+
+    .banner {
+        padding: 20px;
+    }
+
+    .banner-text h2 {
+        font-size: 22px;
+    }
+
+    .card {
+        padding: 20px;
+    }
+
+    .card h2 {
+        font-size: 30px;
+    }
+
+    .links {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .students {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .student {
+        padding: 12px;
+    }
+}
+
+
+/* ============================================================
+   MOBILE / TABLET HEADER + SIDEBAR
+   Matches the marks-page behavior:
+   - hamburger, title and right controls stay on one row
+   - header remains sticky while scrolling
+   - sidebar becomes an off-canvas drawer
+   ============================================================ */
+
+/* Header title group */
+.header-title-wrap {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+}
+
+.header-title-text {
+    min-width: 0;
+}
+
+/* Hamburger is hidden on desktop */
+.menu-toggle {
+    display: none;
+    flex: 0 0 auto;
+    width: 44px;
+    height: 44px;
+    border: none;
+    outline: none;
+    border-radius: 12px;
+    background: #1b1464;
+    color: #ffffff;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    cursor: pointer;
+    box-shadow: 0 5px 16px rgba(27, 20, 100, 0.20);
+    transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.menu-toggle:hover,
+.menu-toggle:focus-visible {
+    background: #ffe600;
+    color: #1b1464;
+    outline: none;
+}
+
+.menu-toggle:active {
+    transform: scale(0.94);
+}
+
+/* Dark backdrop behind the off-canvas sidebar */
+.sidebar-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(10, 8, 45, 0.48);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    z-index: 1999;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+body.sidebar-open {
+    overflow: hidden;
+}
+
+/* ============================================================
+   TABLET
+   ============================================================ */
+
+@media (max-width: 1050px) {
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .sidebar {
+        position: fixed !important;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 290px;
+        max-width: 86vw;
+        height: 100vh;
+        transform: translateX(-105%);
+        transition: transform 0.30s cubic-bezier(0.22, 1, 0.36, 1);
+        box-shadow: 8px 0 30px rgba(0, 0, 0, 0.18);
+        z-index: 2000;
+        overflow-y: auto;
+    }
+
+    .sidebar.open {
+        transform: translateX(0);
+    }
+
+    .sidebar-overlay {
+        display: block;
+    }
+
+    body.sidebar-open .sidebar-overlay {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+
+    .main-content {
+        margin-left: 0;
+        width: 100%;
+        padding: 28px;
+    }
+
+    /* One sticky row: hamburger + title on left, notification + profile on right */
+    header {
+        position: sticky;
+        top: 0;
+        z-index: 1950;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 14px;
+        padding: 10px 0 14px;
+        margin-bottom: 25px;
+        background: #fff9a6;
+    }
+
+    .header-title-wrap {
+        flex: 1 1 auto;
+        min-width: 0;
+        align-items: center;
+    }
+
+    .header-title-text {
+        min-width: 0;
+    }
+
+    header h1 {
+        font-size: clamp(19px, 3vw, 24px);
+        line-height: 1.25;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    header > .header-title-wrap p {
+        font-size: 11px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .header-right {
+        flex: 0 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 10px;
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .middle,
+    .bottom {
+        grid-template-columns: 1fr;
+    }
+
+    .banner-text {
+        max-width: 70%;
+    }
+
+    .banner img {
+        max-width: 210px;
+    }
+}
+
+/* ============================================================
+   SMALL TABLET / LARGE PHONE
+   ============================================================ */
+
+@media (max-width: 768px) {
+
+    .main-content {
+        padding: 18px;
+    }
+
+    header {
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+
+    .menu-toggle {
+        width: 42px;
+        height: 42px;
+        border-radius: 11px;
+        font-size: 18px;
+    }
+
+    .header-title-wrap {
+        gap: 9px;
+    }
+
+    header h1 {
+        font-size: clamp(18px, 4vw, 22px);
+    }
+
+    header > .header-title-wrap p {
+        font-size: clamp(9px, 2.7vw, 11px);
+        line-height: 1.4;
+    }
+
+    .header-right {
+        gap: 8px;
+    }
+
+    .notification {
+        width: 42px;
+        height: 42px;
+        flex: 0 0 auto;
+    }
+
+    .profile {
+        flex: 0 0 auto;
+        max-width: 190px;
+    }
+
+    .profile > div {
+        min-width: 0;
+    }
+
+    .profile h4 {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .banner {
+        min-height: auto;
+        padding: 22px;
+    }
+
+    .banner-text {
+        max-width: 100%;
+    }
+
+    .banner-text h2 {
+        font-size: clamp(19px, 4.8vw, 24px);
+        line-height: 1.35;
+    }
+
+    .banner-text p {
+        font-size: 11px;
+        line-height: 1.5;
+    }
+
+    .banner img {
+        width: min(180px, 65%);
+        max-width: 180px;
+        height: auto;
+        align-self: center;
+    }
+
+    .stats {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+    }
+
+    .card {
+        padding: 17px;
+    }
+
+    .card h3 {
+        font-size: 11px;
+    }
+
+    .card h2 {
+        font-size: 21px;
+    }
+
+    .card p {
+        font-size: 9px;
+    }
+
+    .marks,
+    .attendance,
+    .quick-links,
+    .performers,
+    .notices {
+        padding: 18px;
+    }
+
+    .title {
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    .title h2 {
+        font-size: 16px;
+    }
+
+    .students {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+/* ============================================================
+   PHONE
+   ============================================================ */
+
+@media (max-width: 600px) {
+
+    .sidebar {
+        width: min(310px, 86vw);
+        padding: 22px 16px;
+    }
+
+    .logo {
+        margin-bottom: 25px;
+    }
+
+    .logo img {
+        width: 78px;
+        height: 78px;
+    }
+
+    .logo-text h2 {
+        font-size: 17px;
+    }
+
+    .logo-text .school-info {
+        font-size: 9px;
+    }
+
+    .sidebar ul {
+        display: block;
+    }
+
+    .sidebar li {
+        padding: 13px 15px;
+        margin-bottom: 6px;
+        font-size: 13px;
+    }
+
+    .motivation {
+        margin-top: 22px;
+    }
+
+    .main-content {
+        padding: 14px;
+    }
+
+    /* Still one line: hamburger + title + notification + profile */
+    header {
+        gap: 7px;
+        padding: 9px 0 12px;
+        margin-bottom: 16px;
+    }
+
+    .header-title-wrap {
+        gap: 7px;
+        flex: 1 1 auto;
+    }
+
+    .menu-toggle {
+        width: 40px;
+        height: 40px;
+        border-radius: 10px;
+        font-size: 17px;
+    }
+
+    header h1 {
+        font-size: clamp(16px, 4.7vw, 20px);
+        line-height: 1.2;
+    }
+
+    header > .header-title-wrap p {
+        font-size: 9px;
+        line-height: 1.35;
+    }
+
+    .header-right {
+        gap: 6px;
+    }
+
+    .notification {
+        width: 38px;
+        height: 38px;
+        border-radius: 10px;
+    }
+
+    .notification i {
+        font-size: 16px;
+    }
+
+    .notification span {
+        width: 17px;
+        height: 17px;
+        font-size: 8px;
+        top: -4px;
+        right: -4px;
+    }
+
+    .profile {
+        max-width: 125px;
+        padding: 5px 7px;
+        gap: 6px;
+        border-radius: 11px;
+    }
+
+    .profile img {
+        width: 34px;
+        height: 34px;
+        border-width: 2px;
+        flex: 0 0 auto;
+    }
+
+    .profile h4 {
+        font-size: 10px;
+    }
+
+    .profile p {
+        font-size: 8px;
+    }
+
+    .profile > i {
+        font-size: 8px;
+        margin-left: 0;
+    }
+
+    .banner {
+        border-radius: 16px;
+        padding: 18px;
+        margin-bottom: 16px;
+    }
+
+    .stats {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        margin-bottom: 16px;
+    }
+
+    .card {
+        border-radius: 14px;
+        padding: 14px;
+    }
+
+    .card i {
+        width: 38px;
+        height: 38px;
+        font-size: 15px;
+        margin-bottom: 10px;
+        border-radius: 10px;
+    }
+
+    .card h3 {
+        min-height: 30px;
+        line-height: 1.35;
+    }
+
+    .card h2 {
+        font-size: 19px;
+    }
+
+    .middle,
+    .bottom {
+        gap: 14px;
+        margin-bottom: 16px;
+    }
+
+    .marks,
+    .attendance,
+    .quick-links,
+    .performers,
+    .notices {
+        border-radius: 15px;
+        padding: 15px;
+    }
+
+    .marks table {
+        min-width: 530px;
+    }
+
+    .attendance h1 {
+        font-size: 30px;
+    }
+
+    .links {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .students {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .student {
+        padding: 12px 8px;
+        border-radius: 12px;
+    }
+
+    .student img {
+        width: 56px;
+        height: 56px;
+    }
+
+    .student h4 {
+        font-size: 10px;
+    }
+
+    .student p {
+        font-size: 11px;
+    }
+
+    footer {
+        padding-bottom: 75px;
+        line-height: 1.5;
+    }
+}
+
+/* ============================================================
+   SMALL PHONE
+   ============================================================ */
+
+@media (max-width: 380px) {
+
+    .main-content {
+        padding: 11px;
+    }
+
+    header {
+        gap: 5px;
+        padding-top: 8px;
+    }
+
+    .header-title-wrap {
+        gap: 5px;
+    }
+
+    .menu-toggle {
+        width: 37px;
+        height: 37px;
+        font-size: 16px;
+    }
+
+    header h1 {
+        font-size: 15px;
+    }
+
+    header > .header-title-wrap p {
+        font-size: 8px;
+    }
+
+    .notification {
+        width: 35px;
+        height: 35px;
+    }
+
+    .profile {
+        max-width: 105px;
+        padding: 4px 5px;
+        gap: 4px;
+    }
+
+    .profile img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .profile h4 {
+        font-size: 9px;
+    }
+
+    .profile p {
+        font-size: 7px;
+    }
+
+    .profile > i {
+        display: none;
+    }
+
+    .banner {
+        padding: 15px;
+    }
+
+    .banner-text h2 {
+        font-size: 18px;
+    }
+
+    .banner-text p {
+        font-size: 10px;
+    }
+
+    .stats {
+        gap: 8px;
+    }
+
+    .card {
+        padding: 11px;
+    }
+
+    .card i {
+        width: 34px;
+        height: 34px;
+        font-size: 13px;
+    }
+
+    .card h3 {
+        font-size: 9px;
+        min-height: 26px;
+    }
+
+    .card h2 {
+        font-size: 16px;
+    }
+
+    .card p {
+        font-size: 8px;
+    }
+
+    .title h2 {
+        font-size: 14px;
+    }
+
+    .title button {
+        padding: 7px 9px;
+        font-size: 9px;
+    }
+
+    .marks,
+    .attendance,
+    .quick-links,
+    .performers,
+    .notices {
+        padding: 12px;
+    }
+
+    .links div {
+        padding: 11px 8px;
+    }
+
+    .links span {
+        font-size: 9px;
+    }
+
+    .students {
+        gap: 8px;
+    }
+
+    .student img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .floating-learning-menu {
+        right: 12px;
+        bottom: 12px;
+    }
+}
+
+/* ============================================================
+   ACCESSIBILITY / REDUCED MOTION
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+    .sidebar,
+    .sidebar-overlay,
+    .menu-toggle,
+    * {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+}
+
+/* =========================================================
+   MOBILE SIDEBAR FIX
+   Prevent hidden sidebar from taking page space
+   ========================================================= */
+
+@media (max-width: 1050px) {
+    .sidebar {
+        position: fixed !important;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 290px;
+        height: 100vh;
+        z-index: 2000;
+        transform: translateX(-105%);
+        overflow-y: auto;
+    }
+
+    .sidebar.open {
+        transform: translateX(0);
+    }
+
+    .sidebar ul {
+        display: block;
+    }
+
+    .main-content {
+        margin-left: 0;
+        width: 100%;
+    }
+}
+
+
+/* ============================================================
+   FINAL PHONE / TABLET HEADER RESPONSIVE OVERRIDES
+   ------------------------------------------------------------
+   Required layout:
+   [ HAMBURGER ] [ TITLE + CLASS ] [ NOTIFICATION ] [ PROFILE ]
+
+   The complete header stays on ONE horizontal line.
+   The header is STICKY on phone and tablet.
+   The sidebar is an off-canvas drawer opened by the hamburger.
+   ============================================================ */
+
+/* Keep the page from creating horizontal scrolling on small screens */
+html,
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+/* Header content wrapper created in index.html */
+.header-title-wrap {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+}
+
+.header-title-text {
+    min-width: 0;
+    flex: 1 1 auto;
+}
+
+/* Hamburger: normal header item, NOT fixed to the viewport */
+.menu-toggle {
+    display: none;
+    position: static;
+    flex: 0 0 auto;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    border-radius: 12px;
+    background: #1b1464;
+    color: #ffffff;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    line-height: 1;
+    cursor: pointer;
+    box-shadow: 0 5px 16px rgba(27, 20, 100, 0.20);
+    -webkit-tap-highlight-color: transparent;
+}
+
+.menu-toggle:hover,
+.menu-toggle:focus-visible {
+    background: #ffe600;
+    color: #1b1464;
+}
+
+.menu-toggle:active {
+    transform: scale(0.94);
+}
+
+/* ============================================================
+   TABLET + PHONE
+   ============================================================ */
+
+@media (max-width: 1050px) {
+
+    /* -------------------------
+       PAGE / CONTENT
+       ------------------------- */
+
+    .container {
+        display: block;
+        min-height: 100vh;
+    }
+
+    .main-content {
+        width: 100%;
+        margin-left: 0;
+        padding: 22px;
+    }
+
+    /* -------------------------
+       SIDEBAR DRAWER
+       ------------------------- */
+
+    .sidebar {
+        position: fixed !important;
+        left: 0;
+        top: 0;
+        bottom: 0;
+
+        width: 290px;
+        max-width: 86vw;
+        height: 100vh;
+        min-height: 100vh;
+
+        transform: translateX(-105%);
+        transition: transform 0.30s cubic-bezier(0.22, 1, 0.36, 1);
+
+        z-index: 3000;
+        overflow-y: auto;
+        overflow-x: hidden;
+
+        box-shadow: 8px 0 30px rgba(0, 0, 0, 0.20);
+    }
+
+    .sidebar.open {
+        transform: translateX(0);
+    }
+
+    /* -------------------------
+       SIDEBAR OVERLAY
+       ------------------------- */
+
+    .sidebar-overlay {
+        display: block;
+        position: fixed;
+        inset: 0;
+
+        z-index: 2999;
+
+        background: rgba(10, 8, 45, 0.48);
+
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+
+        transition:
+            opacity 0.25s ease,
+            visibility 0.25s ease;
+
+        backdrop-filter: blur(2px);
+        -webkit-backdrop-filter: blur(2px);
+    }
+
+    body.sidebar-open {
+        overflow: hidden;
+    }
+
+    body.sidebar-open .sidebar-overlay {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+
+    /* -------------------------
+       COMPLETE HEADER
+       -------------------------
+       Everything is in ONE ROW.
+       Nothing is allowed to wrap.
+       ------------------------- */
+
+    header {
+        position: sticky;
+        top: 0;
+        z-index: 2500;
+
+        width: 100%;
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+
+        gap: 14px;
+
+        margin: 0 0 25px 0;
+        padding: 10px 0 14px;
+
+        background: #fff9a6;
+
+        /* Keeps the sticky header visually above page content */
+        isolation: isolate;
+    }
+
+    /* Hamburger + title */
+    .header-title-wrap {
+        display: flex;
+        align-items: center;
+
+        flex: 1 1 auto;
+        min-width: 0;
+
+        gap: 12px;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .header-title-text {
+        min-width: 0;
+        flex: 1 1 auto;
+    }
+
+    header h1 {
+        margin: 0;
+
+        font-size: clamp(19px, 3vw, 25px);
+        line-height: 1.2;
+
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .header-title-text p,
+    header > .header-title-wrap p {
+        margin-top: 4px;
+
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    /* Notification + profile stay on the right */
+    .header-right {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+
+        flex: 0 0 auto;
+        min-width: 0;
+
+        gap: 10px;
+    }
+
+    .notification {
+        flex: 0 0 auto;
+    }
+
+    .profile {
+        flex: 0 0 auto;
+        min-width: 0;
+    }
+
+    .profile h4 {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    /* Never allow the right side to drop below the header */
+    .header-right,
+    .notification,
+    .profile {
+        white-space: nowrap;
+    }
+}
+
+/* ============================================================
+   TABLET
+   ============================================================ */
+
+@media (min-width: 769px) and (max-width: 1050px) {
+
+    .main-content {
+        padding: 24px;
+    }
+
+    header {
+        min-height: 68px;
+    }
+
+    .menu-toggle {
+        width: 44px;
+        height: 44px;
+    }
+
+    header h1 {
+        font-size: clamp(20px, 2.6vw, 25px);
+    }
+
+    .header-title-text p,
+    header > .header-title-wrap p {
+        font-size: 12px;
+    }
+
+    .notification {
+        width: 45px;
+        height: 45px;
+    }
+
+    .profile {
+        padding: 7px 12px;
+    }
+
+    .profile img {
+        width: 42px;
+        height: 42px;
+    }
+
+    .profile h4 {
+        font-size: 13px;
+    }
+
+    .profile p {
+        font-size: 10px;
+    }
+}
+
+/* ============================================================
+   PHONE / LARGE PHONE
+   ============================================================ */
+
+@media (max-width: 768px) {
+
+    .main-content {
+        padding: 16px;
+    }
+
+    header {
+        min-height: 60px;
+
+        gap: 8px;
+        padding: 8px 0 11px;
+        margin-bottom: 18px;
+    }
+
+    .header-title-wrap {
+        gap: 8px;
+    }
+
+    .menu-toggle {
+        width: 40px;
+        height: 40px;
+
+        border-radius: 10px;
+        font-size: 17px;
+    }
+
+    header h1 {
+        font-size: clamp(16px, 4.5vw, 21px);
+        line-height: 1.2;
+    }
+
+    .header-title-text p,
+    header > .header-title-wrap p {
+        margin-top: 3px;
+        font-size: clamp(9px, 2.4vw, 11px);
+    }
+
+    .header-right {
+        gap: 7px;
+    }
+
+    .notification {
+        width: 40px;
+        height: 40px;
+        border-radius: 10px;
+    }
+
+    .notification i {
+        font-size: 16px;
+    }
+
+    .profile {
+        max-width: 145px;
+        padding: 5px 8px;
+        gap: 6px;
+        border-radius: 11px;
+    }
+
+    .profile img {
+        width: 34px;
+        height: 34px;
+        border-width: 2px;
+    }
+
+    .profile h4 {
+        font-size: 10px;
+    }
+
+    .profile p {
+        font-size: 8px;
+    }
+
+    .profile > i {
+        font-size: 8px;
+        margin-left: 0;
+    }
+}
+
+/* ============================================================
+   SMALL PHONE
+   ============================================================ */
+
+@media (max-width: 480px) {
+
+    .main-content {
+        padding: 12px;
+    }
+
+    header {
+        min-height: 56px;
+        gap: 6px;
+        padding: 7px 0 9px;
+        margin-bottom: 15px;
+    }
+
+    .header-title-wrap {
+        gap: 6px;
+    }
+
+    .menu-toggle {
+        width: 38px;
+        height: 38px;
+        border-radius: 9px;
+        font-size: 16px;
+    }
+
+    header h1 {
+        font-size: clamp(15px, 4.4vw, 18px);
+    }
+
+    .header-title-text p,
+    header > .header-title-wrap p {
+        font-size: 8px;
+    }
+
+    .header-right {
+        gap: 5px;
+    }
+
+    .notification {
+        width: 36px;
+        height: 36px;
+        border-radius: 9px;
+    }
+
+    .notification i {
+        font-size: 15px;
+    }
+
+    .notification span {
+        width: 16px;
+        height: 16px;
+        top: -4px;
+        right: -4px;
+        font-size: 8px;
+    }
+
+    .profile {
+        max-width: 118px;
+        padding: 4px 6px;
+        gap: 5px;
+        border-radius: 10px;
+    }
+
+    .profile img {
+        width: 31px;
+        height: 31px;
+    }
+
+    .profile h4 {
+        font-size: 9px;
+    }
+
+    .profile p {
+        font-size: 7px;
+    }
+
+    .profile > i {
+        font-size: 7px;
+    }
+}
+
+/* ============================================================
+   VERY SMALL PHONE
+   ============================================================ */
+
+@media (max-width: 380px) {
+
+    .main-content {
+        padding: 10px;
+    }
+
+    header {
+        gap: 4px;
+        min-height: 52px;
+        padding: 6px 0 8px;
+    }
+
+    .header-title-wrap {
+        gap: 5px;
+    }
+
+    .menu-toggle {
+        width: 35px;
+        height: 35px;
+        border-radius: 8px;
+        font-size: 15px;
+    }
+
+    header h1 {
+        font-size: 14px;
+    }
+
+    .header-title-text p,
+    header > .header-title-wrap p {
+        font-size: 7px;
+    }
+
+    .header-right {
+        gap: 4px;
+    }
+
+    .notification {
+        width: 34px;
+        height: 34px;
+    }
+
+    .notification i {
+        font-size: 14px;
+    }
+
+    .profile {
+        max-width: 100px;
+        padding: 3px 5px;
+        gap: 4px;
+    }
+
+    .profile img {
+        width: 28px;
+        height: 28px;
+    }
+
+    .profile h4 {
+        font-size: 8px;
+    }
+
+    .profile p {
+        font-size: 6.5px;
+    }
+
+    .profile > i {
+        display: none;
+    }
+}
+
+/* ============================================================
+   EXTRA NARROW PHONE
+   Keeps the complete header horizontal even around 320px.
+   ============================================================ */
+
+@media (max-width: 340px) {
+
+    .main-content {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+
+    header {
+        gap: 3px;
+    }
+
+    .header-title-wrap {
+        gap: 4px;
+    }
+
+    .menu-toggle {
+        width: 33px;
+        height: 33px;
+        font-size: 14px;
+    }
+
+    header h1 {
+        font-size: 13px;
+    }
+
+    .header-title-text p,
+    header > .header-title-wrap p {
+        font-size: 6.5px;
+    }
+
+    .notification {
+        width: 32px;
+        height: 32px;
+    }
+
+    .profile {
+        max-width: 92px;
+    }
+
+    .profile img {
+        width: 26px;
+        height: 26px;
+    }
+
+    .profile h4 {
+        font-size: 7.5px;
+    }
+
+    .profile p {
+        font-size: 6px;
+    }
+}
+
+
+/* ============================================================
+   FINAL HEADER FIX — MATCH MARKS PAGE MOBILE/TABLET BEHAVIOUR
+   ------------------------------------------------------------
+   Layout on phone/tablet:
+   [ HAMBURGER ] [ GREETING + CLASS ] [ BELL ] [ PROFILE ]
+   - one horizontal row
+   - sticky while the page scrolls
+   - notification + profile remain on the right
+   - sidebar remains an off-canvas drawer
+   ============================================================ */
+
+.dashboard-header {
+  position: relative;
+}
+
+.dashboard-header .notification,
+.dashboard-header .profile {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+@media (max-width: 1050px) {
+  .dashboard-header {
+    position: sticky;
+    top: 0;
+    z-index: 2500;
+    width: 100%;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    flex-wrap: nowrap !important;
+    gap: 10px;
+    margin: 0 0 25px 0;
+    padding: 10px 0 14px;
+    background: #fff9a6;
+    isolation: isolate;
+  }
+
+  .dashboard-header .header-title-wrap {
+    display: flex;
+    flex: 1 1 auto;
+    min-width: 0;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .dashboard-header .menu-toggle {
+    display: flex;
+    position: static;
+    flex: 0 0 auto;
+  }
+
+  .dashboard-header .header-title-text {
+    min-width: 0;
+    flex: 1 1 auto;
+  }
+
+  .dashboard-header h1,
+  .dashboard-header .header-title-text p {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .dashboard-header .header-right {
+    display: flex;
+    flex: 0 0 auto;
+    width: auto !important;
+    min-width: 0;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
+    white-space: nowrap;
+  }
+
+  .dashboard-header .notification,
+  .dashboard-header .profile {
+    flex: 0 0 auto;
+    white-space: nowrap;
+  }
+
+  .dashboard-header .profile {
+    min-width: 0;
+  }
+
+  .dashboard-header .profile h4 {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard-header {
+    position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        min-height: 60px;
+
+        margin: 0;
+        padding: 8px 14px 8px 68px;
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8px;
+
+        background: #ffffff;
+        box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+
+        z-index: 2000;
+        box-sizing: border-box;
+
+}
+  
+
+  .main-content {
+        padding-top: 78px;
+  }
+
+  .dashboard-header .header-title-wrap {
+    gap: 7px;
+  }
+
+  .dashboard-header .menu-toggle {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    font-size: 17px;
+  }
+
+  .dashboard-header h1 {
+    font-size: clamp(16px, 4.5vw, 21px);
+    line-height: 1.2;
+  }
+
+  .dashboard-header .header-title-text p {
+    margin-top: 3px;
+    font-size: clamp(9px, 2.4vw, 11px);
+  }
+
+  .dashboard-header .header-right {
+    gap: 6px;
+  }
+
+  .dashboard-header .notification {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+  }
+
+  .dashboard-header .notification i {
+    font-size: 16px;
+  }
+
+  .dashboard-header .profile {
+    max-width: 145px;
+    padding: 5px 8px;
+    gap: 6px;
+    border-radius: 11px;
+  }
+
+  .dashboard-header .profile img {
+    width: 34px;
+    height: 34px;
+    border-width: 2px;
+  }
+
+  .dashboard-header .profile h4 {
+    font-size: 10px;
+  }
+
+  .dashboard-header .profile p {
+    font-size: 8px;
+  }
+
+  .dashboard-header .profile > i {
+    font-size: 8px;
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard-header {
+    min-height: 56px;
+    gap: 5px;
+    padding: 7px 9px;
+    margin-bottom: 15px;
+
+    position: fixed;
+    top: 0;
+    left: 2px;
+    right: 2px;
+    width: auto;
+
+    z-index: 1000;
+    box-sizing: border-box;
+}
+
+  .dashboard-header .header-title-wrap {
+    gap: 5px;
+  }
+
+  .dashboard-header .menu-toggle {
+    width: 38px;
+    height: 38px;
+    border-radius: 9px;
+    font-size: 16px;
+  }
+
+  .dashboard-header h1 {
+    font-size: clamp(15px, 4.4vw, 18px);
+  }
+
+  .dashboard-header .header-title-text p {
+    font-size: 8px;
+  }
+
+  .dashboard-header .header-right {
+    width: auto !important;
+    gap: 4px;
+  }
+
+  .dashboard-header .notification {
+    width: 36px;
+    height: 36px;
+    border-radius: 9px;
+    position: sticky;
+  }
+
+  .dashboard-header .notification i {
+    font-size: 15px;
+  }
+
+  .dashboard-header .notification span {
+    width: 16px;
+    height: 16px;
+    top: -4px;
+    right: -4px;
+    font-size: 8px;
+  }
+
+  .dashboard-header .profile {
+    max-width: 118px;
+    padding: 4px 6px;
+    gap: 5px;
+    border-radius: 10px;
+  }
+
+  .dashboard-header .profile img {
+    width: 31px;
+    height: 31px;
+  }
+
+  .dashboard-header .profile h4 {
+    font-size: 9px;
+  }
+
+  .dashboard-header .profile p {
+    font-size: 7px;
+  }
+
+  .dashboard-header .profile > i {
+    font-size: 7px;
+  }
+}
+
+@media (max-width: 380px) {
+  .dashboard-header {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 3px;
+  }
+
+  .dashboard-header .header-title-wrap {
+    gap: 4px;
+  }
+
+  .dashboard-header .menu-toggle {
+    width: 35px;
+    height: 35px;
+    border-radius: 8px;
+    font-size: 15px;
+  }
+
+  .dashboard-header h1 {
+    font-size: 14px;
+  }
+
+  .dashboard-header .header-title-text p {
+    font-size: 7px;
+  }
+
+  .dashboard-header .header-right {
+    width: auto !important;
+    gap: 3px;
+  }
+
+  .dashboard-header .notification {
+    width: 34px;
+    height: 34px;
+  }
+
+  .dashboard-header .profile {
+    max-width: 100px;
+    padding: 3px 5px;
+    gap: 4px;
+  }
+
+  .dashboard-header .profile img {
+    width: 28px;
+    height: 28px;
+  }
+
+  .dashboard-header .profile h4 {
+    font-size: 8px;
+  }
+
+  .dashboard-header .profile p {
+    font-size: 6.5px;
+  }
+
+  .dashboard-header .profile > i {
+    display: none;
+  }
+}
+
+@media (max-width: 340px) {
+  .dashboard-header {
+    gap: 2px;
+  }
+
+  .dashboard-header .header-title-wrap {
+    gap: 3px;
+  }
+
+  .dashboard-header .menu-toggle {
+    width: 33px;
+    height: 33px;
+    font-size: 14px;
+  }
+
+  .dashboard-header h1 {
+    font-size: 13px;
+  }
+
+  .dashboard-header .header-title-text p {
+    font-size: 6.5px;
+  }
+
+  .dashboard-header .header-right {
+    gap: 2px;
+  }
+
+  .dashboard-header .notification {
+    width: 32px;
+    height: 32px;
+  }
+
+  .dashboard-header .profile {
+    max-width: 92px;
+  }
+
+  .dashboard-header .profile img {
+    width: 26px;
+    height: 26px;
+  }
+
+  .dashboard-header .profile h4 {
+    font-size: 7.5px;
+  }
+
+  .dashboard-header .profile p {
+    font-size: 6px;
+  }
+}
+
+
+/* =========================================================
+   TOUCH DEVICE FLOATING MENU
+   <= 768px
+   Desktop hover behavior remains unchanged.
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .floating-learning-menu {
+        right: 18px;
+        bottom: 18px;
+
+        width: 72px;
+        height: 148px;
+    }
+
+    .floating-circle {
+        width: 62px;
+        height: 62px;
+
+        -webkit-tap-highlight-color: transparent;
+        touch-action: manipulation;
+    }
+
+    /*
+       CLOSED STATE
+       AI remains hidden until Learn is tapped.
+    */
+    .floating-learning-menu:not(.mobile-open) .floating-ai {
+        opacity: 0 !important;
+        pointer-events: none !important;
+
+        transform:
+            translateY(0)
+            scale(0.72) !important;
+    }
+
+    /*
+       IMPORTANT:
+       Disable the desktop hover opening behavior
+       on phones/tablets.
+    */
+    .floating-learning-menu:hover .floating-ai {
+        opacity: 0 !important;
+        pointer-events: none !important;
+
+        transform:
+            translateY(0)
+            scale(0.72) !important;
+    }
+
+    /*
+       OPEN STATE
+       AI / Connect appears after tapping Learn.
+    */
+    .floating-learning-menu.mobile-open .floating-ai {
+        opacity: 1 !important;
+        pointer-events: auto !important;
+
+        transform:
+            translateY(-72px)
+            scale(1) !important;
+    }
+
+    /*
+       Keep Learn slightly pressed while menu is open.
+    */
+    .floating-learning-menu.mobile-open .floating-learn {
+        transform: scale(0.94);
+    }
+
+    /*
+       Disable desktop hover enlargement on touch devices.
+    */
+    .floating-learn:hover {
+        transform: none;
+    }
+
+    .floating-ai:hover {
+        transform:
+            translateY(-72px)
+            scale(1) !important;
+    }
+}

@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Attendance</title>
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+
+
+  <link rel="stylesheet" href="attendance.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <!-- Standard Favicon for Browser Tabs & Chrome Shortcuts -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Apple/Safari Specific Icon (For pinned tabs or home screen shortcuts) -->
+  <link rel="apple-touch-icon" href="favicon.ico">
+
+</head>
+
+<body>
+
+  <div class="container">
+
+    <!-- ================= Sidebar ================= -->
+
+    <aside class="sidebar">
+
+      <div class="logo">
+
+        <img src="images/logo.png" alt="School Logo">
+
+        <div class="logo-text">
+          <h2>BRILLIANT</h2>
+          <h2>COACHING CENTRE</h2>
+          <p class="school-info">Established in 2009</p>
+          <p class="school-info">Kairi Birpur, Dist- Kishanganj</p>
+          <p class="school-info state">BIHAR</p>
+        </div>
+
+      </div>
+
+      <ul>
+
+        <li onclick="location.href='dashboard.html'">
+          <i class="fa-solid fa-house"></i>
+          Dashboard
+        </li>
+
+        <li onclick="location.href='profile.html'">
+          <i class="fa-solid fa-user"></i>
+          Profile
+        </li>
+
+        <li onclick="location.href='marks.html'">
+          <i class="fa-solid fa-chart-column"></i>
+          Academic Performance
+        </li>
+
+        <li class="active">
+          <i class="fa-solid fa-calendar-check"></i>
+          Attendance
+        </li>
+
+        <li onclick="location.href='fees.html'">
+          <i class="fa-solid fa-indian-rupee-sign"></i>
+          <span>Fees & Payments</span>
+        </li>
+
+        <li onclick="location.href='notices.html'">
+          <i class="fa-solid fa-bell"></i>
+          Announcements
+        </li>
+
+        <li onclick="location.href='timetable.html'">
+          <i class="fa-solid fa-clock"></i>
+          Class Schedule
+        </li>
+
+        <li onclick="location.href='teachers.html'">
+          <i class="fa-solid fa-chalkboard-user"></i>
+          Faculty & Mentors
+        </li>
+
+        <li onclick="location.href='answer-sheet.html'">
+
+          <i class="fa-solid fa-file-pen"></i>
+          Answer Sheets
+
+        </li>
+
+        <li onclick="location.href='alumni.html'">
+
+          <i class="fa-solid fa-user-graduate"></i>
+          Alumni Network
+
+        </li>
+
+        <li onclick="location.href='results.html'">
+
+          <i class="fa-solid fa-poll-h"></i>
+
+          Board Results
+
+        </li>
+
+        <li onclick="location.href='settings.html'">
+          <i class="fa-solid fa-gear"></i>
+          <span>Settings</span>
+        </li>
+
+        <li class="logout-btn" onclick="window.location.href='index.html'">
+          <i class="fa-solid fa-right-from-bracket"></i>
+          Logout
+        </li>
+
+      </ul>
+
+    </aside>
+
+    <!-- ================= Main ================= -->
+
+    <main class="main">
+
+      <header>
+
+        <div>
+
+          <h1>Attendance</h1>
+
+          <p>View your attendance records and monthly summary.</p>
+
+        </div>
+
+        <div class="profile-box" onclick="location.href='profile.html'">
+
+          <img src="images/student.jpg" alt="Student">
+
+          <div>
+
+            <h3>Meezan Alam</h3>
+
+            <span>Class X • Roll No. 01</span>
+
+          </div>
+
+        </div>
+
+      </header>
+
+      <!-- ================= Student Attendance Card ================= -->
+
+      <section class="attendance-card">
+
+        <div class="student-info">
+
+          <img src="images/student.jpg" alt="Student">
+
+          <div>
+
+            <h2>Meezan Alam</h2>
+
+            <p>Class X - A</p>
+
+            <p>Roll No : 01</p>
+
+            <p>Session : 2026 - 2027</p>
+
+          </div>
+
+        </div>
+
+        <div class="attendance-percentage">
+
+          <div class="circle" id="attendanceCircle">
+
+            <h2 id="attendanceValue">0%</h2>
+
+          </div>
+
+          <p>Overall Attendance</p>
+
+        </div>
+
+      </section>
+
+      <!-- ================= Summary ================= -->
+
+      <section class="summary-section">
+
+        <div class="summary-card">
+
+          <i class="fa-solid fa-circle-check"></i>
+
+          <h3>Present</h3>
+
+          <p>167 Days</p>
+
+        </div>
+
+        <div class="summary-card">
+
+          <i class="fa-solid fa-circle-xmark"></i>
+
+          <h3>Absent</h3>
+
+          <p>15 Days</p>
+
+        </div>
+
+        <div class="summary-card">
+
+          <i class="fa-solid fa-user-clock"></i>
+
+          <h3>Leave</h3>
+
+          <p>03 Days</p>
+
+        </div>
+
+        <div class="summary-card">
+
+          <i class="fa-solid fa-calendar-days"></i>
+
+          <h3>Working Days</h3>
+
+          <p>185 Days</p>
+
+        </div>
+
+      </section>
+
+      <!-- ================= Monthly Attendance ================= -->
+
+      <section class="calendar-section">
+
+        <h2>Attendance Calendar</h2>
+
+        <table>
+
+          <thead>
+
+            <tr>
+
+              <th>Sun</th>
+              <th>Mon</th>
+              <th>Tue</th>
+              <th>Wed</th>
+              <th>Thu</th>
+              <th>Fri</th>
+              <th>Sat</th>
+
+            </tr>
+
+          </thead>
+
+          <tbody>
+
+            <tr>
+
+              <td></td>
+
+              <td class="present">1</td>
+
+              <td class="present">2</td>
+
+              <td class="present">3</td>
+
+              <td class="absent">4</td>
+
+              <td class="present">5</td>
+
+              <td class="present">6</td>
+
+            </tr>
+
+            <tr>
+
+              <td class="present">7</td>
+
+              <td class="present">8</td>
+
+              <td class="present">9</td>
+
+              <td class="leave">10</td>
+
+              <td class="present">11</td>
+
+              <td class="present">12</td>
+
+              <td class="holiday">13</td>
+
+            </tr>
+            <tr>
+
+              <td class="present">14</td>
+
+              <td class="present">15</td>
+
+              <td class="present">16</td>
+
+              <td class="present">17</td>
+
+              <td class="present">18</td>
+
+              <td class="holiday">19</td>
+
+              <td class="holiday">20</td>
+
+            </tr>
+
+            <tr>
+
+              <td class="present">21</td>
+
+              <td class="present">22</td>
+
+              <td class="present">23</td>
+
+              <td class="present">24</td>
+
+              <td class="absent">25</td>
+
+              <td class="present">26</td>
+
+              <td class="holiday">27</td>
+
+            </tr>
+
+            <tr>
+
+              <td class="present">28</td>
+
+              <td class="present">29</td>
+
+              <td class="present">30</td>
+
+              <td></td>
+
+              <td></td>
+
+              <td></td>
+
+              <td></td>
+
+            </tr>
+
+          </tbody>
+
+        </table>
+
+      </section>
+
+      <!-- ================= Attendance Legend ================= -->
+
+      <section class="legend-section">
+
+        <h2>Attendance Legend</h2>
+
+        <div class="legend">
+
+          <div class="legend-item">
+
+            <span class="box green"></span>
+
+            <p>Present</p>
+
+          </div>
+
+          <div class="legend-item">
+
+            <span class="box red"></span>
+
+            <p>Absent</p>
+
+          </div>
+
+          <div class="legend-item">
+
+            <span class="box yellow"></span>
+
+            <p>Leave</p>
+
+          </div>
+
+          <div class="legend-item">
+
+            <span class="box grey"></span>
+
+            <p>Holiday</p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- ================= Buttons ================= -->
+
+      <section class="button-section">
+
+        <button class="download-btn">
+
+          <i class="fa-solid fa-download"></i>
+
+          Download Attendance Report
+
+        </button>
+
+        <button class="print-btn">
+
+          <i class="fa-solid fa-print"></i>
+
+          Print Attendance
+
+        </button>
+
+        <button class="back-btn" onclick="location.href='index.html'">
+
+          <i class="fa-solid fa-arrow-left"></i>
+
+          Back to Dashboard
+
+        </button>
+
+      </section>
+
+    </main>
+
+  </div>
+
+  <script src="attendance.js"></script>
+  <script src="common.js"></script>
+
+</body>
+
+</html>

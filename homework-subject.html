@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Subject Homework | Digital Classroom</title>
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+  <!-- Existing Digital Classroom theme. -->
+  <link rel="stylesheet" href="learning.css">
+  <link rel="stylesheet" href="homework.css">
+
+  <!-- Standard Favicon for Browser Tabs & Chrome Shortcuts -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Apple/Safari Specific Icon (For pinned tabs or home screen shortcuts) -->
+  <link rel="apple-touch-icon" href="favicon.ico">
+</head>
+
+<body>
+  <div class="dashboard-container">
+
+    <aside class="sidebar">
+      <div class="school-brand">
+        <img src="images/logo.png" alt="BCC Logo">
+        <h2>BRILLIANT <span>COACHING CENTRE</span></h2>
+        <p class="established">Established in 2009</p>
+        <p class="address">
+          Kairi Birpur, Po- Bishanpur<br>
+          Dist- Kishanganj<br>
+          <span>BIHAR</span>
+        </p>
+      </div>
+
+      <p class="menu-title">Learning Center</p>
+
+      <nav class="sidebar-menu">
+        <a href="learning.html">
+          <i class="fa-solid fa-chalkboard-user"></i>
+          <span>Lectures</span>
+        </a>
+
+        <a href="notes.html">
+          <i class="fa-solid fa-book-open"></i>
+          <span>Notes</span>
+        </a>
+
+        <a href="homework.html" class="active">
+          <i class="fa-solid fa-file-pen"></i>
+          <span>Homework</span>
+        </a>
+
+        <a href="quizzes.html">
+          <i class="fa-solid fa-clipboard-question"></i>
+          <span>Quizzes</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <a href="dashboard.html" class="back-dashboard">
+          <i class="fa-solid fa-arrow-left"></i>
+          <span>Back to Dashboard</span>
+        </a>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="top-header">
+        <div class="page-heading">
+          <small>Digital Classroom</small>
+          <h1 id="subjectPageTitle">Homework</h1>
+          <p id="subjectPageDescription">Today's homework and subject work.</p>
+        </div>
+
+        <div class="header-actions">
+          <button type="button" class="notification-btn" id="notificationBtn" aria-label="Notifications">
+            <i class="fa-solid fa-bell"></i>
+          </button>
+
+          <div class="profile-mini">
+            <img src="images/student.jpg" alt="Student Profile">
+            <span>Student</span>
+          </div>
+        </div>
+      </header>
+
+      <!-- =================================================
+                 TODAY'S HOMEWORK
+                 The backend will populate this list later.
+                 ================================================= -->
+      <section class="learning-section homework-today-section">
+        <div class="section-heading">
+          <div class="homework-subject-heading">
+            <div class="homework-view-icon" id="selectedSubjectIcon">
+              <i class="fa-solid fa-book"></i>
+            </div>
+            <div>
+              <span class="section-kicker">Daily Work</span>
+              <h2>Today's Homework</h2>
+              <p id="todayHomeworkSubtitle">Homework uploaded for today.</p>
+            </div>
+          </div>
+
+          <a href="homework.html" class="homework-back-btn">
+            <i class="fa-solid fa-arrow-left"></i>
+            <span>All Subjects</span>
+          </a>
+        </div>
+
+        <div class="homework-today-meta">
+          <span class="homework-filter-label">
+            <i class="fa-solid fa-calendar-day"></i>
+            <span id="todayDateLabel">Today</span>
+          </span>
+          <span class="homework-today-badge">TODAY</span>
+        </div>
+
+        <div class="homework-list" id="todayHomeworkList">
+          <!-- Today's homework cards come from the backend. -->
+        </div>
+
+        <div class="empty-list-state homework-empty-state" id="todayHomeworkEmpty" hidden>
+          <i class="fa-regular fa-folder-open"></i>
+          <span>No homework has been uploaded for this subject today.</span>
+        </div>
+      </section>
+
+      <!-- =================================================
+                 SUBJECT PARTS
+                 These cards stay visible below Today's Homework.
+                 Clicking a part loads that part's homework list.
+                 ================================================= -->
+      <section class="learning-section homework-parts-section" id="homeworkPartsSection">
+        <div class="section-heading">
+          <div>
+            <span class="section-kicker">Subject Parts</span>
+            <h2>Choose a Part</h2>
+            <p>Select the part you want to open.</p>
+          </div>
+
+          <div class="section-count">
+            <i class="fa-solid fa-table-cells-large"></i>
+            <span id="partCountLabel">Parts</span>
+          </div>
+        </div>
+
+        <div class="homework-parts-grid" id="homeworkPartsGrid">
+          <!-- Parts are generated according to the selected subject. -->
+        </div>
+      </section>
+
+      <!-- =================================================
+                 SELECTED PART HOMEWORK
+                 Hidden until a part card is clicked.
+                 ================================================= -->
+      <section class="learning-section homework-part-work-section" id="partWorkSection" hidden>
+        <div class="section-heading">
+          <div>
+            <span class="section-kicker">Part Homework</span>
+            <h2 id="selectedPartTitle">Part Homework</h2>
+            <p>All homework for this part, newest first.</p>
+          </div>
+
+          <button type="button" class="homework-back-btn" id="closePartViewBtn">
+            <i class="fa-solid fa-arrow-up"></i>
+            <span>All Parts</span>
+          </button>
+        </div>
+
+        <div class="homework-list" id="partHomeworkList">
+          <!-- Selected-part homework is loaded here. -->
+        </div>
+
+        <div class="empty-list-state homework-empty-state" id="partHomeworkEmpty" hidden>
+          <i class="fa-regular fa-folder-open"></i>
+          <span>No homework has been uploaded for this part yet.</span>
+        </div>
+      </section>
+
+      <footer class="page-footer">
+        © 2026 Brilliant Coaching Centre. All Rights Reserved.
+      </footer>
+    </main>
+  </div>
+
+  <div class="notification-message" id="notificationMessage">
+    <i class="fa-solid fa-bell"></i>
+    <span></span>
+  </div>
+
+  <!-- =========================================================
+         PDF / JPG VIEWER
+         Files open inside the website.
+         ========================================================= -->
+  <div class="homework-viewer-modal" id="homeworkViewerModal" aria-hidden="true">
+    <div class="homework-viewer-box" role="dialog" aria-modal="true" aria-labelledby="homeworkViewerTitle">
+      <div class="homework-viewer-header">
+        <div class="homework-viewer-heading">
+          <img src="images/logo.png" alt="School Logo">
+          <div>
+            <span>DIGITAL CLASSROOM • HOMEWORK</span>
+            <h3 id="homeworkViewerTitle">Homework</h3>
+          </div>
+        </div>
+
+        <button type="button" class="homework-viewer-close" id="closeHomeworkViewer" aria-label="Close homework viewer">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <div class="homework-viewer-content" id="homeworkViewerContent">
+        <!-- PDF iframe or JPG image is inserted by homework-subject.js. -->
+      </div>
+    </div>
+  </div>
+
+  <script src="homework-subject.js"></script>
+</body>
+
+</html>

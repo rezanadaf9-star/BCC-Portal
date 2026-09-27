@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quizzes | Digital Classroom</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link rel="stylesheet" href="learning.css">
+  <link rel="stylesheet" href="quizzes.css">
+
+  <!-- Standard Favicon for Browser Tabs & Chrome Shortcuts -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Apple/Safari Specific Icon (For pinned tabs or home screen shortcuts) -->
+  <link rel="apple-touch-icon" href="favicon.ico">
+</head>
+
+<body>
+  <div class="dashboard-container">
+    <aside class="sidebar">
+      <div class="school-brand">
+        <img src="images/logo.png" alt="BCC Logo">
+        <h2>BRILLIANT <span>COACHING CENTRE</span></h2>
+        <p class="established">Established in 2009</p>
+        <p class="address">Kairi Birpur, Po- Bishanpur<br>Dist- Kishanganj<br><span>BIHAR</span></p>
+      </div>
+      <p class="menu-title">Learning Center</p>
+      <nav class="sidebar-menu">
+        <a href="learning.html"><i class="fa-solid fa-chalkboard-user"></i><span>Lectures</span></a>
+        <a href="notes.html"><i class="fa-solid fa-book-open"></i><span>Notes</span></a>
+        <a href="homework.html"><i class="fa-solid fa-file-pen"></i><span>Homework</span></a>
+        <a href="quizzes.html" class="active"><i class="fa-solid fa-clipboard-question"></i><span>Quizzes</span></a>
+      </nav>
+      <div class="sidebar-bottom">
+        <a href="dashboard.html" class="back-dashboard"><i class="fa-solid fa-arrow-left"></i><span>Back to
+            Dashboard</span></a>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="top-header">
+        <div class="page-heading">
+          <small>Digital Classroom</small>
+          <h1>Quizzes</h1>
+          <p>Test your preparation with weekly, monthly and chapter-wise quizzes.</p>
+        </div>
+        <div class="header-actions">
+          <button type="button" class="notification-btn" id="notificationBtn" aria-label="Notifications"><i
+              class="fa-solid fa-bell"></i></button>
+          <div class="profile-mini"><img src="images/student.jpg" alt="Student Profile"><span>Student</span></div>
+        </div>
+      </header>
+
+      <section class="quiz-status-card">
+        <div class="quiz-status-icon"><i class="fa-solid fa-bolt"></i></div>
+        <div class="quiz-status-content">
+          <span class="section-kicker">Quiz Status</span>
+          <h2 id="quizStatusTitle">Checking quiz status...</h2>
+          <p id="quizStatusText">Checking today's active quizzes.</p>
+        </div>
+        <div class="quiz-status-badge" id="quizStatusBadge">CHECKING</div>
+      </section>
+
+      <section class="quiz-history-section" id="quizHistorySection">
+        <div class="section-heading quiz-history-heading">
+          <div>
+            <span class="section-kicker">Your Record</span>
+            <p>Your submitted quizzes and marks are saved here.</p>
+          </div>
+          <a class="quiz-history-link" id="viewAllHistoryLink" href="quiz-history.html">
+            View All <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+        <button type="button" class="quiz-history-latest-toggle" id="quizHistoryToggle" aria-expanded="false"
+          aria-controls="quizHistoryList" hidden>
+          <span class="latest-toggle-label">Latest Quiz</span>
+          <span class="latest-toggle-preview" id="quizHistoryLatest"></span>
+          <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+        </button>
+        <div class="quiz-history-list" id="quizHistoryList" hidden></div>
+        <div class="quiz-history-empty" id="quizHistoryEmpty">No quiz attempts yet.</div>
+      </section>
+
+      <section class="quizzes-section">
+        <div class="section-heading">
+          <div>
+            <span class="section-kicker">Assessment Center</span>
+            <h2>Available Quizzes</h2>
+          </div>
+          <div class="section-count"><i class="fa-solid fa-list-check"></i> 3 Quiz Types</div>
+        </div>
+
+        <div class="quiz-type-grid">
+          <article class="quiz-type-card disabled" id="weeklyQuizCard">
+            <div class="quiz-card-visual weekly">
+              <div class="quiz-card-icon"><i class="fa-solid fa-calendar-week"></i></div><span>SCHEDULED</span>
+            </div>
+            <div class="quiz-card-content"><span class="eyebrow">Weekly Quiz</span>
+              <h3>Weekly Quiz</h3>
+              <p id="weeklyQuizDescription">No quiz has been activated right now.</p>
+              <div class="quiz-card-footer"><span class="quiz-card-status" id="weeklyQuizStatus">NOT ACTIVE</span><i
+                  class="fa-solid fa-arrow-right"></i></div>
+            </div>
+          </article>
+
+          <article class="quiz-type-card disabled" id="monthlyQuizCard">
+            <div class="quiz-card-visual monthly">
+              <div class="quiz-card-icon"><i class="fa-solid fa-calendar-days"></i></div><span>SCHEDULED</span>
+            </div>
+            <div class="quiz-card-content"><span class="eyebrow">Monthly Quiz</span>
+              <h3>Monthly Quiz</h3>
+              <p id="monthlyQuizDescription">No quiz has been activated right now.</p>
+              <div class="quiz-card-footer"><span class="quiz-card-status" id="monthlyQuizStatus">NOT ACTIVE</span><i
+                  class="fa-solid fa-arrow-right"></i></div>
+            </div>
+          </article>
+
+          <article class="quiz-type-card" id="chapterQuizCard">
+            <div class="quiz-card-visual chapter">
+              <div class="quiz-card-icon"><i class="fa-solid fa-book-bookmark"></i></div><span>SUBJECT WISE</span>
+            </div>
+            <div class="quiz-card-content"><span class="eyebrow">Chapter-wise</span>
+              <h3>Chapter-wise Quiz</h3>
+              <p>Choose a subject and start an active chapter quiz.</p>
+              <div class="quiz-card-footer"><span class="quiz-card-status">6 SUBJECTS</span><i
+                  class="fa-solid fa-arrow-right"></i></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="subject-quiz-section" id="subjectQuizSection" hidden>
+        <div class="section-heading">
+          <div><span class="section-kicker">Chapter-wise Quiz</span>
+            <h2>Choose a Subject</h2>
+            <p>Only subjects with an active quiz can be opened.</p>
+          </div>
+          <button type="button" class="quiz-back-button" id="backToQuizTypes"><i class="fa-solid fa-arrow-left"></i>
+            Back</button>
+        </div>
+        <div class="subject-quiz-grid" id="subjectQuizGrid"></div>
+      </section>
+    </main>
+  </div>
+
+  <section class="quiz-runner" id="quizRunner" aria-hidden="true">
+    <header class="quiz-runner-header">
+      <div class="quiz-runner-brand"><img src="images/logo.png" alt="School Logo">
+        <div><span>BRILLIANT COACHING CENTRE</span>
+          <h2 id="runnerQuizTitle">Quiz</h2>
+        </div>
+      </div>
+      <div class="quiz-runner-info">
+        <div class="quiz-timer-box"><i class="fa-regular fa-clock"></i><strong
+            id="quizTimer">00:00</strong><span>TIME</span></div>
+        <div class="question-total-box"><strong id="questionTotal">0</strong><span>QUESTIONS</span></div>
+      </div>
+    </header>
+    <div class="quiz-runner-body">
+      <main class="quiz-question-area">
+        <div class="question-meta">
+          <span id="questionNumberLabel">Question 1</span>
+          <div class="question-meta-tools">
+            <div class="quiz-medium-switch" id="quizMediumSwitch" role="group" aria-label="Question paper language">
+              <button type="button" class="medium-button active" data-medium="en" aria-pressed="true">English</button>
+              <button type="button" class="medium-button" data-medium="hi" aria-pressed="false">हिंदी</button>
+            </div>
+            <div class="question-marks-box" id="questionMarksBox" aria-label="Quiz marking scheme">
+              <span class="marks-positive"><i class="fa-solid fa-plus"></i><strong
+                  id="positiveMarksValue">4</strong></span>
+              <span class="marks-divider"></span>
+              <span class="marks-negative"><i class="fa-solid fa-minus"></i><strong
+                  id="negativeMarksValue">1</strong></span>
+            </div>
+          </div>
+          <span id="questionMarksLabel" hidden>+4 / -1</span>
+        </div>
+        <div class="question-card">
+          <h2 id="questionText">Question</h2>
+          <div class="options-list" id="optionsList"></div>
+        </div>
+        <div class="question-navigation"><button type="button" class="question-nav-button" id="previousQuestion"><i
+              class="fa-solid fa-arrow-left"></i> Previous</button><button type="button"
+            class="question-nav-button primary" id="nextQuestion">Next <i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+      </main>
+      <aside class="question-sidebar">
+        <div class="question-sidebar-header">
+          <h3>Questions</h3><span id="sidebarProgress">0 / 0</span>
+        </div>
+        <div class="question-palette" id="questionPalette"></div>
+        <div class="question-legend">
+          <div><span class="legend-box"></span> Not Visited</div>
+          <div><span class="legend-box visited"></span> Visited</div>
+          <div><span class="legend-box attempted"></span> Attempted</div>
+        </div>
+        <button type="button" class="submit-quiz-button" id="submitQuizButton">Submit Quiz</button>
+      </aside>
+    </div>
+  </section>
+
+  <div class="quiz-confirm-modal" id="quizConfirmModal" aria-hidden="true">
+    <div class="quiz-confirm-box">
+      <div class="quiz-confirm-icon"><i class="fa-solid fa-paper-plane"></i></div>
+      <h3>Submit Quiz?</h3>
+      <p id="submitSummary"></p>
+      <div class="quiz-confirm-actions"><button type="button" class="quiz-secondary-button"
+          id="cancelSubmitButton">Continue Quiz</button><button type="button" class="quiz-primary-button"
+          id="confirmSubmitButton">Submit Quiz</button></div>
+    </div>
+  </div>
+
+  <section class="no-quiz-screen" id="noQuizScreen" aria-hidden="true">
+    <div class="no-quiz-content">
+      <div class="no-quiz-icon"><i class="fa-solid fa-clipboard-question"></i></div>
+      <h2>No Quiz</h2>
+      <p>There is no active quiz at the moment.</p>
+      <button type="button" class="no-quiz-close-button" id="closeNoQuizButton">Back to Quizzes</button>
+    </div>
+  </section>
+
+  <section class="quiz-result-screen" id="quizResultScreen" aria-hidden="true">
+    <div class="quiz-result-card">
+      <div class="quiz-result-top"><img src="images/logo.png" alt="School Logo"><span>QUIZ RESULT</span></div>
+      <h2 id="resultQuizTitle">Quiz Completed</h2>
+      <div class="result-score-grid">
+        <div><span>Obtained Marks</span><strong id="resultObtainedMarks">0</strong></div>
+        <div><span>Total Marks</span><strong id="resultTotalMarks">0</strong></div>
+        <div><span>Correct</span><strong class="result-correct" id="resultCorrect">0</strong></div>
+        <div><span>Wrong</span><strong class="result-wrong" id="resultWrong">0</strong></div>
+      </div>
+      <div class="answer-review">
+        <div class="answer-review-heading">
+          <div><span class="section-kicker">Answer Review</span>
+            <h3>Correct and Wrong Answers</h3>
+          </div><span id="resultAttempted">Attempted: 0</span>
+        </div>
+        <div class="answer-review-list" id="answerReviewList"></div>
+      </div>
+      <div class="result-actions">
+        <button type="button" class="result-secondary-button" id="downloadResultButton">
+          <i class="fa-solid fa-download"></i> Download Analysis
+        </button>
+        <button type="button" class="result-close-button" id="closeResultButton">Back to Quizzes</button>
+      </div>
+    </div>
+  </section>
+
+  <div class="quiz-notification" id="quizNotification" aria-live="polite"></div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="quizzes.js?v=20260923-bilingual-attempt-1"></script>
+</body>
+
+</html>

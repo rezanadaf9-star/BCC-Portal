@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Student Profile</title>
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="profile.css">
+  <!-- Font Awesome -->
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <!-- Standard Favicon for Browser Tabs & Chrome Shortcuts -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Apple/Safari Specific Icon (For pinned tabs or home screen shortcuts) -->
+  <link rel="apple-touch-icon" href="favicon.ico">
+
+</head>
+
+<body>
+
+  <div class="container">
+
+    <!-- ================= Sidebar ================= -->
+
+    <aside class="sidebar" id="sidebar">
+
+      <div class="logo">
+
+        <img src="images/logo.png" alt="School Logo">
+
+        <div class="logo-text">
+          <h2>BRILLIANT</h2>
+          <h2>COACHING CENTRE</h2>
+          <p class="school-info">Established in 2009</p>
+          <p class="school-info">Kairi Birpur, Dist- Kishanganj</p>
+          <p class="school-info state">BIHAR</p>
+        </div>
+
+      </div>
+
+      <ul>
+
+        <li onclick="location.href='dashboard.html'">
+          <i class="fa-solid fa-house"></i>
+          Dashboard
+        </li>
+
+        <li class="active">
+          <i class="fa-solid fa-user"></i>
+          Profile
+        </li>
+
+        <li onclick="location.href='marks.html'">
+          <i class="fa-solid fa-file-lines"></i>
+          Academic Performance
+        </li>
+
+        <li onclick="location.href='attendance.html'">
+          <i class="fa-solid fa-calendar-check"></i>
+          Attendance
+        </li>
+
+        <li onclick="location.href='fees.html'">
+          <i class="fa-solid fa-indian-rupee-sign"></i>
+          <span>Fees & Payments</span>
+        </li>
+
+        <li onclick="location.href='notices.html'">
+          <i class="fa-solid fa-bell"></i>
+          Announcements
+        </li>
+
+        <li onclick="location.href='timetable.html'">
+          <i class="fa-solid fa-clock"></i>
+          Class Schedule
+        </li>
+
+        <li onclick="location.href='teachers.html'">
+          <i class="fa-solid fa-chalkboard-user"></i>
+          Faculty & Mentors
+        </li>
+
+        <li onclick="location.href='answer-sheet.html'">
+
+          <i class="fa-solid fa-file-pen"></i>
+          Answer Sheets
+
+        </li>
+
+        <li onclick="location.href='alumni.html'">
+
+          <i class="fa-solid fa-user-graduate"></i>
+          Alumni Network
+
+        </li>
+
+        <li onclick="location.href='results.html'">
+          <i class="fa-solid fa-poll"></i>
+          <span>Our Board Results</span>
+        </li>
+
+        <li onclick="location.href='settings.html'">
+          <i class="fa-solid fa-gear"></i>
+          <span>Settings</span>
+        </li>
+
+        <li class="logout-btn" onclick="window.location.href='index.html'">
+          <i class="fa-solid fa-right-from-bracket"></i>
+          Logout
+        </li>
+
+      </ul>
+
+    </aside>
+
+    <!-- ================= Main ================= -->
+
+    <main class="main">
+      <button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu" aria-controls="sidebar"
+        aria-expanded="false">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <!-- Header -->
+
+      <header>
+
+        <div>
+
+          <h1>Student Profile</h1>
+
+          <p>View your personal and academic information.</p>
+
+        </div>
+
+        <div class="profile-box" onclick="location.href='profile.html'">
+
+          <img src="images/student.jpg">
+
+          <div>
+
+            <h3>Meezan Alam</h3>
+
+            <span>Class 10 • Roll No. 01</span>
+
+          </div>
+
+        </div>
+
+      </header>
+
+      <!-- Profile Card -->
+
+      <section class="profile-card">
+
+        <div class="left-profile">
+
+          <img src="images/student.jpg">
+
+          <h2>Meezan Alam</h2>
+
+          <p>Class X - A</p>
+
+          <p>Roll Number : 01</p>
+
+          <button>Edit Profile</button>
+
+        </div>
+
+        <div class="right-profile">
+
+          <!-- Personal -->
+
+          <div class="section">
+
+            <h2>Personal Information</h2>
+
+            <div class="grid">
+
+              <div class="item">
+                <label>Admission No</label>
+                <span>20250001</span>
+              </div>
+
+              <div class="item">
+                <label>Registration No</label>
+                <span>BR1025487</span>
+              </div>
+
+              <div class="item">
+                <label>Date of Birth</label>
+                <span>12 June 2006</span>
+              </div>
+
+              <div class="item">
+                <label>Gender</label>
+                <span>Male</span>
+              </div>
+
+              <div class="item">
+                <label>Blood Group</label>
+                <span>A+</span>
+              </div>
+
+              <div class="item">
+                <label>Religion</label>
+                <span>Islam</span>
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- Parent -->
+
+          <div class="section">
+
+            <h2>Parent Information</h2>
+
+            <div class="grid">
+
+              <div class="item">
+                <label>Father Name</label>
+                <span>Jahangir Alam</span>
+              </div>
+
+              <div class="item">
+                <label>Mother Name</label>
+                <span>Shagufta Begum</span>
+              </div>
+
+              <div class="item">
+                <label>Phone Number</label>
+                <span>XXXXXX7483</span>
+              </div>
+
+              <div class="item">
+                <label>Email</label>
+                <span>mixan@email.com</span>
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- Address -->
+
+          <div class="section">
+
+            <h2>Address</h2>
+
+            <div class="grid">
+
+              <div class="item">
+                <label>Village</label>
+                <span>Dohar</span>
+              </div>
+
+              <div class="item">
+                <label>Post Office</label>
+                <span>Sontha</span>
+              </div>
+
+              <div class="item">
+                <label>District</label>
+                <span>Kishanganj</span>
+              </div>
+
+              <div class="item">
+                <label>State</label>
+                <span>Bihar</span>
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- Academic -->
+
+          <div class="section">
+
+            <h2>Academic Information</h2>
+
+            <div class="grid">
+
+              <div class="item">
+                <label>Session</label>
+                <span>2026-2027</span>
+              </div>
+
+              <div class="item">
+                <label>Class</label>
+                <span>X</span>
+              </div>
+
+              <div class="item">
+                <label>Section</label>
+                <span>A</span>
+              </div>
+
+              <div class="item">
+                <label>Class Teacher</label>
+                <span>Zaki Sir</span>
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- Buttons -->
+
+          <div class="buttons">
+
+            <button class="blue">
+              <i class="fa-solid fa-key"></i>
+              Change Password
+            </button>
+
+            <button class="green">
+              <i class="fa-solid fa-download"></i>
+              Download Profile
+            </button>
+
+            <button class="grey" onclick="location.href='index.html'">
+
+              <i class="fa-solid fa-arrow-left"></i>
+
+              Back Dashboard
+
+            </button>
+
+          </div>
+
+        </div>
+
+      </section>
+
+    </main>
+
+  </div>
+
+  <div class="sidebar-overlay" id="sidebarOverlay" aria-hidden="true"></div>
+
+  <script src="profile.js"></script>
+  <script src="common.js"></script>
+
+</body>
+
+</html>
