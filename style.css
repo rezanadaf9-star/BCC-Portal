@@ -20,96 +20,267 @@ html {
     min-height: 100%;
 }
 
+/* =========================================================
+   VIDEO-INSPIRED AMBIENT LIQUID GRADIENT BACKGROUND
+   Motion follows the reference: large, soft color clouds drift,
+   overlap and continuously change position without a fixed path.
+   Palette is intentionally darker: blue + yellow + white accents.
+   ========================================================= */
+
 body {
     min-height: 100vh;
-
     font-family: 'Poppins', sans-serif;
-
     color: #FFFFFF;
-
     overflow-x: hidden;
+    position: relative;
+    isolation: isolate;
 
-    background: #030305;
+    /* Mostly dark blue/charcoal, with a quiet center. */
+    background:
+        radial-gradient(
+            ellipse at 50% 48%,
+            #27303d 0%,
+            #1b2431 38%,
+            #121a27 72%,
+            #0b111b 100%
+        );
 }
 
-
-/* =========================================================
-   BACKGROUND VIDEO
-   ========================================================= */
-
-.background-video {
+/*
+   The reference animation is built from several very large,
+   heavily blurred color clouds. Each cloud has its own position,
+   so the composition never feels like a simple left-to-right loop.
+*/
+body::before,
+body::after {
+    content: "";
     position: fixed;
-
-    inset: 0;
-
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-
-    z-index: -5;
-}
-
-
-/* =========================================================
-   VIDEO OVERLAY
-   DARK BLACK + DEEP INDIGO
-   ========================================================= */
-
-.video-overlay {
-    position: fixed;
-    inset: 0;
-    z-index: -4;
-
-    background: rgba(5, 5, 12, 0.60);
-
-    backdrop-filter: blur(2px);
-}
-
-
-/* =========================================================
-   AMBIENT LIGHTS
-   YELLOW / SOFT YELLOW GLOW
-   ========================================================= */
-
-.ambient-light {
-    position: fixed;
-
-    border-radius: 50%;
-
+    inset: -22%;
     pointer-events: none;
-
-    z-index: -3;
-
-    filter: blur(75px);
+    z-index: 0;
+    background-repeat: no-repeat;
+    will-change: background-position, transform;
+    filter: blur(82px);
+    transform: scale(1.08);
 }
 
-.light-one {
-    width: 350px;
-    height: 350px;
+/* Layer A — yellow/blue clouds with a restrained white glow. */
+body::before {
+    background-image:
+        radial-gradient(circle, rgba(255, 230, 0, 0.48) 0%, rgba(255, 230, 0, 0.18) 34%, transparent 70%),
+        radial-gradient(circle, rgba(55, 88, 175, 0.58) 0%, rgba(40, 65, 135, 0.24) 38%, transparent 72%),
+        radial-gradient(circle, rgba(255, 255, 255, 0.20) 0%, rgba(255, 255, 255, 0.07) 34%, transparent 68%),
+        radial-gradient(circle, rgba(30, 57, 125, 0.52) 0%, rgba(20, 38, 88, 0.22) 38%, transparent 72%);
 
-    top: -130px;
-    left: -100px;
+    background-size:
+        58% 58%,
+        62% 62%,
+        48% 48%,
+        66% 66%;
 
-    background: rgba(255, 230, 0, 0.22);
+    background-position:
+        0% 0%,
+        100% 0%,
+        50% 48%,
+        100% 100%;
+
+    animation: referenceFlowA 6.8s ease-in-out infinite;
 }
 
-.light-two {
-    width: 300px;
-    height: 300px;
+/* Layer B — secondary clouds crossing the composition at different speeds. */
+body::after {
+    background-image:
+        radial-gradient(circle, rgba(255, 230, 0, 0.34) 0%, rgba(255, 230, 0, 0.12) 35%, transparent 72%),
+        radial-gradient(circle, rgba(38, 72, 158, 0.56) 0%, rgba(31, 55, 120, 0.20) 38%, transparent 72%),
+        radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.05) 35%, transparent 70%),
+        radial-gradient(circle, rgba(24, 45, 105, 0.46) 0%, rgba(16, 31, 74, 0.18) 40%, transparent 74%);
 
-    right: -100px;
-    bottom: -100px;
+    background-size:
+        54% 54%,
+        64% 64%,
+        42% 42%,
+        60% 60%;
 
-    background: rgba(255, 249, 166, 0.14);
+    background-position:
+        100% 100%,
+        10% 20%,
+        45% 5%,
+        0% 80%;
+
+    animation: referenceFlowB 5.9s ease-in-out infinite;
+    opacity: 0.88;
 }
 
+/* Soft center veil — keeps the middle darker and calmer than the edges. */
+.login-page::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+    background:
+        radial-gradient(
+            ellipse at center,
+            rgba(255, 255, 255, 0.045) 0%,
+            rgba(20, 28, 40, 0.08) 32%,
+            rgba(7, 12, 20, 0.22) 100%
+        );
+    filter: blur(24px);
+}
 
+/*
+   Non-linear movement based on the reference video:
+   clouds travel diagonally, change direction and cross through
+   different areas instead of following one predictable axis.
+*/
+@keyframes referenceFlowA {
+    0% {
+        background-position:
+            0% 0%,
+            100% 0%,
+            50% 48%,
+            100% 100%;
+        transform: translate3d(-1vw, -1vh, 0) scale(1.08);
+    }
+    12% {
+        background-position:
+            32% 8%,
+            68% 26%,
+            38% 62%,
+            76% 72%;
+        transform: translate3d(5vw, 1vh, 0) scale(1.13);
+    }
+    25% {
+        background-position:
+            82% 4%,
+            22% 42%,
+            62% 36%,
+            42% 88%;
+        transform: translate3d(-4vw, 4vh, 0) scale(1.17);
+    }
+    39% {
+        background-position:
+            100% 58%,
+            4% 74%,
+            28% 18%,
+            78% 30%;
+        transform: translate3d(3vw, -3vh, 0) scale(1.12);
+    }
+    53% {
+        background-position:
+            54% 94%,
+            92% 18%,
+            72% 66%,
+            8% 44%;
+        transform: translate3d(-5vw, 2vh, 0) scale(1.16);
+    }
+    67% {
+        background-position:
+            12% 62%,
+            46% 100%,
+            44% 6%,
+            94% 70%;
+        transform: translate3d(4vw, 3vh, 0) scale(1.13);
+    }
+    82% {
+        background-position:
+            4% 18%,
+            84% 82%,
+            56% 54%,
+            26% 10%;
+        transform: translate3d(-2vw, -4vh, 0) scale(1.18);
+    }
+    100% {
+        background-position:
+            72% 72%,
+            18% 12%,
+            42% 88%,
+            88% 24%;
+        transform: translate3d(2vw, 1vh, 0) scale(1.10);
+    }
+}
+
+@keyframes referenceFlowB {
+    0% {
+        background-position:
+            100% 100%,
+            10% 20%,
+            45% 5%,
+            0% 80%;
+        transform: translate3d(1vw, 2vh, 0) scale(1.10);
+    }
+    13% {
+        background-position:
+            64% 72%,
+            38% 2%,
+            72% 34%,
+            22% 58%;
+        transform: translate3d(-4vw, -1vh, 0) scale(1.15);
+    }
+    27% {
+        background-position:
+            18% 36%,
+            88% 18%,
+            26% 78%,
+            64% 10%;
+        transform: translate3d(5vw, 3vh, 0) scale(1.18);
+    }
+    41% {
+        background-position:
+            6% 88%,
+            54% 62%,
+            92% 48%,
+            34% 24%;
+        transform: translate3d(-3vw, 4vh, 0) scale(1.12);
+    }
+    56% {
+        background-position:
+            74% 26%,
+            2% 54%,
+            46% 2%,
+            86% 84%;
+        transform: translate3d(4vw, -3vh, 0) scale(1.16);
+    }
+    71% {
+        background-position:
+            96% 72%,
+            30% 96%,
+            12% 48%,
+            58% 34%;
+        transform: translate3d(-5vw, 2vh, 0) scale(1.14);
+    }
+    85% {
+        background-position:
+            42% 8%,
+            78% 46%,
+            62% 88%,
+            4% 18%;
+        transform: translate3d(3vw, -4vh, 0) scale(1.18);
+    }
+    100% {
+        background-position:
+            8% 88%,
+            94% 62%,
+            42% 28%,
+            62% 82%;
+        transform: translate3d(1vw, 1vh, 0) scale(1.11);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    body::before,
+    body::after {
+        animation: none;
+    }
+}
 /* =========================================================
    MAIN PAGE
    ========================================================= */
 
 .login-page {
+
+    position: relative;
+    z-index: 1;
 
     min-height: 100vh;
 
@@ -336,9 +507,9 @@ body {
     background:
         linear-gradient(
             135deg,
-            rgba(255, 255, 255, 0.105),
-            rgba(27, 20, 100, 0.18),
-            rgba(255, 255, 255, 0.055)
+            rgba(255, 255, 255, 0.34),
+            rgba(255, 255, 255, 0.12),
+            rgba(255, 255, 255, 0.22)
         );
 
     border:
@@ -686,7 +857,11 @@ body {
     border-radius: 13px;
 
     background:
-        rgba(0, 0, 0, 0.20);
+        linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.15),
+            rgba(255, 255, 255, 0.07)
+        );
 
     color: #FFFFFF;
 
@@ -706,31 +881,39 @@ body {
 }
 
 .input-box input:focus {
-    border-color: rgba(255, 255, 255, 0.35);
-    background: rgba(255, 255, 255, 0.16);
-    box-shadow: none;
+    border-color: rgba(255, 230, 0, 0.42);
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.20),
+            rgba(255, 255, 255, 0.08)
+        );
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.28),
+        0 0 0 3px rgba(255, 230, 0, 0.07);
     outline: none;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
 }
 
+/* Keep browser autofill glassy instead of blue/purple. */
 .input-box input:-webkit-autofill,
 .input-box input:-webkit-autofill:hover,
 .input-box input:-webkit-autofill:focus,
 .input-box input:-webkit-autofill:active {
-
     -webkit-text-fill-color: #FFFFFF !important;
-
-    -webkit-box-shadow:
-        0 0 0 1000px rgba(30, 25, 75, 0.65) inset !important;
-
-    box-shadow:
-        0 0 0 1000px rgba(30, 25, 75, 0.65) inset !important;
-
     caret-color: #FFFFFF !important;
 
-    background: transparent !important;
+    -webkit-box-shadow:
+        0 0 0 1000px rgba(255, 255, 255, 0.10) inset !important;
 
-    transition:
-        background-color 9999s ease-in-out 0s;
+    box-shadow:
+        0 0 0 1000px rgba(255, 255, 255, 0.10) inset !important;
+
+    border-color: rgba(255, 255, 255, 0.22) !important;
+    background-color: transparent !important;
+
+    transition: background-color 9999s ease-in-out 0s;
 }
 
 
@@ -1324,54 +1507,6 @@ input:focus-visible {
 
 }
 
-/* =========================================
-   MOBILE LANDSCAPE FULLSCREEN
-========================================= */
-
-.video-frame:fullscreen {
-
-    width: 100vw;
-    height: 100vh;
-
-    min-height: 100vh;
-
-    aspect-ratio: auto;
-
-    background: #000000;
-
-}
-
-
-.video-frame:-webkit-full-screen {
-
-    width: 100vw;
-    height: 100vh;
-
-    min-height: 100vh;
-
-    aspect-ratio: auto;
-
-    background: #000000;
-
-}
-
-
-@media (max-width: 650px) and (orientation: landscape) {
-
-    .video-frame {
-
-        min-height: 100vh;
-
-    }
-
-    .video-frame:fullscreen iframe {
-
-        width: 100vw;
-        height: 100vh;
-
-    }
-
-}
 /* =========================================================
    COMPACT MOBILE LOGIN CARD
    Keeps the desktop/tablet design unchanged.
