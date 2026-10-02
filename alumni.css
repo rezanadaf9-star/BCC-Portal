@@ -162,15 +162,18 @@ a {
 
 
 .top-header {
-  min-height: 76px;
-  background: #fff;
-  border: 1px solid var(--line);
-  border-radius: 18px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 12px 16px 12px 18px;
-  box-shadow: 0 8px 30px rgba(20, 18, 70, 0.04);
+
+  height: 80px;
+  background: #fff9a6;
+  margin-right: -20px;
+  margin-left: -20px;
+  margin-top: -20px;
+  padding-left: 20px;
+  padding-right: 8px;
+  border-bottom: 1px solid rgb(226, 226, 226);
 }
 .header-title {
   display: flex;
@@ -178,8 +181,8 @@ a {
   gap: 12px;
 }
 .header-icon {
-  width: 46px;
-  height: 46px;
+  width: 48px;
+  height: 48px;
   border-radius: 13px;
   background: var(--yellow);
   display: grid;
@@ -201,6 +204,9 @@ a {
   display: flex;
   align-items: center;
   gap: 10px;
+  padding: 5px 12px;
+  
+
 }
 .icon-btn {
   width: 42px;
@@ -210,6 +216,9 @@ a {
   color: var(--navy);
   cursor: pointer;
   position: relative;
+  box-shadow:
+    0 3px 12px rgba(0, 0, 0, 0.1);
+
 }
 .notification-btn em {
   position: absolute;
@@ -225,6 +234,7 @@ a {
   border-radius: 50%;
   display: grid;
   place-items: center;
+
 }
 .profile-mini {
   display: flex;
@@ -232,8 +242,10 @@ a {
   gap: 9px;
   background: #f6f6fa;
   border-radius: 13px;
-  padding: 5px 10px 5px 5px;
+  padding: 7px 13px;
   cursor: pointer;
+  box-shadow:
+    0 3px 12px rgba(0, 0, 0, 0.1);
 }
 .profile-mini img {
   width: 35px;
@@ -1385,4 +1397,70 @@ body{min-width:0}
   .photo-wrap{height:245px}
   .card-body h3{font-size:13px}
   .career-row span,.career-row b{font-size:6px}
+}
+
+
+/* =========================================================
+   FIXED DESKTOP HEADER
+   Header fixed while page content scrolls
+   Applies only above 800px
+   ========================================================= */
+
+@media (min-width: 801px) {
+
+  .top-header {
+    position: fixed !important;
+    top: 0;
+    left: 300px;
+    right: 0;
+
+    width: auto;
+    height: 80px;
+
+    margin: 0 !important;
+    padding-left: 30px;
+    padding-right: 30px;
+
+    background: #fff9a6;
+
+    z-index: 1500;
+
+    box-sizing: border-box;
+  }
+
+  /* Sidebar stays above the header */
+  .sidebar {
+    z-index: 2000 !important;
+  }
+
+  /* Keep page content below the fixed header */
+  .main-content {
+    position: relative;
+    z-index: 1;
+    padding-top: 110px;
+  }
+}
+
+
+/* =========================================================
+   801px - 1050px
+   Sidebar becomes an off-canvas menu
+   Header spans the full screen
+   ========================================================= */
+
+@media (min-width: 801px) and (max-width: 1050px) {
+
+  .top-header {
+    left: 0;
+    right: 0;
+    width: 100%;
+  }
+
+  .main-content {
+    padding-top: 110px;
+  }
+
+  .sidebar {
+    z-index: 2000 !important;
+  }
 }

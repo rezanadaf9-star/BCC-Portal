@@ -1,0 +1,944 @@
+/* ============================================================
+   BCC QUIZ MARKS LEADERBOARD
+   The page deliberately uses learning.css + quizzes.css for the
+   main BCC theme. This file only styles the leaderboard content.
+   ============================================================ */
+
+.leaderboard-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(360px, .92fr);
+  gap: 20px;
+  align-items: start;
+}
+
+.leaderboard-left,
+.leaderboard-right {
+  min-width: 0;
+}
+
+.leaderboard-card {
+  background: var(--white);
+  border: 1px solid #1b146414;
+  border-radius: 18px;
+  box-shadow: 0 8px 24px #00000012;
+  overflow: hidden;
+}
+
+.lb-section-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 18px 20px 10px;
+  background: white;
+}
+
+.lb-section-heading h2 {
+  color: var(--primary);
+  font-size: 17px;
+  line-height: 1.3;
+}
+
+.lb-section-heading span {
+  color: var(--grey);
+  font-size: 9px;
+}
+
+/* ============================================================
+   TOP 3
+   ============================================================ */
+
+.podium-card {
+  overflow: hidden;
+}
+
+.podium {
+  height: 315px;
+  padding: 18px 26px 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 14px;
+  background: linear-gradient(180deg, #fff 0%, #fffdfa 100%);
+  border-top: 1px solid #1b14640d;
+}
+
+.podium-place {
+  position: relative;
+  width: 31%;
+  min-width: 105px;
+  height: var(--podium-height);
+  display: flex;
+  justify-content: center;
+  z-index: var(--podium-z);
+}
+
+.podium-face {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border-radius: 14px 14px 4px 4px;
+  transform: perspective(650px) rotateX(2deg);
+  box-shadow:
+    inset 8px 0 0 #ffffff28,
+    inset -8px 0 0 #00000018,
+    0 12px 22px #00000018;
+}
+
+.podium-face::after {
+  content: "";
+  position: absolute;
+  width: 65%;
+  height: 125%;
+  top: -10%;
+  left: -28%;
+  background: #ffffff25;
+  transform: rotate(18deg);
+}
+
+.podium-place.first {
+  --podium-height: 205px;
+  --podium-z: 3;
+  --podium-main: #febb04;
+}
+
+.podium-place.second {
+  --podium-height: 155px;
+  --podium-z: 2;
+  --podium-main: #aab3c2;
+}
+
+.podium-place.third {
+  --podium-height: 125px;
+  --podium-z: 1;
+  --podium-main: #d57b32;
+}
+
+.podium-place.first .podium-face {
+  background: linear-gradient(135deg, #fff18a 0%, #ffd11b 42%, #c98000 100%);
+}
+
+.podium-place.second .podium-face {
+  background: linear-gradient(135deg, #eef2f8 0%, #adb7c5 46%, #687484 100%);
+}
+
+.podium-place.third .podium-face {
+  background: linear-gradient(135deg, #ffc481 0%, #dc7c32 48%, #95451f 100%);
+}
+
+.podium-profile {
+  position: absolute;
+  z-index: 7;
+  top: -47px;
+  width: 68px;
+  height: 68px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #fff;
+  outline: 3px solid var(--podium-main);
+  background: #eee;
+  box-shadow: 0 7px 18px #00000024;
+}
+
+.podium-rank {
+  position: absolute;
+  top: 27px;
+  z-index: 8;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.podium-name {
+  position: absolute;
+  top: 64px;
+  left: 5%;
+  width: 90%;
+  z-index: 8;
+  color: #fff;
+  text-align: center;
+  font-size: 10px;
+  font-weight: 700;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.podium-score {
+  position: absolute;
+  top: 84px;
+  width: 100%;
+  z-index: 8;
+  color: #fff;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.podium-place.current .podium-face {
+  box-shadow:
+    inset 8px 0 0 #ffffff28,
+    inset -8px 0 0 #00000018,
+    0 0 0 3px var(--secondary),
+    0 13px 25px #1b146433;
+}
+
+.podium-you {
+  position: absolute;
+  bottom: 8px;
+  z-index: 9;
+  padding: 3px 9px;
+  border-radius: 999px;
+  background: var(--secondary);
+  color: var(--primary);
+  font-size: 8px;
+  font-weight: 800;
+}
+
+/* ============================================================
+   CROWN (PNG Image Version)
+   ============================================================ */
+.lb-crown {
+  position: absolute;
+  z-index: 12;
+  bottom: 100%; 
+  margin-bottom: 35px; /* Changed from -15px to 35px to lift it up exactly 50px */
+  left: 50%;
+  width: 68px; 
+  height: 48px;
+  transform: translateX(-50%) rotate(-2deg);
+  filter: drop-shadow(0 5px 5px rgba(125, 78, 0, 0.15));
+  background: url('images/crown.png') no-repeat center center;
+  background-size: contain;
+}
+
+/* ============================================================
+   RANK LIST
+   ============================================================ */
+
+.rank-card {
+  margin-top: 18px;
+}
+
+.rank-head,
+.rank-row {
+  display: grid;
+  grid-template-columns: 58px minmax(0, 1fr) 105px;
+  align-items: center;
+}
+
+.rank-head {
+  padding: 9px 18px;
+  background: var(--primary);
+  color: #fff;
+  font-size: 9px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.rank-head span:last-child {
+  text-align: right;
+}
+
+.rank-row {
+  min-height: 59px;
+  padding: 7px 18px;
+  border-bottom: 1px solid #1b146414;
+}
+
+.rank-row:last-child {
+  border-bottom: 0;
+}
+
+.rank-row.current {
+  background: #fff9a6;
+  box-shadow: inset 4px 0 0 var(--secondary);
+}
+
+.rank-number {
+  color: var(--primary);
+  font-size: 21px;
+  font-weight: 800;
+}
+
+.rank-student {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.rank-student img {
+  width: 40px;
+  height: 40px;
+  flex: 0 0 auto;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid var(--secondary);
+}
+
+.rank-student div {
+  min-width: 0;
+}
+
+.rank-student strong {
+  display: block;
+  color: var(--primary);
+  font-size: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.rank-student small {
+  color: var(--grey);
+  font-size: 8px;
+}
+
+.rank-score {
+  color: var(--primary);
+  text-align: right;
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.rank-dots {
+  min-height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #aaa;
+  letter-spacing: 5px;
+  border-bottom: 1px solid #1b146414;
+}
+
+/* ============================================================
+   RIGHT: DETAILED QUIZ PERFORMANCE
+   ============================================================ */
+
+.performance-card {
+  padding: 20px;
+  overflow: visible;
+}
+
+.performance-student {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.performance-photo-wrap {
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.performance-photo-wrap > img {
+  width: 68px;
+  height: 68px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid var(--secondary);
+  background: #eee;
+}
+
+.performance-photo-wrap > span {
+  position: absolute;
+  right: -5px;
+  bottom: -3px;
+  min-width: 30px;
+  padding: 3px 6px;
+  border-radius: 999px;
+  background: var(--primary);
+  color: #fff;
+  text-align: center;
+  font-size: 8px;
+  font-weight: 800;
+  box-shadow: 0 3px 8px #00000024;
+}
+
+.performance-student-info {
+  min-width: 0;
+}
+
+.performance-student-info h2 {
+  color: var(--primary);
+  font-size: 18px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.performance-student-info p {
+  margin-top: 3px;
+  color: var(--grey);
+  font-size: 9px;
+}
+
+.performance-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin-top: 18px;
+}
+
+.performance-stat {
+  min-width: 0;
+  padding: 11px 8px;
+  border: 1px solid #1b146414;
+  border-radius: 12px;
+  background: #fffdfa;
+  text-align: center;
+}
+
+.performance-stat span {
+  display: block;
+  color: var(--grey);
+  font-size: 7px;
+  line-height: 1.35;
+}
+
+.performance-stat strong {
+  display: block;
+  margin-top: 4px;
+  color: var(--primary);
+  font-size: 16px;
+}
+
+.performance-block {
+  margin-top: 20px;
+}
+
+.block-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.block-heading h3 {
+  color: var(--primary);
+  font-size: 13px;
+}
+
+.block-heading span {
+  color: var(--grey);
+  font-size: 8px;
+  font-weight: 700;
+}
+
+#improvementText {
+  color: #218653;
+}
+
+/* Simple flow graph â€” no fake chart-library styling. */
+.improvement-chart {
+  height: 145px;
+  padding: 10px 7px 0;
+  border-bottom: 1px solid #ddd;
+  border-radius: 10px;
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      transparent 0,
+      transparent 31px,
+      #eeeeee 32px
+    );
+  overflow: hidden;
+}
+
+.improvement-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.subject-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.subject-row {
+  display: grid;
+  grid-template-columns: 75px minmax(0, 1fr) 38px;
+  align-items: center;
+  gap: 8px;
+}
+
+.subject-name {
+  color: #444;
+  font-size: 9px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.subject-track {
+  height: 9px;
+  border-radius: 999px;
+  background: #eeeeee;
+  overflow: hidden;
+}
+
+.subject-fill {
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--primary), #655dd0);
+}
+
+.subject-percent {
+  color: var(--primary);
+  text-align: right;
+  font-size: 9px;
+  font-weight: 800;
+}
+
+.quiz-marks-table {
+  border: 1px solid #1b146414;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.quiz-mark-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 70px 55px;
+  align-items: center;
+  gap: 8px;
+  min-height: 42px;
+  padding: 6px 10px;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.quiz-mark-row:last-child {
+  border-bottom: 0;
+}
+
+.quiz-mark-row.header {
+  min-height: 32px;
+  background: var(--primary);
+  color: #fff;
+  font-size: 8px;
+  font-weight: 800;
+}
+
+.quiz-mark-row.header > span:nth-child(2),
+.quiz-mark-row.header > span:nth-child(3) {
+  text-align: right;
+}
+
+.quiz-mark-title {
+  min-width: 0;
+}
+
+.quiz-mark-title strong {
+  display: block;
+  color: var(--primary);
+  font-size: 9px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.quiz-mark-title small {
+  color: var(--grey);
+  font-size: 7px;
+}
+
+.quiz-mark-score {
+  color: var(--primary);
+  text-align: right;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.quiz-mark-percent {
+  color: #218653;
+  text-align: right;
+  font-size: 9px;
+  font-weight: 800;
+}
+
+.leaderboard-toast {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  z-index: 5000;
+  padding: 11px 15px;
+  border-radius: 11px;
+  background: var(--primary);
+  color: #fff;
+  box-shadow: 0 10px 30px #00000030;
+  font-size: 10px;
+  opacity: 0;
+  transform: translateY(12px);
+  pointer-events: none;
+  transition: .2s ease;
+}
+
+.leaderboard-toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 1100px) {
+  .leaderboard-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .performance-card {
+    position: static;
+  }
+}
+
+@media (max-width: 700px) {
+  .performance-card {
+    padding: 16px;
+  }
+
+  .performance-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .podium {
+    height: 280px;
+    padding: 18px 10px 0;
+    gap: 8px;
+  }
+
+  .podium-place {
+    min-width: 0;
+  }
+
+  .podium-place.first { --podium-height: 180px; }
+  .podium-place.second { --podium-height: 140px; }
+  .podium-place.third { --podium-height: 115px; }
+
+  .podium-profile {
+    width: 58px;
+    height: 58px;
+    top: -41px;
+  }
+
+  .podium-rank {
+    top: 22px;
+    font-size: 13px;
+  }
+
+  .podium-name {
+    top: 54px;
+    font-size: 8px;
+  }
+
+  .podium-score {
+    top: 73px;
+    font-size: 12px;
+  }
+
+  .rank-head,
+  .rank-row {
+    grid-template-columns: 45px minmax(0, 1fr) 82px;
+  }
+
+  .rank-head {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .rank-row {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .rank-score {
+    font-size: 13px;
+  }
+
+  .subject-row {
+    grid-template-columns: 70px minmax(0, 1fr) 36px;
+  }
+}
+
+@media (max-width: 480px) {
+  .performance-student-info h2 {
+    font-size: 15px;
+  }
+
+  .performance-student-info p {
+    font-size: 8px;
+  }
+
+  .performance-photo-wrap > img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .improvement-chart {
+    height: 125px;
+  }
+
+  .quiz-mark-row {
+    grid-template-columns: minmax(0, 1fr) 62px 47px;
+  }
+
+  .quiz-mark-title strong {
+    font-size: 8px;
+  }
+
+  .quiz-mark-score {
+    font-size: 9px;
+  }
+
+  .quiz-mark-percent {
+    font-size: 8px;
+  }
+
+  .lb-section-heading {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+}
+
+/* ============================================================
+   LEADERBOARD NAVIGATION / FIXED HEADER OVERRIDES
+   ============================================================ */
+
+/* Fixed header: transparent so the page background continues behind it. */
+.top-header {
+  position: fixed !important;
+  top: 0 !important;
+  left: 330px !important;
+  right: 30px !important;
+  z-index: 1000 !important;
+  background: #fbf596 !important;
+
+}
+
+/* Reserve space for the fixed header. */
+.main-content {
+  padding-top: 125px !important;
+}
+
+/* Sidebar is always above the fixed header. */
+#leaderboardSidebar {
+  z-index: 1100 !important;
+}
+
+/* Mobile overlay is above the header but below the sidebar. */
+.leaderboard-sidebar-overlay {
+  z-index: 1050 !important;
+}
+
+/* Hidden on desktop; enabled only at <=768px. */
+.leaderboard-menu-button {
+  display: none;
+  flex: 0 0 auto;
+  width: 40px;
+  height: 40px;
+  margin-right: 12px;
+  border: 0;
+  border-radius: 10px;
+  background: var(--primary, #1b1464);
+  color: #fff;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 17px;
+  box-shadow: 0 5px 14px #00000018;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.leaderboard-menu-button:active {
+  transform: scale(.96);
+}
+
+/* ============================================================
+   LARGE SCREENS / DIGITAL BOARD / SMARTBOARD
+   ============================================================ */
+
+@media (min-width: 1440px) {
+  .leaderboard-layout {
+    gap: 28px;
+  }
+
+  .leaderboard-card {
+    border-radius: 20px;
+  }
+
+  .main-content {
+    padding-top: 135px !important;
+  }
+
+  .top-header {
+    left: 330px !important;
+    right: 30px !important;
+  }
+}
+
+/* ============================================================
+   MOBILE: <=768px
+   ============================================================ */
+
+@media (max-width: 768px) {
+  .top-header {
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    min-height: 108px;
+    padding: 10px 14px 12px !important;
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto auto;
+    row-gap: 8px;
+    align-items: center;
+  }
+
+  .main-content {
+    width: 100% !important;
+    margin-left: 0 !important;
+    padding: 124px 14px 24px !important;
+    box-sizing: border-box;
+  }
+
+  .leaderboard-menu-button {
+    display: inline-flex;
+  }
+
+  /* First row: hamburger + Digital Classroom + title. */
+  .top-header .page-heading {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    grid-template-rows: auto auto;
+    column-gap: 9px;
+    align-items: center;
+    min-width: 0;
+    width: 100%;
+  }
+
+  .top-header .page-heading .leaderboard-menu-button {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+    align-self: center;
+  }
+
+  .top-header .page-heading small {
+    grid-column: 2;
+    grid-row: 1;
+    min-width: 0;
+    line-height: 1.1;
+  }
+
+  .top-header .page-heading h1 {
+    grid-column: 2;
+    grid-row: 2;
+    min-width: 0;
+    margin: 0;
+    line-height: 1.05;
+  }
+
+  /* The old descriptive sub-headline is intentionally removed. */
+  .top-header .page-heading p {
+    display: none !important;
+  }
+
+  /* Second row: notification + profile, in the space formerly used by the sub-headline. */
+  .top-header .header-actions {
+    grid-row: 2;
+    grid-column: 1;
+    display: flex !important;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    margin: 0;
+  }
+
+  .top-header .notification-btn,
+  .top-header .profile-mini {
+    position: static !important;
+    flex: 0 0 auto;
+  }
+
+  /* Keep the card's "Quiz Marks" label below the header instead of overlapping it. */
+  .leaderboard-layout {
+    grid-template-columns: minmax(0, 1fr);
+    width: 100%;
+  }
+
+  /* Vertical off-canvas sidebar. */
+  #leaderboardSidebar {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    bottom: 0 !important;
+    width: min(300px, 86vw) !important;
+    height: 100dvh !important;
+    max-height: 100dvh !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    z-index: 1100 !important;
+    transform: translateX(-105%) !important;
+    visibility: hidden;
+    transition: transform .28s ease, visibility .28s ease;
+    box-shadow: 12px 0 35px #00000035;
+  }
+
+  #leaderboardSidebar.open {
+    transform: translateX(0) !important;
+    visibility: visible;
+  }
+
+  .leaderboard-sidebar-overlay {
+    display: block !important;
+    position: fixed !important;
+    inset: 0 !important;
+    z-index: 1050 !important;
+    background: #0a082d7a;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity .28s ease, visibility .28s ease;
+  }
+
+  body.leaderboard-sidebar-open {
+    overflow: hidden !important;
+  }
+
+  body.leaderboard-sidebar-open .leaderboard-sidebar-overlay {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  .performance-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* ============================================================
+   EXTRA-WIDE SCREENS
+   ============================================================ */
+
+@media (min-width: 1920px) {
+  .leaderboard-layout {
+    max-width: 1800px;
+    margin-right: auto;
+  }
+}
+
+.top-header {
+    height: 80px;
+    background: #fff9a6;
+    margin-right: -30px;
+    margin-left: -30px;
+    margin-top: -20px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-bottom: 1px solid rgb(226, 226, 226);
+    margin-top: 0px;
+}
+

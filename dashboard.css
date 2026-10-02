@@ -249,8 +249,22 @@ header {
   justify-content: space-between;
 
   align-items: center;
+  
+  height: 80px;
 
   margin-bottom: 25px;
+
+  background: #fbf596;
+  padding-right: 30px;
+  margin-right: -30px;
+  margin-top: -30px;
+  margin-left: -30px;
+  padding-left: 30px;
+
+  border-bottom: 1px solid rgb(226, 226, 226);
+  position: fixed;
+  z-index: 1000;
+ 
 }
 
 header h1 {
@@ -3519,7 +3533,7 @@ body {
    Desktop hover behavior remains unchanged.
    ========================================================= */
 
-@media (max-width: 768px) {
+@media (max-width: 800px) {
 
     .floating-learning-menu {
         right: 18px;
@@ -3596,4 +3610,126 @@ body {
             translateY(-72px)
             scale(1) !important;
     }
+
+    header {
+      height: 70px;
+    }
+    
+}
+
+@media (max-width: 640px) {
+  .dashboard-header {
+    padding-right: 13px;
+    margin-right: -2px;
+    margin-left: -2px;
+    padding-left: 13px;
+
+    height: 50px;
+    box-shadow: none;
+    border-bottom: 1px solid rgb(237, 236, 236);
+  }
+
+  .profile-box {
+    padding: 5px 12px;
+  }
+}
+
+/* ============================================================
+   DESKTOP HEADER FIX — 801px AND ABOVE
+   ------------------------------------------------------------
+   Header:
+   - stays fixed while main content scrolls
+   - above normal page content
+   - below sidebar
+   ============================================================ */
+
+@media (min-width: 801px) {
+
+    .dashboard-header {
+        position: fixed !important;
+        top: 0;
+        left: 0;
+        right: 0;
+
+        width: 100%;
+        height: 80px;
+
+        margin: 0 !important;
+        padding: 0 30px;
+
+        background: #fff9a6;
+
+        z-index: 1500;
+
+        box-sizing: border-box;
+    }
+
+    /*
+       Keep the sidebar above the header.
+    */
+    .sidebar {
+        z-index: 2000 !important;
+    }
+
+    /*
+       Keep the header above normal content.
+    */
+    .main-content {
+        position: relative;
+        z-index: 1;
+
+        padding-top: 110px;
+    }
+}
+
+
+/* ============================================================
+   LARGE DESKTOP
+   Keep header aligned with the content area beside sidebar
+   ============================================================ */
+
+@media (min-width: 1051px) {
+
+    .dashboard-header {
+        left: 300px;
+        right: 0;
+        width: auto;
+    }
+
+    .main-content {
+        padding-top: 110px;
+    }
+}
+
+
+/* ============================================================
+   801px - 1050px
+   Sidebar is an off-canvas drawer, so header can span full width.
+   Sidebar remains above header.
+   ============================================================ */
+
+@media (min-width: 801px) and (max-width: 1050px) {
+
+    .dashboard-header {
+        left: 0;
+        right: 0;
+        width: 100%;
+    }
+
+    .main-content {
+        padding-top: 110px;
+    }
+
+    .sidebar {
+        z-index: 2000 !important;
+    }
+}
+
+.dashboard-header {
+  background: #fbf596;
+}
+@media (max-width: 640px) {
+  .dashboard-header {
+    background: rgb(249, 249, 249);
+  }
 }

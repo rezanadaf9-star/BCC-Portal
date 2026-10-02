@@ -189,6 +189,7 @@ button {
     justify-content: space-between;
     gap: 20px;
     margin-bottom: 28px;
+    background: #fff9a6;
 }
 
 .page-heading small,

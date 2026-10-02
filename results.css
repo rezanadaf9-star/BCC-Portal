@@ -294,22 +294,17 @@ button {
 
     gap: 25px;
 
-    margin-bottom: 30px;
+    margin-bottom: 25px;
 
-    padding: 28px;
-
-    border-radius: 25px;
-
-    position: relative;
-
-    overflow: hidden;
-
-    background: #FFFFFF;
-
-    border: 1px solid rgba(27, 20, 100, 0.20);
-
-    box-shadow:
-        0 10px 30px rgba(27, 20, 100, 0.12);
+    height: 80px;
+    background: #fff9a6;
+    margin-right: -30px;
+    margin-left: -30px;
+    margin-top: -20px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-bottom: 1px solid rgb(226, 226, 226);
+    margin-top: -30px;
 }
 
 .results-header::before {
@@ -361,8 +356,8 @@ button {
 }
 
 .header-icon {
-    width: 70px;
-    height: 70px;
+    width: 56px;
+    height: 56px;
 
     flex-shrink: 0;
 
@@ -370,9 +365,9 @@ button {
     align-items: center;
     justify-content: center;
 
-    border-radius: 20px;
+    border-radius: 12px;
 
-    background: #FFF9A6;
+    background: #fcfcfb;
 
     color: #1B1464;
 
@@ -414,7 +409,7 @@ button {
 
     align-items: center;
 
-    gap: 25px;
+    gap: 15px;
 
     position: relative;
 
@@ -429,9 +424,9 @@ button {
     width: 48px;
     height: 48px;
 
-    background: #FFF9A6;
+    background: #fbfbfa;
 
-    border-radius: 50%;
+    border-radius: 14px;
 
     display: flex;
     justify-content: center;
@@ -462,10 +457,10 @@ button {
 .notification span {
     position: absolute;
 
-    top: 4px;
-    right: 2px;
+    top: 6px;
+    right: 6px;
 
-    background: #1B1464;
+    background: #f70808;
 
     color: #FFFFFF;
 
@@ -490,11 +485,11 @@ button {
 
     gap: 12px;
 
-    background: #FFF9A6;
+    background: #fafafa;
 
-    padding: 8px 16px;
+    padding: 7px 16px;
 
-    border-radius: 50px;
+    border-radius: 14px;
 
     box-shadow:
         0 6px 18px rgba(27, 20, 100, 0.12);
@@ -505,18 +500,18 @@ button {
 .profile:hover {
     transform: translateY(-3px);
 
-    background: #FFF9A6;
+    background: #fcfcfc;
 }
 
 .profile img {
-    width: 52px;
-    height: 52px;
+    width: 46px;
+    height: 46px;
 
     border-radius: 50%;
 
     object-fit: cover;
 
-    border: 3px solid #FFFFFF;
+    border: 3px solid #ffea01;
 }
 
 .profile h4 {
@@ -1518,4 +1513,70 @@ footer {
     .year-buttons {
         grid-template-columns: repeat(2, 1fr);
     }
+}
+
+
+/* =========================================================
+   FIXED DESKTOP HEADER
+   Header fixed while page content scrolls
+   Applies only above 800px
+   ========================================================= */
+
+@media (min-width: 801px) {
+
+  header {
+    position: fixed !important;
+    top: 0;
+    left: 300px;
+    right: 0;
+
+    width: auto;
+    height: 80px;
+
+    margin: 0 !important;
+    padding-left: 30px;
+    padding-right: 30px;
+
+    background: #fff9a6;
+
+    z-index: 1500;
+
+    box-sizing: border-box;
+  }
+
+  /* Sidebar stays above the header */
+  ul {
+    z-index: 2000 !important;
+  }
+
+  /* Keep page content below the fixed header */
+  .main-content {
+    position: relative;
+    z-index: 1;
+    padding-top: 110px;
+  }
+}
+
+
+/* =========================================================
+   801px - 1050px
+   Sidebar becomes an off-canvas menu
+   Header spans the full screen
+   ========================================================= */
+
+@media (min-width: 801px) and (max-width: 1050px) {
+
+  header {
+    left: 0;
+    right: 0;
+    width: 100%;
+  }
+
+  .main-content {
+    padding-top: 110px;
+  }
+
+  ul {
+    z-index: 2000 !important;
+  }
 }
